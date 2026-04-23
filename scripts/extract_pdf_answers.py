@@ -3,6 +3,10 @@
 從 data/pdfs/ 下的 PDF 提取選擇題答案
 執行：python scripts/extract_pdf_answers.py
 輸出：data/pdf_answers.json
+
+支援兩種格式：
+1. SMask 圖片格式（行政法概要、刑法概要）：答案為 XObject SMask 二進位 MD5 指紋
+2. 私用字元格式（法學知識與英文）：答案以 private-use Unicode 字元嵌入文字層
 """
 import json
 import zlib
@@ -19,12 +23,32 @@ except ImportError:
     print("請執行: pip install pikepdf")
     sys.exit(1)
 
+try:
+    import fitz  # PyMuPDF
+    HAS_FITZ = True
+except ImportError:
+    HAS_FITZ = False
+
+# 私用字元 → 答案字母（法學知識與英文格式）
+PRIVATE_CHAR_MAP: dict[str, str] = {
+    '\ue2b7': 'A',
+    '\ue2b8': 'B',
+    '\ue2b9': 'C',
+    '\ue2ba': 'D',
+}
+
 # 已知答案圖片雜湊 → 字母映射 (從 113年行政法概要 PDF 建立)
 ANSWER_HASHES: dict[str, str] = {
+    # 113_行政法概要
     'b85cfa95a61d17c653a3966028d69e71': 'D',
     '3609ba45be8dd729c06e1a4ac93cbd8a': 'A',
     '3982d818f7ca9bd991956019b7378780': 'B',
     '45bd951c9c309bffb0b5a16f5ca4722d': 'C',
+    # 113_刑法概要
+    'fdfa7b27fa1c4d76b28c0c3578810be5': 'A',
+    '7f74a5f8f6f7726dddfd45e812070351': 'C',
+    '2be2f67f478357ee431d56451c485b0e': 'D',
+    '422da79441cf733527a81121ee395449': 'B',
 }
 
 DATA_DIR = Path(__file__).parent.parent / 'data'
@@ -97,7 +121,7 @@ def extract_answers_from_pdf(pdf_path: Path) -> list[str]:
             x = float(m.group(3))
             y = float(m.group(4))
             img_name = m.group(5)
-            if w < 25 and 44 <= x <= 52:
+            if w < 30 and 40 <= x <= 55:
                 answer_imgs.append((y, img_name))
 
         answer_imgs.sort(key=lambda t: -t[0])  # 由上而下
@@ -119,15 +143,39 @@ def extract_answers_from_pdf(pdf_path: Path) -> list[str]:
     return [letter for _, _, _, letter in all_answers]
 
 
+def extract_answers_private_char(pdf_path: Path) -> list[str]:
+    """用 PyMuPDF 提取私用字元格式答案（法學知識與英文）"""
+    if not HAS_FITZ:
+        return []
+    pdf = fitz.open(str(pdf_path))
+    all_answers: list[str] = []
+    for page_idx in range(len(pdf)):
+        page = pdf[page_idx]
+        page_answers: list[tuple[float, str]] = []
+        for block in page.get_text('dict')['blocks']:
+            if block['type'] != 0:
+                continue
+            for line in block['lines']:
+                for span in line['spans']:
+                    text = span['text'].strip()
+                    x = span['bbox'][0]
+                    y = span['bbox'][1]
+                    if x < 50 and len(text) == 1 and text in PRIVATE_CHAR_MAP:
+                        page_answers.append((y, PRIVATE_CHAR_MAP[text]))
+        page_answers.sort(key=lambda t: t[0])
+        all_answers.extend(letter for _, letter in page_answers)
+    return all_answers
+
+
 def run():
     print('=== 公職王 PDF 答案提取器 ===')
-    
+
     # 找所有 PDF
     pdfs = sorted(PDF_DIR.glob('*.pdf'))
     print(f'找到 {len(pdfs)} 個 PDF')
-    
+
     results = {}
-    
+
     for pdf_path in pdfs:
         fname = pdf_path.stem  # e.g. '113_行政法概要'
         parts = fname.split('_', 1)
@@ -138,9 +186,26 @@ def run():
             roc_year = int(roc_year_str)
         except ValueError:
             continue
-        
+
         print(f'\n處理：{fname}.pdf')
-        answers = extract_answers_from_pdf(pdf_path)
+
+        # 申論題科目直接跳過
+        ESSAY_SUBJECTS = ('刑事訴訟法概要', '法院組織法', '刑事訴訟法', '法院組織')
+        if subject in ESSAY_SUBJECTS:
+            print(f'  (申論題科目，跳過)')
+            continue
+
+        # 法學知識與英文用私用字元格式
+        if subject in ('法學知識與英文',):
+            answers = extract_answers_private_char(pdf_path)
+        else:
+            answers = extract_answers_from_pdf(pdf_path)
+
+        # 申論題科目（無 MCQ 答案）跳過
+        if not answers:
+            print(f'  (無選擇題答案，跳過)')
+            continue
+
         print(f'  提取到 {len(answers)} 個答案：{" ".join(answers)}')
         
         key = f'{roc_year}_{subject}'
