@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>司法特考四等法警考古題系統</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#1a3a5c', accent: '#e07b39' } } }
+    }
+  </script>
+  <style>
+    .tab-btn { display:flex; align-items:center; gap:6px; padding:12px 16px; font-size:0.875rem; font-weight:500; color:#4b5563; border-bottom:2px solid transparent; transition:all .15s; white-space:nowrap; cursor:pointer; background:none; border-top:0; border-left:0; border-right:0; }
+    .tab-btn:hover { color:#1a3a5c; border-bottom-color:#1a3a5c; }
+    .tab-btn.active { color:#1a3a5c; border-bottom-color:#1a3a5c; }
+    .tab-pane.hidden { display:none; }
+    .option-btn { width:100%; text-align:left; padding:12px 16px; border-radius:8px; border:1px solid #e5e7eb; transition:all .15s; font-size:0.875rem; background:#fff; cursor:pointer; margin-bottom:8px; }
+    .option-btn:hover:not(:disabled) { border-color:#1a3a5c; background:#eff6ff; }
+    .option-btn.correct { background:#f0fdf4; border-color:#4ade80; color:#166534; }
+    .option-btn.wrong { background:#fef2f2; border-color:#f87171; color:#991b1b; }
+    .option-btn:disabled { cursor:default; }
+    @media (prefers-color-scheme: dark) {
+      .option-btn { background:#374151; border-color:#4b5563; color:#f3f4f6; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header style="background:#1a3a5c" class="text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl font-bold">⚖️ 司法特考四等法警考古題系統</h1>
+        <p class="text-sm mt-0.5" style="color:#93c5fd" id="header-sub">載入中…</p>
+      </div>
+      <button onclick="toggleDark()" class="w-9 h-9 rounded-full flex items-center justify-center text-lg" style="background:rgba(255,255,255,0.1)" title="深色模式">🌙</button>
+    </div>
+  </header>
+
+  <!-- Tab Nav -->
+  <nav class="bg-white border-b shadow-sm sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 flex overflow-x-auto">
+      <button class="tab-btn active" onclick="showTab('dashboard')">📊 總覽</button>
+      <button class="tab-btn" onclick="showTab('practice')">✏️ 練習</button>
+      <button class="tab-btn" onclick="showTab('browse')">🔍 題庫瀏覽</button>
+      <button class="tab-btn" onclick="showTab('exam-info')">📋 考試資訊</button>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-6">
+
+    <!-- ── Dashboard ── -->
+    <div id="tab-dashboard" class="tab-pane">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="stat-cards"></div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white rounded-xl shadow-sm p-5">
+          <h3 class="font-semibold text-gray-700 mb-4">科目題數分布</h3>
+          <canvas id="chart-subjects" height="200"></canvas>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-5">
+          <h3 class="font-semibold text-gray-700 mb-4">年度出題趨勢</h3>
+          <canvas id="chart-trend" height="200"></canvas>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm p-5">
+        <h3 class="font-semibold text-gray-700 mb-4">快速開始練習</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="subject-shortcuts"></div>
+      </div>
+    </div>
+
+    <!-- ── Practice ── -->
+    <div id="tab-practice" class="tab-pane hidden">
+      <div id="practice-setup" class="bg-white rounded-xl shadow-sm p-6 mb-4">
+        <h2 class="text-lg font-semibold mb-4 text-gray-800">練習設定</h2>
+        <div class="grid md:grid-cols-3 gap-4 mb-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">科目</label>
+            <select id="practice-subject" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
+              <option value="">全部科目</option>
+              <option value="行政法概要">行政法概要（選擇）</option>
+              <option value="刑法概要">刑法概要（選擇）</option>
+              <option value="刑事訴訟法概要">刑事訴訟法概要（申論）</option>
+              <option value="法院組織法">法院組織法（申論）</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">年度</label>
+            <select id="practice-year" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
+              <option value="">全部年度</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">題型</label>
+            <select id="practice-type" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
+              <option value="mcq">選擇題</option>
+              <option value="essay">申論題（閱讀）</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <label class="text-sm text-gray-600">題數：
+            <input type="number" id="practice-count" value="20" min="5" max="50"
+              class="w-16 ml-1 border border-gray-200 rounded px-2 py-1 text-sm">
+          </label>
+          <button onclick="startPractice()" class="text-white px-6 py-2 rounded-lg font-medium text-sm" style="background:#1a3a5c">
+            開始練習
+          </button>
+        </div>
+      </div>
+
+      <div id="practice-area" class="hidden">
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-sm text-gray-500">
+            第 <span id="q-current" class="font-bold">1</span> / <span id="q-total">20</span> 題
+            <span class="ml-3 text-green-600">✅ <span id="q-correct">0</span></span>
+            <span class="ml-2 text-red-500">❌ <span id="q-wrong">0</span></span>
+          </div>
+          <button onclick="endPractice()" class="text-sm text-gray-400 hover:text-gray-600">結束練習</button>
+        </div>
+
+        <!-- 進度條 -->
+        <div class="w-full bg-gray-200 rounded-full h-1.5 mb-5">
+          <div id="progress-bar" class="h-1.5 rounded-full transition-all" style="background:#1a3a5c; width:0%"></div>
+        </div>
+
+        <div id="question-container"></div>
+
+        <div id="result-banner" class="hidden bg-white rounded-xl shadow-sm p-8 text-center">
+          <div class="text-5xl mb-3" id="result-emoji">🎉</div>
+          <h2 class="text-2xl font-bold mb-1" id="result-title"></h2>
+          <p class="text-gray-500 mb-6" id="result-subtitle"></p>
+          <button onclick="startPractice()" class="text-white px-6 py-2 rounded-lg font-medium mr-3" style="background:#1a3a5c">再練一次</button>
+          <button onclick="endPractice()" class="bg-gray-100 text-gray-700 px-6 py-2 rounded-lg font-medium">返回設定</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Browse ── -->
+    <div id="tab-browse" class="tab-pane hidden">
+      <div class="bg-white rounded-xl shadow-sm p-4 mb-4 flex flex-wrap gap-3 items-center">
+        <select id="browse-subject" onchange="loadBrowse(1)" class="border border-gray-200 rounded-lg px-3 py-2 text-sm">
+          <option value="">全部科目</option>
+          <option value="行政法概要">行政法概要</option>
+          <option value="刑法概要">刑法概要</option>
+          <option value="刑事訴訟法概要">刑事訴訟法概要</option>
+          <option value="法院組織法">法院組織法</option>
+        </select>
+        <select id="browse-year" onchange="loadBrowse(1)" class="border border-gray-200 rounded-lg px-3 py-2 text-sm">
+          <option value="">全部年度</option>
+        </select>
+        <select id="browse-type" onchange="loadBrowse(1)" class="border border-gray-200 rounded-lg px-3 py-2 text-sm">
+          <option value="">全部題型</option>
+          <option value="mcq">選擇題</option>
+          <option value="essay">申論題</option>
+        </select>
+        <span class="text-sm text-gray-400 ml-auto" id="browse-count"></span>
+      </div>
+      <div id="browse-list"></div>
+      <div class="flex justify-center gap-3 mt-4">
+        <button id="browse-prev" onclick="browsePage(-1)" class="px-4 py-2 rounded-lg border border-gray-200 text-sm hover:bg-gray-50 disabled:opacity-40">← 上一頁</button>
+        <span class="px-4 py-2 text-sm text-gray-500" id="browse-page-info"></span>
+        <button id="browse-next" onclick="browsePage(1)" class="px-4 py-2 rounded-lg border border-gray-200 text-sm hover:bg-gray-50 disabled:opacity-40">下一頁 →</button>
+      </div>
+    </div>
+
+    <!-- ── Exam Info ── -->
+    <div id="tab-exam-info" class="tab-pane hidden">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-lg font-semibold mb-4">📋 考試科目</h2>
+          <table class="w-full text-sm">
+            <thead><tr class="text-left text-gray-500 border-b"><th class="pb-2">科目</th><th class="pb-2">題型</th><th class="pb-2">題數</th></tr></thead>
+            <tbody class="divide-y text-gray-700">
+              <tr><td class="py-2 font-medium">國文</td><td>作文80%+測驗20%</td><td>—</td></tr>
+              <tr><td class="py-2 font-medium">法學知識與英文</td><td>選擇題</td><td>30題</td></tr>
+              <tr><td class="py-2 font-medium">行政法概要</td><td>選擇題</td><td>50題</td></tr>
+              <tr><td class="py-2 font-medium">刑法概要</td><td>選擇題</td><td>50題</td></tr>
+              <tr><td class="py-2 font-medium">法院組織法</td><td>申論題</td><td>4題</td></tr>
+              <tr><td class="py-2 font-medium">刑事訴訟法概要</td><td>申論題</td><td>4題</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-lg font-semibold mb-4">🏃 體能複試標準（1,200公尺跑走）</h2>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="rounded-xl p-4 text-center" style="background:#eff6ff">
+              <div class="text-3xl mb-1">👨</div>
+              <div class="text-2xl font-bold" style="color:#1d4ed8">5'50"</div>
+              <div class="text-sm mt-1" style="color:#2563eb">男性（以內）</div>
+            </div>
+            <div class="rounded-xl p-4 text-center" style="background:#fdf2f8">
+              <div class="text-3xl mb-1">👩</div>
+              <div class="text-2xl font-bold" style="color:#9d174d">6'20"</div>
+              <div class="text-sm mt-1" style="color:#be185d">女性（以內）</div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400">※ 體能測驗不計分，達標即通過，不達標不予錄取</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6 md:col-span-2">
+          <h2 class="text-lg font-semibold mb-4">📌 報考資格與注意事項</h2>
+          <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+            <div><span class="font-medium text-gray-800">年齡：</span>18 歲以上、45 歲以下</div>
+            <div><span class="font-medium text-gray-800">學歷：</span>高中職以上學校畢業且持有證書</div>
+            <div><span class="font-medium text-gray-800">資料來源：</span>法源法律網 108-114 年歷屆考題</div>
+            <div><span class="font-medium text-gray-800">答案狀態：</span>選擇題答案待補充，申論題供閱讀參考</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/static/js/app.js?v=1"></script>
+</body>
+</html>

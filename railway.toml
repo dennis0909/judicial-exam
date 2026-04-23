@@ -1,0 +1,10 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# 不寫 startCommand：交給 Dockerfile CMD（已用 sh -c 正確展開 $PORT）
+healthcheckPath = "/api/me"
+healthcheckTimeout = 60
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
