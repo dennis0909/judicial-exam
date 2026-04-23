@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: judicial-exam
+    runtime: docker
+    region: singapore
+    plan: free
+    envVars:
+      - key: FIREBASE_API_KEY
+        sync: false
+      - key: FIREBASE_AUTH_DOMAIN
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+    healthCheckPath: /api/stats
+    autoDeploy: true
