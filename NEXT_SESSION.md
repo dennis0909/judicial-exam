@@ -7,17 +7,24 @@
 
 Build a usable judicial-exam question app — pipeline stable, app running on Render.
 
+## ⚡ 下次優先順序
+
+1. **Task 2：修 API / 前端** — 答案已補齊，接上 API 讓前端正確顯示答案
+2. **Task 1：法學知識與英文擴充** — 下載 112、111 年 PDF，提取題目和答案
+
 ## Current Status
 
 - [x] Phase 1: source reconnaissance finished
 - [x] Phase 2: pipeline repaired
 - [x] Phase 3: App 完成（練習/瀏覽/統計/考試資訊）
 - [x] GitHub push 完成
-- [x] Dead code 清除（adaptive_engine.py, gamification.py, db.py 瘦身）
-- [x] Runtime bugs 修復（options格式、db.init_db、verify_id_token）
-- [x] build_questions.py 保護 extra_questions.json 不被蓋掉
+- [x] Dead code 清除
+- [x] Runtime bugs 修復
+- [x] 112年 行政法/刑法 答案補充完成（359/360 MCQ 有答案）
+- [x] PDF 萃取修正（y-gap 過濾誤觸 marker）
 - [ ] Render 部署（render.yaml 已加，等在 dashboard 連 repo）
-- [ ] 112年 行政法/刑法 答案補充（101 題無答案）
+- [ ] API / 前端接答案顯示
+- [ ] 法學知識與英文 112、111 年擴充
 
 ## Data Pipeline
 
@@ -35,13 +42,15 @@ python scripts\build_questions.py         # → questions.json（合併所有來
 
 | 科目 | 題數 | 有答案 | 來源 |
 |------|------|--------|------|
-| 行政法概要 | 150 | 99 | lawbank(112-114) + PDF(113) + hardcoded(114) |
-| 刑法概要 | 150 | 100 | lawbank(112-114) + PDF(113) + hardcoded(114) |
+| 行政法概要 | 150 | 149 | lawbank(112-114) + PDF(112,113) + hardcoded(114) |
+| 刑法概要 | 150 | 150 | lawbank(112-114) + PDF(112,113) + hardcoded(114) |
 | 刑事訴訟法概要 | 28 | 0 | lawbank(108-114) 申論題 |
 | 法院組織法 | 32 | 0 | lawbank(86, 108-114) 申論題 |
 | 法學知識與英文 | 50 | 50 | extra_questions.json（113年 PDF 提取）|
 | 國文 | 10 | 10 | extra_questions.json（113年 PDF 提取）|
-| **合計** | **420** | **259/360 MCQ (72%)** | |
+| **合計** | **420** | **359/360 MCQ (99.7%)** | |
+
+> 缺 1 題：113年行政法概要（PDF 有一個 marker 抓不到，原因待查）
 
 ## Data Sources 上限
 
