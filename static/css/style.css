@@ -599,6 +599,33 @@ body.focus-mode .focus-mode-btn svg path {
   font-weight: 600;
 }
 
+/* 答題後 option-clickable 被移除，仍需高亮 */
+.option-item.selected {
+  background: #ebf5ff;
+  border: 1px solid #1a365d;
+  color: #1a365d;
+  font-weight: 600;
+}
+
+.option-item.selected.correct {
+  background: #dcfce7;
+  border-color: #16a34a;
+  color: #166534;
+}
+
+.option-item.selected.wrong {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.option-item.reveal-correct {
+  background: #dcfce7;
+  border: 1px solid #16a34a;
+  color: #166534;
+  font-weight: 600;
+}
+
 /* ===== 熱力圖 ===== */
 .heatmap-table {
   width: 100%;

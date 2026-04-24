@@ -350,7 +350,7 @@ async function submitAnswer(qId, answer, el) {
   // Disable all options
   document.querySelectorAll('.option-clickable').forEach(b => {
     b.style.pointerEvents = 'none';
-    b.classList.remove('option-clickable');
+    b.style.cursor = 'default';
   });
 
   try {
