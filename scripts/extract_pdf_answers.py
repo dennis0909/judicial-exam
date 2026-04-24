@@ -130,7 +130,17 @@ def extract_answers_from_pdf(pdf_path: Path) -> list[str]:
                 continue
 
     answers.sort(key=lambda item: (item[0], -item[1]))
-    return [letter for _, _, letter in answers]
+
+    # Remove spurious duplicate markers: if two consecutive markers on the same page
+    # are within 25 y-units, the first one is a misfire — keep only the second.
+    filtered: list[tuple[int, float, str]] = []
+    for entry in answers:
+        if filtered and filtered[-1][0] == entry[0] and filtered[-1][1] - entry[1] < 25:
+            filtered[-1] = entry  # replace previous with current
+        else:
+            filtered.append(entry)
+
+    return [letter for _, _, letter in filtered]
 
 
 def extract_answers_private_char(pdf_path: Path) -> list[str]:

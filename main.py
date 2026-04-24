@@ -20,6 +20,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="法警特考考古題分析系統", version="1.0.0")
+db.init_db()
 
 # ---------- Load questions ----------
 _ROOT = Path(__file__).parent
@@ -41,7 +42,7 @@ async def _current_user(authorization: str | None) -> dict | None:
         return None
     token = authorization.split(" ", 1)[1]
     try:
-        return fb_auth.verify_firebase_token(token)
+        return fb_auth.verify_id_token(token)
     except Exception:
         return None
 

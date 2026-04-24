@@ -1,0 +1,906 @@
+{
+  "source": "pdf_extracted",
+  "note": "PDF 提取或 AI 補充題目（非 lawbank）",
+  "questions": [
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 1,
+      "stem": "甲男於民國103 年2 月因車禍身亡，其妻乙遲至103 年8 月始依國民年金法之規定，申請遺屬年金給付，因而僅得自申請該月起領取給付。依司法院釋字第766 號解釋意旨，下列敘述何者正確？",
+      "options": {
+        "A": "國民年金保險為具有強制性之社會保險，立法者有較大之自由形成空間，受到司法審查之密度皆較寬鬆",
+        "B": "人民依法享有之國民年金給付請求權，屬於財產權之保障範圍，其保障之內容及限制，應由行政權決定",
+        "C": "法律以主管機關追溯認定困難之行政便宜考量，限制遺屬年金之起算始點，並非重要公益",
+        "D": "法令規定以遺屬提出年金給付之申請時起算其年金，以節省政府財政支出，於公益及私益間之衡量，符合比例原則"
+      },
+      "answer": "C",
+      "id": "q_fa3fd8e67d"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 2,
+      "stem": "憲法增修條文第5 條第5 項規定「政黨之目的或其行為，危害中華民國之存在或自由民主之憲政秩序者為違憲。」此規定展現下列何種民主的內涵？",
+      "options": {
+        "A": "多數民主",
+        "B": "防衛民主",
+        "C": "多元民主",
+        "D": "直接民主"
+      },
+      "answer": "B",
+      "id": "q_e245cedab0"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 3,
+      "stem": "依司法院大法官解釋及憲法法庭判決，有關原住民之身分認同權，下列敘述何者錯誤？",
+      "options": {
+        "A": "原住民之身分認同權，受憲法22 條保障",
+        "B": "原住民之血統為憲法及法律所創設",
+        "C": "原住民之身分原則上採自我認同原則",
+        "D": "原住民之身分認同權乃原住民特殊人格權利"
+      },
+      "answer": "B",
+      "id": "q_4d6f6c0b03"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 4,
+      "stem": "我國憲法本文對於邊疆地區之地方自治事業，有如何之規定？",
+      "options": {
+        "A": "未有任何特別規定",
+        "B": "考量到邊疆地區之特殊性，應特別扶植其地方自治事業",
+        "C": "基於民族平等原則，邊疆地區與非邊疆地區之地方自治事業一律平等",
+        "D": "國家應尊重其自治意願，保持中立，而不予以干預或特別扶植"
+      },
+      "answer": "B",
+      "id": "q_417c84da59"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 5,
+      "stem": "關於軍事審判，下列敘述何者正確？",
+      "options": {
+        "A": "無論平時或戰時，軍事審判皆應由軍事法院掌理",
+        "B": "軍事審判為國家刑罰權之一種",
+        "C": "為確保獨立審判，軍事審判官不得免職",
+        "D": "有關軍事審判官志願留營之核准等身分保障，與其他現役軍人並無不同"
+      },
+      "answer": "B",
+      "id": "q_b34fb73a3f"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 6,
+      "stem": "有關國家為興建水庫而要求人民遷村，下列敘述何者正確？",
+      "options": {
+        "A": "不構成居住自由之限制，故為憲法所許",
+        "B": "構成居住自由之限制，故為憲法所不許",
+        "C": "構成居住自由之限制，遷村作業實施計畫應由法律明定",
+        "D": "構成居住自由之限制，行政機關得經法律授權以命令訂定遷村作業實施計畫"
+      },
+      "answer": "D",
+      "id": "q_f0b156cac8"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 7,
+      "stem": "下列何者為學說上所稱之直接歧視？",
+      "options": {
+        "A": "先天或後天原因所致個人或群體的不利地位，例如身心障礙、城鄉差距等因素所致之政經地位的結構性不平等",
+        "B": "法規範表面上以性別、國籍、階級、黨派為區分標準，進而有不合理的差別待遇",
+        "C": "個人所為之社會性歧視對某些群體人民造成長期、固定性的不利差別待遇",
+        "D": "表面中立的國家法令之實際適用結果發生系統性的不利差別待遇"
+      },
+      "answer": "B",
+      "id": "q_def60084a3"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 8,
+      "stem": "依憲法法庭判決，強制汽車駕駛人在肇事而無法實施吐氣酒測時，應至醫療機構接受血液採檢的法律規定，所涉及的基本權不包括下列何者？",
+      "options": {
+        "A": "身體權",
+        "B": "平等權",
+        "C": "人身自由",
+        "D": "資訊隱私權"
+      },
+      "answer": "B",
+      "id": "q_4ae2c9437a"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 9,
+      "stem": "以下何者並非由總統提名或任命產生？",
+      "options": {
+        "A": "行政院院長",
+        "B": "司法院院長",
+        "C": "審計長",
+        "D": "立法院院長"
+      },
+      "answer": "D",
+      "id": "q_978a39057d"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 10,
+      "stem": "依憲法增修條文規定，有關監察委員之任命及職權，下列敘述何者錯誤？",
+      "options": {
+        "A": "監察委員行使彈劾、糾舉及糾正權",
+        "B": "監察委員，任期6 年，由總統提名，經立法院同意任命之",
+        "C": "監察院院長、副院長各一人，由監察委員互選之",
+        "D": "監察委員須超出黨派以外，依據法律獨立行使職權"
+      },
+      "answer": "C",
+      "id": "q_128c2cc3c2"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 11,
+      "stem": "依憲法訴訟法規定，關於憲法法庭的裁判效力，下列敘述何者錯誤？",
+      "options": {
+        "A": "憲法法庭所為的判決，有拘束全國各機關的效力",
+        "B": "對憲法法庭的裁判，當事人不得聲明不服",
+        "C": "憲法法庭判決某法律違憲且「立即失效」，先前已確定的行政法院裁判，如非據以聲請之原因案件，並不因此受影響",
+        "D": "憲法法庭判決某法律違憲且「定期失效」，法官於案件審理時即不得再適用該法律"
+      },
+      "answer": "D",
+      "id": "q_da48468b41"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 12,
+      "stem": "依憲法法庭111 年憲判字第6 號判決，有關中央與地方分權，下列敘述何者正確？",
+      "options": {
+        "A": "有關食品安全容許標準之規定，為地方專屬之權限",
+        "B": "因地制宜之地方自治條例，仍不得牴觸中央法律之框架規定",
+        "C": "地方就其自治核心事項享有專屬立法權",
+        "D": "商業與公共衛生事項，中央享有專屬立法權"
+      },
+      "answer": "B",
+      "id": "q_2165aafb96"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 13,
+      "stem": "有關我國憲法對於基本權利之保障，下列敘述何者正確？",
+      "options": {
+        "A": "所保障之基本權利採列舉窮盡規定方式",
+        "B": "憲法明文保障創制複決權",
+        "C": "權利主體僅限於本國國民",
+        "D": "於每一項基本權利規定其限制之條件"
+      },
+      "answer": "B",
+      "id": "q_500b640721"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 14,
+      "stem": "依憲法規定，關於行政院，下列敘述何者正確？",
+      "options": {
+        "A": "憲法增修條文已將總統定位為最高行政機關，行政院僅向總統負責",
+        "B": "基於各憲法機關之權力核心領域不容侵犯，行政院之組織架構應由行政院自行規範，不得以法律決定",
+        "C": "立法院對行政院院長提出之不信任案通過後，行政院院長應於10 日內提出辭職，並得直接依法解散立法院",
+        "D": "行政院院長欲向立法院提出之法律修正草案，依據憲法應先提出於行政院會議議決"
+      },
+      "answer": "D",
+      "id": "q_47db8de953"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 15,
+      "stem": "依憲法訴訟法規定，下列何者僅得針對法律位階之法規範向憲法法庭聲請判決？",
+      "options": {
+        "A": "中央選舉委員會",
+        "B": "臺灣高雄地方法院",
+        "C": "監察院",
+        "D": "屏東縣"
+      },
+      "answer": "B",
+      "id": "q_a08876c493"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 16,
+      "stem": "勞工遭遇職業災害，依據勞動基準法之規定，下列敘述何者錯誤？",
+      "options": {
+        "A": "在醫療中不能工作時，雇主應按勞工之原領工資數額予以補償",
+        "B": "於勞動基準法第59 條規定職業災害之醫療期間，雇主不得終止契約",
+        "C": "雇主依勞動基準法第59 條第2 款給付40 個月之平均工資，免除其工資補償責任後，雇主應補償其必需之醫療費用",
+        "D": "勞工因職業災害而接受醫療，醫療期間屆滿2 年仍未能痊癒且仍無法工作時，雇主應即給付資遣費"
+      },
+      "answer": "D",
+      "id": "q_40f7870aff"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 17,
+      "stem": "下列關於聯合國消除對婦女一切形式歧視公約效力之敘述，何者正確？",
+      "options": {
+        "A": "為國際人權公約，僅具有事實上的拘束力",
+        "B": "為立法院批准之國際人權公約，後完成加入書之存放，有內國法效力",
+        "C": "為立法院批准之國際人權公約，與憲法基本人權章等同效力",
+        "D": "為國際人權公約，立法院制定該公約之施行法，明定該公約有內國法效力"
+      },
+      "answer": "D",
+      "id": "q_7c690168cc"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 18,
+      "stem": "有關「比例原則」，下列敘述何者錯誤？",
+      "options": {
+        "A": "採取之方法應有助於目的之達成，乃係「適當性原則」之明文規定",
+        "B": "有多種同樣能達成目的之方法時，應選擇對人民權益損害最少者，乃係「必要性原則」之明文規定",
+        "C": "採取之方法所造成之損害不得與欲達成目的之利益顯失均衡，乃係「狹義比例原則」之明文規定",
+        "D": "司法機關不得就目的本身的適法性與妥當性加以審查"
+      },
+      "answer": "D",
+      "id": "q_47d26c1e70"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 19,
+      "stem": "關於中止犯，下列敘述何者錯誤？",
+      "options": {
+        "A": "中止犯之法律效果為「必」減輕或免除其刑",
+        "B": "中止犯之成立，須行為人出於己意放棄犯罪，或防止結果發生",
+        "C": "結果不發生非防止行為所致，但行為人已盡力而為，仍能視為中止犯",
+        "D": "雖犯罪既遂，但共同正犯其中一人因己意消極放棄犯行，仍可論以中止犯"
+      },
+      "answer": "D",
+      "id": "q_b91c2e429b"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 20,
+      "stem": "甲、乙、丙及丁四人欲至銀行行竊，四人講好由甲負責在門口把風，乙負責破壞銀行安全設備，丙負責進入銀行保險庫內拿取錢財，丁則負責事前提供銀行配置圖及規劃行竊流程。依我國實務見解，下列敘述何者正確？",
+      "options": {
+        "A": "甲應論以普通竊盜罪之幫助犯",
+        "B": "乙應論以加重竊盜罪之共同正犯",
+        "C": "丙應論以普通竊盜罪之間接正犯",
+        "D": "丁應論以加重竊盜罪之教唆犯"
+      },
+      "answer": "B",
+      "id": "q_f49e44c67f"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 21,
+      "stem": "居住於臺北市之甲向臺北市",
+      "options": {
+        "A": "汽車經銷商購買一部汽車，但該汽車經常故障。有關甲得主張之申訴，下列敘述何者錯誤？A甲得直接向A 汽車經銷商申訴",
+        "B": "甲得直接向臺灣臺北地方法院消費者保護官申訴",
+        "C": "甲得直接向消費者保護團體申訴",
+        "D": "甲得直接向臺北市政府消費者服務中心申訴"
+      },
+      "answer": "B",
+      "id": "q_f4f1cd174a"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 22,
+      "stem": "關於法院得聲請法規範憲法審查之審查標的，下列敘述何者正確？",
+      "options": {
+        "A": "經立法院議決通過並施行之條約",
+        "B": "行政機關依據法律授權所訂定之命令",
+        "C": "終審法院之判例",
+        "D": "經監督機關函告無效之自治法規"
+      },
+      "answer": "A",
+      "id": "q_e8c5b59178"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 23,
+      "stem": "關於憲法法庭審查庭之設置，下列敘述何者錯誤？",
+      "options": {
+        "A": "憲法法庭得設數審查庭，由大法官3 人組成之",
+        "B": "審查庭設審判長，由3 位大法官輪流擔任之",
+        "C": "各審查庭大法官之組成，每2 年調整一次",
+        "D": "審查庭大法官未達一致決不受理之案件，應提交憲法法庭評決是否受理"
+      },
+      "answer": "B",
+      "id": "q_71444bbc41"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 24,
+      "stem": "甲未授與乙代理權，乙卻擅自以甲的名義，向丙承攬",
+      "options": {
+        "A": "工程。下列敘述，何者正確？A該A 工程承攬契約無效",
+        "B": "丙得向乙請求履行A 工程承攬契約",
+        "C": "該A 工程承攬契約在甲、丙間有效",
+        "D": "該A 工程承攬契約效力未定"
+      },
+      "answer": "D",
+      "id": "q_86c2bb1bd1"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 25,
+      "stem": "關於刑法之規定，下列敘述何者正確？",
+      "options": {
+        "A": "刑法上所稱電子公文書者，謂保管加密於公務機關之電子公文書",
+        "B": "刑法所稱公務員者，謂依地方自治規章，服務地方自治團體滿兩年以上者",
+        "C": "同一行為雖經外國確定裁判，仍得依本國刑法處斷。但在外國已受刑之全部或一部執行者，得免其刑之全部或一部之執行",
+        "D": "僅受國家相關機關依法委託，從事與委託機關權限有關之公共事務者，並非刑法所指稱之公務員"
+      },
+      "answer": "C",
+      "id": "q_2fc3fff372"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 26,
+      "stem": "我國憲法學上常引用的「法治國」概念，主要是繼受自何國法？",
+      "options": {
+        "A": "美國法",
+        "B": "德國法",
+        "C": "日本法",
+        "D": "法國法"
+      },
+      "answer": "B",
+      "id": "q_ca2175d140"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 27,
+      "stem": "依據地方制度法，關於自治法規之訂定機關與程序，下列敘述何者正確？",
+      "options": {
+        "A": "地方行政機關得訂定自律規則，由各地方立法機關發布，並報各該上級政府備查",
+        "B": "直轄市議會為辦理上級機關委辦事項，得依其法定職權訂定委辦規則，並報請委辦機關核定",
+        "C": "自治條例經地方立法機關通過，並由各該行政機關公布，如自治條例有罰則時，應分別報經行政院、中央各該主管機關核定後發布",
+        "D": "自治規則由地方行政機關訂定並公布，如自治規則有罰則時，應分別報經地方立法機關、行政院、中央各該主管機關核定後發布"
+      },
+      "answer": "C",
+      "id": "q_f4fd61804d"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 28,
+      "stem": "依據中央法規標準法，關於法規之廢止，下列敘述何者正確？",
+      "options": {
+        "A": "法律之廢止，應經原提案之行政機關提出，並經立法院通過後由總統公布",
+        "B": "法規定有施行期限者，期滿當然廢止，亦無需由主管機關公告之",
+        "C": "法律定有施行期限者，不得再行延長，應重新制定新法因應",
+        "D": "命令之廢止，由原發布機關為之，並自公布或發布之日起，算至第三日起失效"
+      },
+      "answer": "D",
+      "id": "q_d5effffe3d"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 29,
+      "stem": "有學者主張，民法第194 條對於慰撫金請求權是否可以讓與，並未有明文規定，此時應該基於法律上相同的理由，填補法律漏洞。此時該學者所主張的漏洞填補方法，應是下列何種方法？",
+      "options": {
+        "A": "反面推論",
+        "B": "目的性擴張",
+        "C": "目的性限縮",
+        "D": "類推適用"
+      },
+      "answer": "D",
+      "id": "q_538f987fdd"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 30,
+      "stem": "依民法規定，有關收養子女之要件，下列敘述何者正確？",
+      "options": {
+        "A": "收養人得收養其舅父之外孫女",
+        "B": "收養人之年齡，應長於被收養人18 歲以上",
+        "C": "收養人與被收養人除訂立收養契約之外，應經公證，收養始能生效",
+        "D": "父母離婚後，行使親權之父，出養其未成年子女時，無庸得其生母同意"
+      },
+      "answer": "A",
+      "id": "q_09a190bc11"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 31,
+      "stem": "There was no international _____ among the countries on how to deal with the pandemic whenit first broke out.",
+      "options": {
+        "A": "destination",
+        "B": "consensus",
+        "C": "essence",
+        "D": "gratitude"
+      },
+      "answer": "B",
+      "id": "q_41bcba7053"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 32,
+      "stem": "Suggestions from the survey have been _____ into the new law.",
+      "options": {
+        "A": "subsidized",
+        "B": "abolished",
+        "C": "incorporated",
+        "D": "overwhelmed"
+      },
+      "answer": "C",
+      "id": "q_3050c419b2"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 33,
+      "stem": "Joseph experienced intense _____ and trauma when he lost his parents in a fatal car crash.",
+      "options": {
+        "A": "beam",
+        "B": "grief",
+        "C": "triumph",
+        "D": "vanity"
+      },
+      "answer": "B",
+      "id": "q_1fb788d5a8"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 34,
+      "stem": "If you need to drive in a snowy weather, it is essential to take proper _____ to avoid an accident.",
+      "options": {
+        "A": "objectives",
+        "B": "inscriptions",
+        "C": "stimulants",
+        "D": "precautions"
+      },
+      "answer": "D",
+      "id": "q_145d512afa"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 35,
+      "stem": "The mayor _____ the company to reconsider its decision to close its stores in phases over a fewyears.",
+      "options": {
+        "A": "bares",
+        "B": "crows",
+        "C": "poses",
+        "D": "urges"
+      },
+      "answer": "D",
+      "id": "q_ddd7981865"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 36,
+      "stem": "A _____ jacket is ideal for outdoor activities because it can keep the body dry in case of rain.",
+      "options": {
+        "A": "consequent",
+        "B": "determined",
+        "C": "persuasive",
+        "D": "waterproof"
+      },
+      "answer": "D",
+      "id": "q_4517a5b6c2"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 37,
+      "stem": "The research team carried out detailed analysis before _____ their conclusions to the board ofdirectors.",
+      "options": {
+        "A": "deleting",
+        "B": "discovering",
+        "C": "installing",
+        "D": "presenting"
+      },
+      "answer": "D",
+      "id": "q_87889b6305"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 38,
+      "stem": "She was a _____ host. She made sure everyone was comfortable in the party.",
+      "options": {
+        "A": "furious",
+        "B": "gracious",
+        "C": "precious",
+        "D": "suspicious"
+      },
+      "answer": "B",
+      "id": "q_b36b86041f"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 39,
+      "stem": "As the storm approached, the captain made a prompt decision to change _____ of the ship.",
+      "options": {
+        "A": "course",
+        "B": "manual",
+        "C": "construction",
+        "D": "motion"
+      },
+      "answer": "A",
+      "id": "q_f72f2a5756"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 40,
+      "stem": "The airline provided _____ towels to the passengers on the long-haul flight.",
+      "options": {
+        "A": "requiring",
+        "B": "reflective",
+        "C": "refreshing",
+        "D": "repetitive請依下文回答第41題至第45題When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss’soffice. She was informed of a company restructure. Someone else would take over her tasks, and she wasasked not to go to office, but to work __41__ in a new role.In the weeks that followed, Eliza’s professional life became much quieter. Her main duties now weresimply sending occasional email and completing the odd routine work from home. Amonth later, she quit.“It was __42__ ,” she said. “I was made to feel worthless. I’d rather have been just fired on the spot thanhave to go through that.”The phenomenon of __43__ employees slowly is dubbed “quiet firing.” To avoid a hardconversation, employers choose to __44__ workers and make their lives difficult. But quiet firing oftencreates even greater harm. It fails tocreate an inclusive workplace culture. It can affect a firm’s __45__ for workers departing may share theirexperience in an online review.Worse yet, it may have a negative impact on one’s well-being.Quiet firing may be the easiest option for bosses, but it’s not a good solution for firms or workers."
+      },
+      "answer": "C",
+      "id": "q_b9ca1879d2"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 41,
+      "stem": "[閱讀測驗] When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss's office. She was informed of a company restructure. Someone else would take over her tasks, and she was asked not to go to office, but to work __41__ in a new role. In the weeks that followed, Eliza's professional life became much quieter. Her main duties now were simply sending occasional email and completing the odd routine work from home. A month later, she quit. \"It was __42__,\" she said. \"I was made to feel worthless. I'd rather have been just fired on the spot than have to go through that.\" The phenomenon of __43__ employees slowly is dubbed \"quiet firing.\" To avoid a hard conversation, employers choose to __44__ workers and make their lives difficult. But quiet firing often creates even greater harm. It fails to create an inclusive workplace culture. It can affect a firm's __45__ for workers departing may share their experience in an online review. Worse yet, it may have a negative impact on one's well-being.\n\n第41題：She was asked not to go to office, but to work _____ in a new role.",
+      "options": {
+        "A": "swiftly",
+        "B": "remotely",
+        "C": "comprehensively",
+        "D": "distinguishingly"
+      },
+      "answer": "B",
+      "id": "q_3ebcc40ee9"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 42,
+      "stem": "[閱讀測驗] When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss's office. She was informed of a company restructure. Someone else would take over her tasks, and she was asked not to go to office, but to work __41__ in a new role. In the weeks that followed, Eliza's professional life became much quieter. Her main duties now were simply sending occasional email and completing the odd routine work from home. A month later, she quit. \"It was __42__,\" she said. \"I was made to feel worthless. I'd rather have been just fired on the spot than have to go through that.\" The phenomenon of __43__ employees slowly is dubbed \"quiet firing.\" To avoid a hard conversation, employers choose to __44__ workers and make their lives difficult. But quiet firing often creates even greater harm. It fails to create an inclusive workplace culture. It can affect a firm's __45__ for workers departing may share their experience in an online review. Worse yet, it may have a negative impact on one's well-being.\n\n第42題：\"It was _____,\" she said. \"I was made to feel worthless.\"",
+      "options": {
+        "A": "coordinating",
+        "B": "dedicating",
+        "C": "humiliating",
+        "D": "understanding"
+      },
+      "answer": "C",
+      "id": "q_d35b23c2ce"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 43,
+      "stem": "[閱讀測驗] When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss's office. She was informed of a company restructure. Someone else would take over her tasks, and she was asked not to go to office, but to work __41__ in a new role. In the weeks that followed, Eliza's professional life became much quieter. Her main duties now were simply sending occasional email and completing the odd routine work from home. A month later, she quit. \"It was __42__,\" she said. \"I was made to feel worthless. I'd rather have been just fired on the spot than have to go through that.\" The phenomenon of __43__ employees slowly is dubbed \"quiet firing.\" To avoid a hard conversation, employers choose to __44__ workers and make their lives difficult. But quiet firing often creates even greater harm. It fails to create an inclusive workplace culture. It can affect a firm's __45__ for workers departing may share their experience in an online review. Worse yet, it may have a negative impact on one's well-being.\n\n第43題：The phenomenon of _____ employees slowly is dubbed \"quiet firing.\"",
+      "options": {
+        "A": "poking",
+        "B": "promoting",
+        "C": "advancing",
+        "D": "complimenting"
+      },
+      "answer": "A",
+      "id": "q_1957a55b4b"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 44,
+      "stem": "[閱讀測驗] When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss's office. She was informed of a company restructure. Someone else would take over her tasks, and she was asked not to go to office, but to work __41__ in a new role. In the weeks that followed, Eliza's professional life became much quieter. Her main duties now were simply sending occasional email and completing the odd routine work from home. A month later, she quit. \"It was __42__,\" she said. \"I was made to feel worthless. I'd rather have been just fired on the spot than have to go through that.\" The phenomenon of __43__ employees slowly is dubbed \"quiet firing.\" To avoid a hard conversation, employers choose to __44__ workers and make their lives difficult. But quiet firing often creates even greater harm. It fails to create an inclusive workplace culture. It can affect a firm's __45__ for workers departing may share their experience in an online review. Worse yet, it may have a negative impact on one's well-being.\n\n第44題：Employers choose to _____ workers and make their lives difficult.",
+      "options": {
+        "A": "sympathize",
+        "B": "empathize",
+        "C": "marginalize",
+        "D": "consolidate"
+      },
+      "answer": "C",
+      "id": "q_056c2a1d7d"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 45,
+      "stem": "[閱讀測驗] When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss's office. She was informed of a company restructure. Someone else would take over her tasks, and she was asked not to go to office, but to work __41__ in a new role. In the weeks that followed, Eliza's professional life became much quieter. Her main duties now were simply sending occasional email and completing the odd routine work from home. A month later, she quit. \"It was __42__,\" she said. \"I was made to feel worthless. I'd rather have been just fired on the spot than have to go through that.\" The phenomenon of __43__ employees slowly is dubbed \"quiet firing.\" To avoid a hard conversation, employers choose to __44__ workers and make their lives difficult. But quiet firing often creates even greater harm. It fails to create an inclusive workplace culture. It can affect a firm's __45__ for workers departing may share their experience in an online review. Worse yet, it may have a negative impact on one's well-being.\n\n第45題：It can affect a firm's _____ for workers departing may share their experience in an online review.",
+      "options": {
+        "A": "reputation",
+        "B": "property",
+        "C": "location",
+        "D": "patience"
+      },
+      "answer": "A",
+      "id": "q_1a46a3786e"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 46,
+      "stem": "According to the passage, which of the following is NOT considered superstitious in the US?",
+      "options": {
+        "A": "Opening an umbrella inside the house.",
+        "B": "Fear of the 17th day of the any month.",
+        "C": "Friday the 13th being an unlucky day.",
+        "D": "Walking under a ladder on a sidewalk."
+      },
+      "answer": "B",
+      "id": "q_2b6d54c7e7"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 47,
+      "stem": "According to the passage, why is 13 deemed as unlucky?",
+      "options": {
+        "A": "People are uneasy because of the unknown beyond 12.",
+        "B": "It reminds people that Judas betrayed Jesus on Friday the 13th.",
+        "C": "People think it means that their lives are over.",
+        "D": "Misfortune takes place on Friday the 13th in other countries."
+      },
+      "answer": "A",
+      "id": "q_9654dcce86"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 48,
+      "stem": "According to the passage, which of the following is closest in meaning to the word\"triskaidekaphobia\"?",
+      "options": {
+        "A": "A panic over the number 13.",
+        "B": "A curse on the number 13.",
+        "C": "A favor of the number 13.",
+        "D": "A delight for the number 13."
+      },
+      "answer": "A",
+      "id": "q_c26a766a01"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 49,
+      "stem": "How many times can Friday the 13th occur the most in a year?",
+      "options": {
+        "A": "Once.",
+        "B": "Twice.",
+        "C": "Thrice.",
+        "D": "Four times."
+      },
+      "answer": "C",
+      "id": "q_31bdad21bf"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 50,
+      "stem": "In what section of a magazine would the passage most likely appear?",
+      "options": {
+        "A": "Food.",
+        "B": "Myth.",
+        "C": "Health.",
+        "D": "Ethics."
+      },
+      "answer": "B",
+      "id": "q_9564914b06"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 1,
+      "stem": "下列文句，何者敘述最正確？",
+      "options": {
+        "A": "一畦畦黃色的野菊沿著鐵道鋪陳，十分迷人",
+        "B": "黃昏時彩霞在天邊燃燒，投影出瑰麗的景象",
+        "C": "他從信仰中獲得精神上的喜樂，並心懷感恩",
+        "D": "得知他不幸發生意外，留言與追思蕩漾臉書"
+      },
+      "answer": "C",
+      "id": "q_ac66766e1a"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 2,
+      "stem": "下列文句，「」內成語運用最正確的是：",
+      "options": {
+        "A": "他能「信口雌黃」，隨時上臺發表精采的演說",
+        "B": "這種方法是「揚湯止沸」，無法徹底解決問題",
+        "C": "他的新居，空間大小適中，真是「宜室宜家」",
+        "D": "這次宴會很豐盛，主人準備「酒囊飯袋」招待"
+      },
+      "answer": "B",
+      "id": "q_3491c9e0bd"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 3,
+      "stem": "「當年iPod 問世時，其他科技公司若介紹它，必然是朗誦硬體規格等等。但蘋果創辦人賈伯斯是這樣說：『iPod，將一千首歌放在口袋裡。』」根據上文，下列選項最符合文意的是：",
+      "options": {
+        "A": "講述硬體規格，能顯示專業",
+        "B": "容量一千首歌，是精確資訊",
+        "C": "避免專業名詞，是貼心溝通",
+        "D": "其他科技公司，較缺乏創意"
+      },
+      "answer": "C",
+      "id": "q_8017890fb4"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 4,
+      "stem": "「我們會以『如切如磋，如琢如磨』來譬喻朋友間的交互影響。一如玉石有瑕疵稜角，用一種器具來切磋琢磨，才能圓融光潤，才能『成器』。人的性格也難免有瑕疵稜角，朋友便是切磋琢磨的利器，與自己愈不同，磨擦愈多，切磋琢磨的影響也就愈大。所以孔子論益友，特重直諒多聞。」根據上文，下列選項何者最正確？",
+      "options": {
+        "A": "鼓勵大家結交損友砥礪自己的德性",
+        "B": "每個人都應該成為說實話的真小人",
+        "C": "圓融的品格可透過同溫層交友達成",
+        "D": "與正直誠信之友相交可以砥礪品行"
+      },
+      "answer": "D",
+      "id": "q_6cbc0bca62"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 5,
+      "stem": "「一顆顆肥大茂盛的芥菜在冬天收成。吃不完的新鮮芥菜，都曬在牆頭屋瓦上，經發酵後做成酸菜，可以保存比較久。吃不完的酸菜，就塞在甕裡瓶子裡繼續發酵，做成福菜，福菜要塞得很緊實，不受潮，幾乎像真空，可以保存兩年不壞。福菜做完後，剩餘的芥菜葉，就用鹽漬風乾到幾乎沒有水分，綁成一綑一綑，做成梅乾菜。」根據上文，下列說明最正確的是：",
+      "options": {
+        "A": "酸菜如果受潮可用真空保存",
+        "B": "福菜的發酵時間會比酸菜長",
+        "C": "芥菜採收後會優先日曬風乾保存",
+        "D": "梅乾菜是以芥菜梗鹽漬風乾而成"
+      },
+      "answer": "B",
+      "id": "q_b36582fb29"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 6,
+      "stem": "「我們從小被灌輸的觀念，是敬佩以意志力堅持成功，看不起辭職、半途而廢。當然，遇見困難就打退堂鼓的人，絕對無法成功，但有時，堅持不見得是明智的，選擇退場反而更需要勇氣。看我早期的履歷，也許會認為我是個穩定度差、不知道自己要什麼的人。其實正好相反。每次改變都讓我更清楚自己擅長什麼、不喜歡什麼，更勇敢面對內心的聲音，做出選擇。」根據上文，下列敘述最接近作者觀點的是：",
+      "options": {
+        "A": "如果不知道要什麼，堅持不變的態度其實不明智",
+        "B": "能以意志力堅持成功，自然就知道自己想要什麼",
+        "C": "早期穩定度差的人，後來就很難有變勇敢的時候",
+        "D": "只要遇見困難時就打退堂鼓，勇敢面對個人選擇"
+      },
+      "answer": "A",
+      "id": "q_e3bb9d89fc"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 7,
+      "stem": "「感官機制有絕佳的調整適應能力，能辨識出景觀中的特點，感受其中差異，並為所有微小細節賦予意義。即使是身在澳洲一望無際的茂密刺槐林裡，或愛斯基摩一整片白皚皚的雪地，讓人無法分辨陸地跟海洋，或是霧氣深重、詭譎多變的阿留申群島，以及玻里尼西亞附近的茫茫大海，這些外人從表面看起來毫無辨識線索的地方，對當地人而言卻清晰可辨。」根據上文，下列選項何者最符合文意？",
+      "options": {
+        "A": "環境地貌因人類賦予意義，而具有辨認方向的功能",
+        "B": "人類能否找出移動方向，完全取決於地標是否清晰",
+        "C": "地方環境的線索是否清楚可辨，仰賴精密探測工具",
+        "D": "環境地貌能否成為參照系統，當地氣候是關鍵因素"
+      },
+      "answer": "A",
+      "id": "q_8b32611423"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 8,
+      "stem": "「我在這裡好些年，也知道府上的人那一個不是肥己的。一年一年都往他家裡拿，那自然府上是一年不夠一年了。又添了大老爺、珍大爺那邊兩處的費用，外頭又有些債務，前兒又破了好些財，要想衙門裡緝賊追贓是難事。老世翁若要安頓家事，除非傳那些管事的來，派一個心腹的人各處去清查清查，該去的去，該留的留，有了虧空著在經手的身上賠補，這就有了數兒了。」上文中「我」向「老世翁」所提最主要的建議是：",
+      "options": {
+        "A": "將不良管事者汰除",
+        "B": "撙節不必要的開銷",
+        "C": "指派心腹清償債務",
+        "D": "委請官府緝賊追贓"
+      },
+      "answer": "A",
+      "id": "q_6303fa048e"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 9,
+      "stem": "「馬諦斯的畫作使用大量色塊，分不清何處是牆面、何處是地面。然而無論是多麼平面性或裝飾性的作品，還是利用無人可及的配色引人入勝，以線條構成的人與物從未抽象化，呈現驚人的具體造形，要是畫家缺乏這種造形能力，想必畫不出像一筆畫的優異素描，也做不來那些充滿魅力的剪紙畫。他的作品看似能輕易模仿，實際上卻臻至模仿難以企及的境界。」根據上文，作者對於馬諦斯作品的分析，敘述最正確的是：",
+      "options": {
+        "A": "對於立體感的掌握能力較弱",
+        "B": "善於以對比色塊繪製抽象畫",
+        "C": "一筆畫素描受到剪紙畫影響",
+        "D": "看似簡單實則藝術境界超凡"
+      },
+      "answer": "D",
+      "id": "q_147ce1a378"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 10,
+      "stem": "「以前強調『專才』，現在則強調『通才』。一個原因是現代社會變遷快速，過去界定的『領域』現在可能已經不適用，或界線已經變得模糊。以近年最夯的電動車為例，以前汽車工業是一個很明確的領域，各高職學校也都設有『汽修科』等科系。然而，電動車牽涉的領域就廣得多，除了機械與材料等固有領域，還有電池（電動車的核心）、自動駕駛、人工智慧等，需要對各領域都有一些了解的人進行整合。近年來，國內外開始有大學採『不分系』的策略，相當受學生歡迎。不分系除了讓學生多一些時間探討未來職涯發展方向，了解自己真正興趣所在，也可讓學生累積各領域的經驗，大幅提升『跨領域整合』能力，也是未來發展的趨勢。」根據上文，下列選項最符合發展「通才」趨勢的關鍵因素是：",
+      "options": {
+        "A": "各領域團隊合作的概念已經不流行",
+        "B": "新科技所牽涉的領域已越來越寬廣",
+        "C": "科技一日千里專業知識很快就落伍",
+        "D": "電動車將取代燃油車成為未來主流"
+      },
+      "answer": "B",
+      "id": "q_49a2679dfe"
+    }
+  ]
+}

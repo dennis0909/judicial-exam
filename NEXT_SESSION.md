@@ -5,69 +5,91 @@
 
 ## Goal
 
-Build a usable judicial-exam question app by reusing the `exam-analyzer` architecture, but with a stable scraper pipeline first.
+Build a usable judicial-exam question app — pipeline stable, app running on Render.
 
 ## Current Status
 
 - [x] Phase 1: source reconnaissance finished
-- [x] Phase 2: pipeline repaired for `scraper_lawbank.py -> scraper_public_pdf.py -> extract_pdf_answers.py -> build_questions.py`
-- [ ] Phase 3: continue app fork / UI / deployment work
+- [x] Phase 2: pipeline repaired
+- [x] Phase 3: App 完成（練習/瀏覽/統計/考試資訊）
+- [x] GitHub push 完成
+- [x] Dead code 清除（adaptive_engine.py, gamification.py, db.py 瘦身）
+- [x] Runtime bugs 修復（options格式、db.init_db、verify_id_token）
+- [x] build_questions.py 保護 extra_questions.json 不被蓋掉
+- [ ] Render 部署（render.yaml 已加，等在 dashboard 連 repo）
+- [ ] 112年 行政法/刑法 答案補充（101 題無答案）
 
-## Current Pipeline
+## Data Pipeline
 
 ```powershell
 cd C:\Users\denni\judicial-exam
 
-pip install requests beautifulsoup4 pikepdf pymupdf
-
-python scripts\scraper_lawbank.py
-python scripts\scraper_public_pdf.py
-python scripts\extract_pdf_answers.py
-python scripts\build_questions.py
+# 依序執行（通常只在新 PDF/爬蟲更新後才需要重跑）
+python scripts\scraper_lawbank.py         # → data/lawbank_questions.json
+python scripts\scraper_public_pdf.py      # → data/pdfs/*.pdf
+python scripts\extract_pdf_answers.py     # → data/pdf_answers.json
+python scripts\build_questions.py         # → questions.json（合併所有來源）
 ```
 
-## Current Outputs
+## Current Questions.json
 
-- `data/lawbank_questions.json`
-- `data/pdf_index.json`
-- `data/pdf_answers.json`
-- `questions.json`
+| 科目 | 題數 | 有答案 | 來源 |
+|------|------|--------|------|
+| 行政法概要 | 150 | 99 | lawbank(112-114) + PDF(113) + hardcoded(114) |
+| 刑法概要 | 150 | 100 | lawbank(112-114) + PDF(113) + hardcoded(114) |
+| 刑事訴訟法概要 | 28 | 0 | lawbank(108-114) 申論題 |
+| 法院組織法 | 32 | 0 | lawbank(86, 108-114) 申論題 |
+| 法學知識與英文 | 50 | 50 | extra_questions.json（113年 PDF 提取）|
+| 國文 | 10 | 10 | extra_questions.json（113年 PDF 提取）|
+| **合計** | **420** | **259/360 MCQ (72%)** | |
 
-## Important Constraints
+## Data Sources 上限
 
-- Lawbank currently covers only 4 subjects in this repo's dataset:
-  - `行政法概要`
-  - `刑法概要`
-  - `刑事訴訟法概要`
-  - `法院組織法`
-- PDF answer extraction currently provides useful objective answers for:
-  - `行政法概要`
-  - `刑法概要`
-  - `法學知識與英文`
-- `法學知識與英文` answer keys exist, but question bodies are not yet in `lawbank_questions.json`
-- `國文` PDF is downloaded, but the current app dataset still does not include its question bodies
+| 科目 | lawbank 可爬年份 | 說明 |
+|------|----------------|------|
+| 行政法概要 | 112–114 | 法警在 112年才新增此科 |
+| 刑法概要 | 112–114 | 同上 |
+| 法院組織法 | 86, 108–114 | 已全數抓完 |
+| 刑事訴訟法概要 | 108–114 | 已全數抓完 |
+| 法學知識與英文 | ❌ 不在 lawbank | 需手動下載 PDF |
+| 國文 | ❌ 不在 lawbank | 需手動下載 PDF |
 
-## What Was Fixed This Session
+## 待補資料
 
-- `scraper_public_pdf.py`
-  - standardized canonical subject names
-  - downloads PDFs into a stable `data/pdfs/*.pdf` flow
-  - improved yearly discovery and URL normalization
-- `scraper_lawbank.py`
-  - cleaned parser structure
-  - added hard validation for expected `(roc_year, subject)` vs parsed page metadata
-  - kept output schema aligned with downstream scripts
-- `extract_pdf_answers.py`
-  - now scans PDFs recursively
-  - dedupes duplicate files by stem
-  - no longer silently misses PDFs stored under year subfolders
-- `build_questions.py`
-  - keeps merge logic simple and deterministic
-  - warns when PDF answers exist for subjects not yet present in the question bank
+### 112年 行政法概要 + 刑法概要 答案（101題）
+- 公職王 PDF URL 格式和 113年不同，無法自動猜測
+- 手動在 https://www.public.com.tw/exampoint/2023-judicial 找到 PDF 後：
+  1. 存成 `data/pdfs/112_行政法概要.pdf` / `data/pdfs/112_刑法概要.pdf`
+  2. 跑 `python scripts/extract_pdf_answers.py`
+  3. 跑 `python scripts/build_questions.py`
 
-## Next High-Value Tasks
+### 法學知識與英文 其他年份（108-112年）
+- 同樣需要手動從 public.com.tw 或考選部下載 PDF
+- PDF 下載後放入 `data/pdfs/`，格式：`{年份}_法學知識與英文.pdf`
+- 跑完整 pipeline 即可自動提取題目和答案
 
-1. Decide the source strategy for `法學知識與英文` and `國文` question bodies.
-2. Wire the repaired `questions.json` into the app flow and subject filters.
-3. Clean remaining mojibake docs inherited from older notes.
-4. Keep `docs/maintenance.md` as the checklist for pruning stale memory/md/skill notes.
+## Pipeline 說明（data sources）
+
+- `data/lawbank_questions.json` — 法源法律網爬蟲輸出（360題）
+- `data/pdf_answers.json` — 公職王 PDF 解析答案（SMask 技術）
+- `data/extra_questions.json` — PDF 提取或 AI 補充（法學知識50題+國文10題）
+- `questions.json` — 三個來源合併後最終輸出，不要手動編輯
+
+## Key Files
+
+```
+main.py             FastAPI app（db.init_db 在啟動時自動執行）
+auth_firebase.py    verify_id_token()（非 verify_firebase_token）
+db.py               精簡版 SQLite（users/profiles/events）
+utils.py            SUBJECTS、normalize_subject
+static/             前端 HTML/CSS/JS
+scripts/            四個 pipeline 腳本
+data/extra_questions.json  ← 重要：法學知識/國文來源，不要刪
+```
+
+## Render 部署步驟
+
+1. 在 Render dashboard 新增 Web Service
+2. 連接 GitHub repo `judicial-exam`
+3. 設定環境變數：`FIREBASE_API_KEY`, `FIREBASE_AUTH_DOMAIN`, `FIREBASE_PROJECT_ID`
+4. render.yaml 已設定 healthCheckPath: /api/stats

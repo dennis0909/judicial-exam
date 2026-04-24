@@ -1,8 +1,4 @@
 fastapi
 uvicorn[standard]
-anthropic
-httpx
-itsdangerous
-cachetools
 google-auth
 requests
