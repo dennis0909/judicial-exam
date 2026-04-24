@@ -95,6 +95,7 @@ async def get_questions(
     subject: Optional[str] = Query(None),
     year: Optional[int] = Query(None),
     q_type: Optional[str] = Query(None, alias="type"),
+    keyword: Optional[str] = Query(None),
     limit: int = Query(50, ge=1, le=500),
     offset: int = Query(0, ge=0),
     shuffle: bool = Query(False),
@@ -110,6 +111,10 @@ async def get_questions(
 
     if q_type in ("mcq", "essay"):
         qs = [q for q in qs if q["type"] == q_type]
+
+    if keyword:
+        kw = keyword.strip().lower()
+        qs = [q for q in qs if kw in q.get("stem", "").lower()]
 
     if shuffle:
         qs = list(qs)
