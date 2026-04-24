@@ -1,43 +1,43 @@
 {
-  "crawled_at": "2026-04-23T20:07:46.314168",
+  "crawled_at": "2026-04-24T10:04:25.460750",
   "total": 6,
-  "downloaded": 0,
+  "downloaded": 6,
   "pdfs": [
     {
       "year": 113,
       "subject": "行政法概要",
       "url": "https://www.public.com.tw/TestFileManage/21088/anspdf/113司法四等-行政法概要.pdf",
-      "local_path": null
+      "local_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113\\113_行政法概要.pdf"
     },
     {
       "year": 113,
       "subject": "刑法概要",
       "url": "https://www.public.com.tw/TestFileManage/21090/anspdf/113司法特考四等-刑法概要.pdf",
-      "local_path": null
+      "local_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113\\113_刑法概要.pdf"
     },
     {
       "year": 113,
       "subject": "刑事訴訟法概要",
       "url": "https://www.public.com.tw/TestFileManage/21071/anspdf/113司法四等-刑事訴訟法概要.pdf",
-      "local_path": null
+      "local_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113\\113_刑事訴訟法概要.pdf"
     },
     {
       "year": 113,
       "subject": "法院組織法",
       "url": "https://www.public.com.tw/TestFileManage/21078/anspdf/113司法特考四等-法院組織法.pdf",
-      "local_path": null
+      "local_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113\\113_法院組織法.pdf"
     },
     {
       "year": 113,
       "subject": "國文",
       "url": "https://www.public.com.tw/TestFileManage/21069/anspdf/113司法特考四等-國文(作文與測驗).pdf",
-      "local_path": null
+      "local_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113\\113_國文.pdf"
     },
     {
       "year": 113,
       "subject": "法學知識與英文",
       "url": "https://www.public.com.tw/TestFileManage/21093/anspdf/113司法特考四等、海巡特考四等-法學知識與英文.pdf",
-      "local_path": null
+      "local_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113\\113_法學知識與英文.pdf"
     }
   ]
 }

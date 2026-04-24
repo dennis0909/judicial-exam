@@ -34,7 +34,7 @@
         "C": "合法，但不符個案適當性",
         "D": "違法，因裁量基準未經法律授權"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -55,7 +55,7 @@
         "C": "平等原則",
         "D": "預防原則"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -76,7 +76,7 @@
         "C": "法律保留原則係指重要事項應以法律加以規範",
         "D": "屬於執行法律之細節性、技術性次要事項，得由機關發布命令為之"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -97,7 +97,7 @@
         "C": "基於法律保留原則，關於行政罰之構成要件的規定，禁止使用不確定法律概念",
         "D": "行政機關適用不確定法律概念之行政處分，行政法院得審查其合法性"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -118,7 +118,7 @@
         "C": "招標與審標均屬公法性質",
         "D": "招標為公法行為，審標為私法行為"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -139,7 +139,7 @@
         "C": "地方自治團體不得為公權利主體，對國家主張給付請求權",
         "D": "其當事人關係為行政機關與人民之間，不包含行政機關與公務人員之間"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -160,7 +160,7 @@
         "C": "金融監督管理委員會",
         "D": "行政院消費者保護會"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -181,7 +181,7 @@
         "C": "內部單位須有獨立之預算",
         "D": "內部單位無法成為行政處分機關，亦不得對之提起訴願"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -202,7 +202,7 @@
         "C": "勒令停工",
         "D": "停止營業"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -223,7 +223,7 @@
         "C": "委辦",
         "D": "職務協助"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -244,7 +244,7 @@
         "C": "不能協議或有統一管轄之必要時，由最高行政法院決定",
         "D": "人民對行政機關所為指定管轄之決定，得聲明不服"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -265,7 +265,7 @@
         "C": "休職，休其現職，停發俸（薪）給，並不得申請退休、退伍或在其他機關任職",
         "D": "應受懲戒行為，自行為終了之日起，至案件繫屬懲戒法院之日止，已逾 5  年者，不得予以休職之懲戒"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -286,7 +286,7 @@
         "C": "公務員以私法手段執行行政任務侵害人民權益時，仍適用國家賠償法",
         "D": "公務員對所屬服務機關不享有休假請求權"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -307,7 +307,7 @@
         "C": "依法得自由決定是否要遵守",
         "D": "若命令違反刑事法律即無須遵守"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -328,7 +328,7 @@
         "C": "機關依法聘任人員",
         "D": "應各種公務人員考試錄取參加訓練之人員"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -349,7 +349,7 @@
         "C": "公務員依法令兼職者，得兼薪",
         "D": "公務員於其離職後 5 年內不得擔任與其離職前之職務直接相關之營利事業董事"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -370,7 +370,7 @@
         "C": "機要人員",
         "D": "約僱人員"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -391,7 +391,7 @@
         "C": "公有公物得為公用徵收之標的",
         "D": "供公眾一般使用之物為公物"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -412,7 +412,7 @@
         "C": "陳述意見程序",
         "D": "調查事實程序"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -433,7 +433,7 @@
         "C": "行政法院審理人民提起之行政訴訟時，應受行政規則拘束",
         "D": "行政規則均須登載於政府公報與發布始能生效"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -454,7 +454,7 @@
         "C": "公物之設定為一般處分",
         "D": "其應記明理由以符合正當程序之要求"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -475,7 +475,7 @@
         "C": "補償請求權，自行政機關告知其事由時起，因 2  年間不行使而消滅",
         "D": "補償請求權，自處分廢止時起逾 5  年而消滅"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -496,7 +496,7 @@
         "C": "集水區遷村作業實施計畫公告",
         "D": "指定古蹟之決定"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -517,7 +517,7 @@
         "C": "構成要件效力",
         "D": "存續力"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -538,7 +538,7 @@
         "C": "對重要事項為不完全陳述，致使行政機關依該資料或陳述而作成行政處分者",
         "D": "因重大過失而不知行政處分違法者"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -559,7 +559,7 @@
         "C": "契約整體特徵之綜合判斷",
         "D": "契約相對人之主觀認識"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -580,7 +580,7 @@
         "C": "行政機關締結和解契約未符合行政程序法相關規定",
         "D": "行政契約依法應經其他機關批准而尚未批准"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -601,7 +601,7 @@
         "C": "徵收土地之行為",
         "D": "監測空氣品質之行為"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -622,7 +622,7 @@
         "C": "裁罰性不利處分",
         "D": "管制性行政處分"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -643,7 +643,7 @@
         "C": "行為人須對自己的行為究係違反何法規之規定有所認知，始得加以處罰",
         "D": "「不知法規」，係指行為人不知法規所「禁止」或「要求應為」之行為或不行為義務"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -664,7 +664,7 @@
         "C": "即時制止其行為",
         "D": "為保全證據之措施"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -685,7 +685,7 @@
         "C": "懲處",
         "D": "民事賠償"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -706,7 +706,7 @@
         "C": "得向法院聲請核發對甲之禁止命令",
         "D": "得對該工廠核發禁止命令"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -727,7 +727,7 @@
         "C": "作成行政行為之行政機關即為行政執行之行政機關",
         "D": "行政機關採取行政執行手段前，原則上須先以書面命義務人限期履行"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -748,7 +748,7 @@
         "C": "得對義務人核發限制其進入一般消費場所之禁止命令",
         "D": "拘提係由行政執行機關派執行員持拘票執行之"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -769,7 +769,7 @@
         "C": "蒐集意見之範圍限於聽證事件之當事人",
         "D": "經聽證程序而作成之行政處分，人民對之如有不服者，須經訴願後提起行政訴訟"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -790,7 +790,7 @@
         "C": "請求閱覽卷宗遭拒者，原則上應直接提起行政救濟",
         "D": "行政機關應主動公開當事人之卷宗資料"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -811,7 +811,7 @@
         "C": "依行政程序法規定參加行政程序之人",
         "D": "法規命令之相對人"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -832,7 +832,7 @@
         "C": "內政部",
         "D": "行政院"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -853,7 +853,7 @@
         "C": "基於訴訟經濟之考量，得不經訴願先行程序，逕提起訴願",
         "D": "得提起訴願之主體僅限於行政處分之相對人"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -874,7 +874,7 @@
         "C": "終止全民健康保險特約之決定",
         "D": "拒絕提供政府資訊申請之決定"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -895,7 +895,7 @@
         "C": "就監所之駁回決定，提起行政訴訟",
         "D": "就監所之駁回決定，提起復查程序"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -916,7 +916,7 @@
         "C": "聲請重新審理不合法者，行政法院應以裁定駁回之",
         "D": "原確定判決執行之效力，原則上因聲請重新審理而停止"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -937,7 +937,7 @@
         "C": "提起撤銷命拆除之處分訴訟",
         "D": "提起一般給付之訴請求回復原狀"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -958,7 +958,7 @@
         "C": "以原處分機關及受理訴願機關為共同被告",
         "D": "以原處分機關及受理訴願機關之共同上級機關為被告"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -979,7 +979,7 @@
         "C": "因違反道路交通管理處罰條例規定，不服被令接受道路交通安全講習",
         "D": "因不服內政部移民署行政收容事件而提起之行政訴訟"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -1000,7 +1000,7 @@
         "C": "當事人為地方機關時，其所屬專任人員辦理法制、法務、訴願業務或與訴訟事件相關業務",
         "D": "交通裁決事件，原告為自然人時，四親等內之血親或三親等內之姻親"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -1021,7 +1021,7 @@
         "C": "汽車駕駛人因道路坑洞致車輛受損",
         "D": "市立醫院醫師診療行為有過失"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -1042,7 +1042,7 @@
         "C": "於開放之山域、水域等自然公物，經管理機關就使用該公物為適當之警告，而人民仍從事危險性活動，得減輕國家應負之損害賠償責任",
         "D": "於開放之山域、水域等自然公物內之設施，經受委託管理之民間團體就使用該設施為適當之標示，而人民仍從事危險性活動，得減輕或免除國家應負之損害賠償責任"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -1063,7 +1063,7 @@
         "C": "公務員怠於執行職務，致人民自由或權利遭受損害者，國家亦應負損害賠償責任",
         "D": "因公務員違法之國家賠償責任，公務員有具體輕過失時，賠償義務機關對之有求償權"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8007"
@@ -1148,7 +1148,7 @@
         "C": "不利益變更禁止原則",
         "D": "禁止溯及既往原則"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1169,7 +1169,7 @@
         "C": "依刑法第 2  條第 2  項之規定，沒收與所有的保安處分均適用裁判時之法律",
         "D": "刑罰之內容於行為後有變更者，結論上應適用最有利於行為人之法律"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1190,7 +1190,7 @@
         "C": "甲用球棒毆打乙，使乙昏迷成為植物人",
         "D": "甲用球棒毆打乙，使乙腳骨折經一年復健始能正常行走"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1211,7 +1211,7 @@
         "C": "甲成立刑法第 164  條第 2  項的意圖隱避犯人頂替罪",
         "D": "乙成立刑法第 164  條第 2  項的意圖隱避犯人頂替罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1232,7 +1232,7 @@
         "C": "習慣法不得作為成立犯罪之依據",
         "D": "保安處分一律適用裁判時之法律"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1253,7 +1253,7 @@
         "C": "經行政院公告之生活必需用品",
         "D": "衣服、鞋子等服飾物品"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1274,7 +1274,7 @@
         "C": "甲依道路交通規則駕駛汽車，雖見路人違規穿越道路，仍未減速而碰撞該路人，甲不得主張信賴原則",
         "D": "主治醫師甲任由護理師獨自執行醫療行為，針對護理師的醫療過失，基於醫療分工原則，甲仍得主張信賴原則"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1295,7 +1295,7 @@
         "C": "行為人已著手於犯罪行為之實行， 但其行為不能發生犯罪之結果 ，又無危險者，其法律效果為減輕或免除其刑",
         "D": "行為人已著手於犯罪行為之實行，但因己意中止者，其法律效果為不罰"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1316,7 +1316,7 @@
         "C": "屬於反面的容許構成要件錯誤",
         "D": "屬於包攝錯誤"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1337,7 +1337,7 @@
         "C": "刑法第 339  條之 4  第 1  項第 2  款規定：「三人以上共同犯之」，始成立加重詐欺罪。如僅有二人共同犯詐欺罪，不成立該款之加重詐欺罪",
         "D": "共同正犯之意思聯絡，原不以數人間直接發生者為限，即有間接之聯絡者，亦包括在內"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1358,7 +1358,7 @@
         "C": "甲欲射殺乙，卻因手抖擊傷旁邊的 A  犬，甲成立刑法第 271  條第 1  項殺人既遂罪",
         "D": "甲欲射殺 A  犬，卻因手抖而誤擊旁邊的乙，致乙死亡，甲成立刑法第 271  條第 1  項殺人既遂罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1379,7 +1379,7 @@
         "C": "第 353  條規定之毀壞他人船艦行為",
         "D": "第 302  條規定之私行拘禁行為"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1400,7 +1400,7 @@
         "C": "著手之處罰，以有特別規定者為限",
         "D": "著手之處罰，得按既遂犯之刑減輕之"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1421,7 +1421,7 @@
         "C": "甲成立殺人罪之不能未遂",
         "D": "甲成立殺人罪之失敗未遂"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1442,7 +1442,7 @@
         "C": "成立竊盜罪之精神幫助犯",
         "D": "成立竊盜罪之教唆犯"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1463,7 +1463,7 @@
         "C": "丙係以自己共同犯罪之意思，參與實行犯罪構成要件以外之行為，仍為共同正犯",
         "D": "若乙、丙皆未滿 14 歲，則甲、乙、丙即無法成立共同正犯"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1484,7 +1484,7 @@
         "C": "最小限從屬形式",
         "D": "最大限從屬形式"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1505,7 +1505,7 @@
         "C": "教唆他人使之從事刑法未處罰之預備行為者，不成立教唆犯",
         "D": "教唆犯之成立以教唆人與被教唆人有心理接觸為必要"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1526,7 +1526,7 @@
         "C": "乙為竊盜罪之間接正犯",
         "D": "乙為竊盜罪之共謀共同正犯"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1547,7 +1547,7 @@
         "C": "執行完畢者，仍須執行其所受宣告之刑",
         "D": "罰金易服勞役期間為 1  年以下之情形時，得以提供社會勞動半日折算半日，易服社會勞動"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1568,7 +1568,7 @@
         "C": "熱心民眾丙短暫拘束現行犯之自由並即時通知警察到場處理",
         "D": "休假的醫師丙在飛機上為瀕死的心臟病患急救而致其輕微挫傷"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1589,7 +1589,7 @@
         "C": "不得科以較輕罪名所定最重本刑以下之刑",
         "D": "屬裁判上一罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1610,7 +1610,7 @@
         "C": "集合犯係指立法者本就預定多數同種類之行為將反覆實行之犯罪類型",
         "D": "一行為成立強制性交罪時，即不另論強制罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1631,7 +1631,7 @@
         "C": "刑法第 230  條之血親性交罪",
         "D": "刑法第 168  條之偽證罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1652,7 +1652,7 @@
         "C": "無期徒刑不得假釋",
         "D": "假釋撤銷後，其出獄日數仍計入刑期內"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1673,7 +1673,7 @@
         "C": "受刑人聲請再審",
         "D": "受刑人心神喪失，依檢察官之指揮停止執行"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1694,7 +1694,7 @@
         "C": "負責查報違章建築之公務員，明知為違建而隱匿不予查報，使違建所有人繼續享受違建之使用利益",
         "D": "承辦法制職務之公務員，明知未依法令之規定，請託承辦社會住宅分配職務之公務員，將特定社會住宅分配給自己的親戚"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1715,7 +1715,7 @@
         "C": "駕駛動力交通工具對公務員施強暴脅迫者，構成加重妨害公務罪",
         "D": "通緝犯將便衣刑警誤認為尋仇之人，而將其推倒在地反抗逮捕，不成立本罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1736,7 +1736,7 @@
         "C": "乙成立刑法第 131  條之公務員違法圖利罪",
         "D": "乙成立刑法第 151  條之恐嚇公眾罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1757,7 +1757,7 @@
         "C": "甲、乙、丙在公眾得出入之場所聚集，三人共同對在場之其他民眾施以詐術",
         "D": "甲、乙、丙在公眾得出入之場所聚集，三人共同向在場之其他民眾播放嘲諷政治人物之影片"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1778,7 +1778,7 @@
         "C": "公務員因過失致依法逮捕拘禁之人脫逃，不構成犯罪",
         "D": "縱放人犯而損壞拘禁處所者，僅另以毀損罪論處，不加重其刑"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1799,7 +1799,7 @@
         "C": "湮滅證據罪",
         "D": "妨害公務罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1820,7 +1820,7 @@
         "C": "得減輕其刑",
         "D": "無特別法律效果"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1841,7 +1841,7 @@
         "C": "破壞現有人所在之火車",
         "D": "無駕駛執照之人開汽車"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1862,7 +1862,7 @@
         "C": "行使偽造貨幣，如貨幣非自己偽造，不構成犯罪",
         "D": "收受後方知為偽造貨幣而仍行使，不構成犯罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1883,7 +1883,7 @@
         "C": "本罪屬己手犯",
         "D": "本罪為挑唆防衛之明文"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1904,7 +1904,7 @@
         "C": "甲成立刑法第 211  條變造公文書罪",
         "D": "甲成立刑法第 215  條之業務登載不實罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1925,7 +1925,7 @@
         "C": "業務登載不實罪",
         "D": "偽造特種文書罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1946,7 +1946,7 @@
         "C": "強制性交罪之強制手段，限於強暴、脅迫之高強度方法",
         "D": "本罪之被害人不限於婦女"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1967,7 +1967,7 @@
         "C": "父母之一方得未滿 7  歲子女同意將其帶離，使脫離他方親權並阻隔他方探視監護，成立略誘未成年人罪",
         "D": "略誘未滿 16 歲之人，以和誘論"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -1988,7 +1988,7 @@
         "C": "組頭以自有私人住宅作為簽賭處所，供不特定人前來簽賭，賭客亦成立賭博罪",
         "D": "賭客透過網路以帳號密碼登入賭博網站，與網站經營者對賭財物，不成立賭博罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2009,7 +2009,7 @@
         "C": "過失重傷罪",
         "D": "重傷罪"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2030,7 +2030,7 @@
         "C": "對於未滿 18 歲之人，施以凌虐或以他法足以妨害其身心之健全或發育者，雖未有客觀可見之傷口，亦構成犯罪",
         "D": "激於義憤犯傷害罪者，其處罰較普通傷害罪為重"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2051,7 +2051,7 @@
         "C": "強制未遂罪",
         "D": "散布猥褻物品罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2072,7 +2072,7 @@
         "C": "以散布文字、圖畫犯誹謗罪，為加重誹謗罪",
         "D": "所謂意圖散布於眾，係指意圖散發或傳布於不特定之多數人而言"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2093,7 +2093,7 @@
         "C": "他人之車輛",
         "D": "他人之隨身物件"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2114,7 +2114,7 @@
         "C": "甲在公寓之樓梯間竊取腳踏車",
         "D": "甲侵入旅館房間竊取旅客財物"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2135,7 +2135,7 @@
         "C": "成立海盜罪",
         "D": "成立恐嚇取財罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2156,7 +2156,7 @@
         "C": "甲乃將業務上持有他人之物侵占，應構成刑法第 336  條第 2  項犯罪",
         "D": "甲乃是將自己持有他人之物侵占，應構成刑法第 335  條犯罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -2177,7 +2177,7 @@
         "C": "以廣播電視、電子通訊、網際網路或其他媒體等傳播工具，對公眾散布而犯之",
         "D": "以不正方法由收費設備取得他人之物"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "8009"
@@ -4490,7 +4490,7 @@
         "C": "法定預算",
         "D": "司法院解釋"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4511,7 +4511,7 @@
         "C": "行政機關作成沒入處分時，沒入之標的已滅失，係違反明確性原則",
         "D": "行政機關之裁罰處分，未記載罰鍰數額，係違反明確性原則"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4532,7 +4532,7 @@
         "C": "剝奪人民生命或限制人民身體自由者，得以制定命令之方式為之",
         "D": "何種事項應以法律直接規範或得委由命令予以規定，與所謂規範密度有關"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4553,7 +4553,7 @@
         "C": "裁量濫用",
         "D": "裁量過當"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4574,7 +4574,7 @@
         "C": "民間公司拖吊車受交通警察指揮拖吊違規車輛",
         "D": "交通部委託汽車修理廠辦理定期汽車檢驗事務"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4595,7 +4595,7 @@
         "C": "國家作為公權力主體，得課人民作為、不作為義務",
         "D": "地方自治團體亦得作為公權利主體，對國家主張給付請求"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4616,7 +4616,7 @@
         "C": "新竹縣",
         "D": "農會"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4637,7 +4637,7 @@
         "C": "稱署者，屬三級機關",
         "D": "稱分局者，屬四級機關"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4658,7 +4658,7 @@
         "C": "兩者均有效，依特別法優先於普通法，決定適用順序",
         "D": "兩者均有效，依後法優先於前法，決定適用順序"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4679,7 +4679,7 @@
         "C": "關於自然人之事件，依其指定之處所所在地",
         "D": "關於法人之事件，依其負責人之住所地"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4700,7 +4700,7 @@
         "C": "人民對行政機關所為指定管轄之決定，得向其上級機關聲明異議",
         "D": "人民對行政機關所為指定管轄之決定，不得聲明不服"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4721,7 +4721,7 @@
         "C": "1 個半月",
         "D": "2 個月"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4742,7 +4742,7 @@
         "C": "外交領事人員",
         "D": "政務人員"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4763,7 +4763,7 @@
         "C": "公務員對於國家負有忠誠義務所以禁止結社與罷工",
         "D": "公務員得因婚喪疾病分娩之原因依法請假"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4784,7 +4784,7 @@
         "C": "年終考績",
         "D": "平時考績"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4805,7 +4805,7 @@
         "C": "得予以罰款或減俸",
         "D": "得予以剝奪或減少退休金"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4826,7 +4826,7 @@
         "C": "執行職務時，發生意外致受傷應發給之慰問金為 10 年",
         "D": "經服務機關核准之加班費為 5  年"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4847,7 +4847,7 @@
         "C": "道路橋樑等直接供公眾使用者，稱為公共用物",
         "D": "僅供軍隊使用之戰車，稱為行政（公物）用物"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4868,7 +4868,7 @@
         "C": "法務部辦理採購作業要點",
         "D": "臺中市石虎保育自治條例"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4889,7 +4889,7 @@
         "C": "有關與執行法律之細節性、技術性次要事項，縱因而對人民產生不便或輕微影響，亦得由主管機關發布命令為必要之規範",
         "D": "徵收土地之要件及程序，得以法律明確授權之命令予以規定，且須法有明示其授權之目的、範圍及內容並符合具體明確之要件"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4910,7 +4910,7 @@
         "C": "期限",
         "D": "負擔"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4931,7 +4931,7 @@
         "C": "行政程序之再審",
         "D": "行政程序之覆審"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4952,7 +4952,7 @@
         "C": "行政處分因其存續力而對後行政處分產生構成要件效力",
         "D": "行政處分原則上受有效之推定"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4973,7 +4973,7 @@
         "C": "平時考核之不予敘獎決定",
         "D": "年資部分不採計之決定"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -4994,7 +4994,7 @@
         "C": "公立學校與教師間之關係，係透過契約而成立，停聘仍屬契約行為，非屬行政處分",
         "D": "公立學校教師與學校間就解聘發生爭執，屬公法性質得提起行政訴訟"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5015,7 +5015,7 @@
         "C": "行政契約屬於公權力行政",
         "D": "行政契約成立後，原則上須經許可始生效力"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5036,7 +5036,7 @@
         "C": "依法得提起訴願之事項，受理機關得不予處理，無庸告知陳情人",
         "D": "陳情僅得以書面為之"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5057,7 +5057,7 @@
         "C": "乃為避免因法律規定之錯綜複雜，致人民之同一行為，遭受數個不同法律之處罰，而承受過度不利之後果",
         "D": "違法之事實是否為一行為，係就法規與法規間之關連，或抽象事實予以抽象之判斷"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5078,7 +5078,7 @@
         "C": "得沒入之物，受處罰者於受裁處沒入前，予以處分、使用或以他法致不能裁處沒入者，得裁處沒入其物之價額",
         "D": "得沒入之物，受處罰者於受裁處沒入後，予以處分、使用或以他法致不能執行沒入者，得追徵其物之價額"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5099,7 +5099,7 @@
         "C": "違約通知",
         "D": "影響名譽之不利益處分"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5120,7 +5120,7 @@
         "C": "不得逾法定罰鍰最高額之 1/3，亦不得低於法定罰鍰最低額之 1/2",
         "D": "不得逾法定罰鍰最高額之 1/3，亦不得低於法定罰鍰最低額之 1/3"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5141,7 +5141,7 @@
         "C": "處以怠金",
         "D": "斷水斷電"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5162,7 +5162,7 @@
         "C": "異議人應先提起訴願",
         "D": "異議人得直接提起行政訴訟"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5183,7 +5183,7 @@
         "C": "義務人不為繳納代履行費用時，行政機關得連續處以怠金",
         "D": "代履行費用屬公法上金錢給付義務"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5204,7 +5204,7 @@
         "C": "涉及營業秘密事項",
         "D": "合議制機關之會議紀錄"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5225,7 +5225,7 @@
         "C": "於該事件曾為鑑定人",
         "D": "本人就該事件與當事人有共同義務人之關係"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5246,7 +5246,7 @@
         "C": "移請上級機關決定",
         "D": "舉行聽證"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5267,7 +5267,7 @@
         "C": "教育機構為達成教育目的所為處分學生之行為",
         "D": "犯罪矯正機關為達成收容目的所為之行為"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5288,7 +5288,7 @@
         "C": "公務人員對於人事行政處分之復審程序",
         "D": "政府採購法之申訴程序"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5309,7 +5309,7 @@
         "C": "臺北市政府",
         "D": "法務部"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5330,7 +5330,7 @@
         "C": "訴願不受理",
         "D": "訴願暫時停止審理"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5351,7 +5351,7 @@
         "C": "請求更正行政指導",
         "D": "請求身心障礙者日間照顧費用補助"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5372,7 +5372,7 @@
         "C": "立即向行政法院聲請停止執行之假處分",
         "D": "立即向行政法院提起撤銷之訴"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5393,7 +5393,7 @@
         "C": "行政法院認收容異議、停止收容之聲請為無理由者，應以判決駁回之",
         "D": "收容聲請事件，除別有規定外，準用通常訴訟程序之規定"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5414,7 +5414,7 @@
         "C": "向地方法院行政訴訟庭提起行政訴訟",
         "D": "向高等行政法院提起行政訴訟"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5435,7 +5435,7 @@
         "C": "向管轄之高等行政法院提起訴訟，請求法院命核定計畫之行政機關發布特定內容之都市計畫",
         "D": "向管轄之高等行政法院提起訴訟，請求宣告該都市計畫無效"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5456,7 +5456,7 @@
         "C": "行為與職務在外觀、時間或處所具有密切關連",
         "D": "行為應與職務內容具有密切關聯性"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5477,7 +5477,7 @@
         "C": "徵收之公益目的必須特定",
         "D": "徵收原則上必須有法律依據"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5498,7 +5498,7 @@
         "C": "請求權人得對賠償義務機關中之一機關，或數機關，或其全體同時或先後，請求全部或一部之損害賠償",
         "D": "請求權人如同時或先後向賠償義務機關請求全部或一部之賠償時，應載明其已向其他賠償義務機關請求賠償之金額或申請回復原狀之內容"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5519,7 +5519,7 @@
         "C": "私人所有之既成道路",
         "D": "公立學校之校舍"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7378"
@@ -5604,7 +5604,7 @@
         "C": "駕駛因粗心闖紅燈，雖及時煞車未撞到行人，行人卻因驚嚇而心肌梗塞死亡",
         "D": "原想給情敵一個教訓，卻在毆打情敵時不小心打到要害而導致情敵傷重死亡"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5625,7 +5625,7 @@
         "C": "以酒瓶插入他人口腔",
         "D": "以口腔與他人性器接合"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5646,7 +5646,7 @@
         "C": "罰金",
         "D": "沒收"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5667,7 +5667,7 @@
         "C": "犯罪構成要件明確性原則是罪刑法定原則內涵之一",
         "D": "民國 98 年 1  月廢除之檢肅流氓條例有關「欺壓善良」、「品行惡劣」、「遊蕩無賴」等流氓之定義規定，經司法院解釋認為違反法律明確性原則"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5688,7 +5688,7 @@
         "C": "甲因看見牆上貼著「歹路毋通行」，一時心生悔意，遂空手離開盜所，甲成立侵入住居竊盜之中止未遂",
         "D": "甲若成立侵入住居竊盜之中止未遂犯，該行為之處罰，得減輕或免除其刑"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5709,7 +5709,7 @@
         "C": "對於公務上或業務上有特別義務者，皆不適用",
         "D": "二者皆有過當得減輕或免除其刑之規定"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5730,7 +5730,7 @@
         "C": "刑法以處罰過失犯為原則",
         "D": "行為人對於構成犯罪之事實，預見其發生而其發生並不違背其本意者，亦屬故意"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5751,7 +5751,7 @@
         "C": "丙雖甫滿 12 歲，仍屬無責任能力人",
         "D": "乙、丙均未成年，僅得減輕其刑"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5772,7 +5772,7 @@
         "C": "依法令之行為",
         "D": "原因自由行為"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5793,7 +5793,7 @@
         "C": "客體錯誤",
         "D": "因果歷程錯誤"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5814,7 +5814,7 @@
         "C": "須已盡力為防止行為",
         "D": "須出於不得已之行為"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5835,7 +5835,7 @@
         "C": "預備犯不適用之",
         "D": "行為人只要因己意中止犯行，即成立中止犯"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5856,7 +5856,7 @@
         "C": "殺人罪",
         "D": "重傷罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5877,7 +5877,7 @@
         "C": "打擊錯誤",
         "D": "客體錯誤"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5898,7 +5898,7 @@
         "C": "決意、預備、陰謀、著手實行",
         "D": "預備、決意、陰謀、著手實行"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5919,7 +5919,7 @@
         "C": "行使變造特種文書罪",
         "D": "行使業務登載不實文書罪"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5940,7 +5940,7 @@
         "C": "與他人謀議並一同實行犯罪",
         "D": "與他人犯意聯絡並參與全部構成要件實行"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5961,7 +5961,7 @@
         "C": "刑法第 153  條煽惑他人犯罪罪與教唆犯並無不同",
         "D": "教唆他人犯罪後，又參加實行構成要件行為者，應成立共同正犯"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -5982,7 +5982,7 @@
         "C": "乙成立侵占罪",
         "D": "乙成立竊盜罪"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6003,7 +6003,7 @@
         "C": "丙欺騙不知情的路人，某輛他人腳踏車為自己所有，請路人幫忙牽到丙宅停放",
         "D": "丁在夜店受到欺負，向其男友哭訴，並要男友教訓該人，男友便痛毆該人一頓"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6024,7 +6024,7 @@
         "C": "供犯罪預備之物",
         "D": "犯罪所生之物"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6045,7 +6045,7 @@
         "C": "集合犯",
         "D": "加重結果犯"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6066,7 +6066,7 @@
         "C": "甲因犯毀損器物罪四次，各被宣告拘役 40 日、30  日、30 日、50 日，四罪定其應執行刑，最低不得低於拘役 50 日，最高不得逾 120  日",
         "D": "甲因違反投票行賄罪二罪，各被宣告有期徒刑 1  年 2  月、褫奪公權 2  年，1 年 3  月、褫奪公權 3  年，二罪就褫奪公權部分，只要執行 3  年即可"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6087,7 +6087,7 @@
         "C": "沒收屬從刑",
         "D": "利得沒收屬義務沒收"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6108,7 +6108,7 @@
         "C": "緩刑之效力及於從刑，但不及於保安處分及沒收之宣告",
         "D": "緩刑宣告，得斟酌情形，命犯罪行為人向被害人道歉、立悔過書"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6129,7 +6129,7 @@
         "C": "有期徒刑執行已滿 6  個月始得聲請假釋",
         "D": "未經撤銷假釋者，其未執行之刑，失其效力"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6150,7 +6150,7 @@
         "C": "刑法第 328  條第 1  項強盜罪，因 30 年未起訴而追訴權消滅",
         "D": "刑法第 339  條之 4  第 1  項加重詐欺罪，因 20 年未起訴而追訴權消滅"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6171,7 +6171,7 @@
         "C": "授權公務員",
         "D": "委託公務員"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6192,7 +6192,7 @@
         "C": "甲成立違背職務期約賄賂罪",
         "D": "甲分別觸犯違背職務期約賄賂與不違背職務收受賄賂二罪名，從一重處斷"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6213,7 +6213,7 @@
         "C": "向該公務員之長官陳情",
         "D": "向該公務員施強暴脅迫"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6234,7 +6234,7 @@
         "C": "乙成立刑法第 161  條第 1  項脫逃罪之共同正犯",
         "D": "乙成立刑法第 161  條第 1  項脫逃罪之幫助犯"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6255,7 +6255,7 @@
         "C": "對犯人提供金錢或交通工具使其易於逃避偵查",
         "D": "在詐欺犯罪集團第一次犯案前先提供自己帳戶、提款卡與密碼以便日後作人頭帳戶使用"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6276,7 +6276,7 @@
         "C": "頂替罪",
         "D": "詐欺罪"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6297,7 +6297,7 @@
         "C": "證人於民事審判程序中所為之偽證行為，亦有偽證罪之適用",
         "D": "證人於檢察官偵查時所為之偽證行為，不成立本罪"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6318,7 +6318,7 @@
         "C": "對無主物放火，不成立放火罪",
         "D": "行為人故意引燃火源，係屬故意放火罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6339,7 +6339,7 @@
         "C": "偽造度量衡罪",
         "D": "偽造支付工具罪"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6360,7 +6360,7 @@
         "C": "集合犯",
         "D": "數罪併罰"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6381,7 +6381,7 @@
         "C": "成立強制性交罪預備犯",
         "D": "成立強制性交罪既遂犯"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6402,7 +6402,7 @@
         "C": "公然賭博罪最重僅處以罰金刑",
         "D": "以網路帳號在特定網站賭博下注，不得以賭博罪加以處罰"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6423,7 +6423,7 @@
         "C": "受囑託而殺人",
         "D": "得承諾而殺人"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6444,7 +6444,7 @@
         "C": "普通傷害罪不處罰未遂犯",
         "D": "身體髮膚，受之父母。因此傷害自己身體的行為，也構成傷害罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6465,7 +6465,7 @@
         "C": "依刑法第 294  條，對於無自救力之人，依法令或契約應扶助、養育或保護而遺棄之，構成遺棄罪，其中「法令」包括民法",
         "D": "對於直系血親尊親屬犯刑法第 294  條之罪者，加重其刑至二分之一"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6486,7 +6486,7 @@
         "C": "侵入客體除住宅外，也包括船艦在內",
         "D": "得到同意而進入他人住宅，並非無故侵入"
       },
-      "answer": null,
+      "answer": "B",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6507,7 +6507,7 @@
         "C": "構成刑法第 317  條的無故洩漏依契約有守因業務知悉工商秘密義務之犯罪",
         "D": "構成刑法第 316  條的無故洩漏因業務知悉或持有他人秘密之犯罪"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6528,7 +6528,7 @@
         "C": "甲、乙、丙三人組成扒竊集團在西門町扒走觀光客 A  的皮夾",
         "D": "甲在公車上扒走乘客 A  包包內的最新款手機"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6549,7 +6549,7 @@
         "C": "至使人無法抗拒",
         "D": "施強暴脅迫"
       },
-      "answer": null,
+      "answer": "A",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6570,7 +6570,7 @@
         "C": "甲應成立第 329  條準強盜罪",
         "D": "甲應成立第 335  條侵占罪"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6591,7 +6591,7 @@
         "C": "成立刑法第 336  條業務侵占罪之共同正犯",
         "D": "成立刑法第 335  條普通侵占罪之共同正犯"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6612,7 +6612,7 @@
         "C": "乙成立背信罪",
         "D": "乙成立重利罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -6633,7 +6633,7 @@
         "C": "甲成立竊盜罪及贓物罪；乙丙成立贓物罪",
         "D": "甲成立竊盜罪；乙丙成立贓物罪"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "7388"
@@ -7277,6 +7277,846 @@
       "explanation": null,
       "source": "法源法律網",
       "source_eid": "1838"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 1,
+      "stem": "甲男於民國103 年2 月因車禍身亡，其妻乙遲至103 年8 月始依國民年金法之規定，申請遺屬年金給付，因而僅得自申請該月起領取給付。依司法院釋字第766 號解釋意旨，下列敘述何者正確？",
+      "options": [
+        "國民年金保險為具有強制性之社會保險，立法者有較大之自由形成空間，受到司法審查之密度皆較寬鬆",
+        "人民依法享有之國民年金給付請求權，屬於財產權之保障範圍，其保障之內容及限制，應由行政權決定",
+        "法律以主管機關追溯認定困難之行政便宜考量，限制遺屬年金之起算始點，並非重要公益",
+        "法令規定以遺屬提出年金給付之申請時起算其年金，以節省政府財政支出，於公益及私益間之衡量，符合比例原則"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 2,
+      "stem": "憲法增修條文第5 條第5 項規定「政黨之目的或其行為，危害中華民國之存在或自由民主之憲政秩序者為違憲。」此規定展現下列何種民主的內涵？",
+      "options": [
+        "多數民主",
+        "防衛民主",
+        "多元民主",
+        "直接民主"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 3,
+      "stem": "依司法院大法官解釋及憲法法庭判決，有關原住民之身分認同權，下列敘述何者錯誤？",
+      "options": [
+        "原住民之身分認同權，受憲法22 條保障",
+        "原住民之血統為憲法及法律所創設",
+        "原住民之身分原則上採自我認同原則",
+        "原住民之身分認同權乃原住民特殊人格權利"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 4,
+      "stem": "我國憲法本文對於邊疆地區之地方自治事業，有如何之規定？",
+      "options": [
+        "未有任何特別規定",
+        "考量到邊疆地區之特殊性，應特別扶植其地方自治事業",
+        "基於民族平等原則，邊疆地區與非邊疆地區之地方自治事業一律平等",
+        "國家應尊重其自治意願，保持中立，而不予以干預或特別扶植"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 5,
+      "stem": "關於軍事審判，下列敘述何者正確？",
+      "options": [
+        "無論平時或戰時，軍事審判皆應由軍事法院掌理",
+        "軍事審判為國家刑罰權之一種",
+        "為確保獨立審判，軍事審判官不得免職",
+        "有關軍事審判官志願留營之核准等身分保障，與其他現役軍人並無不同"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 6,
+      "stem": "有關國家為興建水庫而要求人民遷村，下列敘述何者正確？",
+      "options": [
+        "不構成居住自由之限制，故為憲法所許",
+        "構成居住自由之限制，故為憲法所不許",
+        "構成居住自由之限制，遷村作業實施計畫應由法律明定",
+        "構成居住自由之限制，行政機關得經法律授權以命令訂定遷村作業實施計畫"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 7,
+      "stem": "下列何者為學說上所稱之直接歧視？",
+      "options": [
+        "先天或後天原因所致個人或群體的不利地位，例如身心障礙、城鄉差距等因素所致之政經地位的結構性不平等",
+        "法規範表面上以性別、國籍、階級、黨派為區分標準，進而有不合理的差別待遇",
+        "個人所為之社會性歧視對某些群體人民造成長期、固定性的不利差別待遇",
+        "表面中立的國家法令之實際適用結果發生系統性的不利差別待遇"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 8,
+      "stem": "依憲法法庭判決，強制汽車駕駛人在肇事而無法實施吐氣酒測時，應至醫療機構接受血液採檢的法律規定，所涉及的基本權不包括下列何者？",
+      "options": [
+        "身體權",
+        "平等權",
+        "人身自由",
+        "資訊隱私權"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 9,
+      "stem": "以下何者並非由總統提名或任命產生？",
+      "options": [
+        "行政院院長",
+        "司法院院長",
+        "審計長",
+        "立法院院長"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 10,
+      "stem": "依憲法增修條文規定，有關監察委員之任命及職權，下列敘述何者錯誤？",
+      "options": [
+        "監察委員行使彈劾、糾舉及糾正權",
+        "監察委員，任期6 年，由總統提名，經立法院同意任命之",
+        "監察院院長、副院長各一人，由監察委員互選之",
+        "監察委員須超出黨派以外，依據法律獨立行使職權"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 11,
+      "stem": "依憲法訴訟法規定，關於憲法法庭的裁判效力，下列敘述何者錯誤？",
+      "options": [
+        "憲法法庭所為的判決，有拘束全國各機關的效力",
+        "對憲法法庭的裁判，當事人不得聲明不服",
+        "憲法法庭判決某法律違憲且「立即失效」，先前已確定的行政法院裁判，如非據以聲請之原因案件，並不因此受影響",
+        "憲法法庭判決某法律違憲且「定期失效」，法官於案件審理時即不得再適用該法律"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 12,
+      "stem": "依憲法法庭111 年憲判字第6 號判決，有關中央與地方分權，下列敘述何者正確？",
+      "options": [
+        "有關食品安全容許標準之規定，為地方專屬之權限",
+        "因地制宜之地方自治條例，仍不得牴觸中央法律之框架規定",
+        "地方就其自治核心事項享有專屬立法權",
+        "商業與公共衛生事項，中央享有專屬立法權"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 13,
+      "stem": "有關我國憲法對於基本權利之保障，下列敘述何者正確？",
+      "options": [
+        "所保障之基本權利採列舉窮盡規定方式",
+        "憲法明文保障創制複決權",
+        "權利主體僅限於本國國民",
+        "於每一項基本權利規定其限制之條件"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 14,
+      "stem": "依憲法規定，關於行政院，下列敘述何者正確？",
+      "options": [
+        "憲法增修條文已將總統定位為最高行政機關，行政院僅向總統負責",
+        "基於各憲法機關之權力核心領域不容侵犯，行政院之組織架構應由行政院自行規範，不得以法律決定",
+        "立法院對行政院院長提出之不信任案通過後，行政院院長應於10 日內提出辭職，並得直接依法解散立法院",
+        "行政院院長欲向立法院提出之法律修正草案，依據憲法應先提出於行政院會議議決"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 15,
+      "stem": "依憲法訴訟法規定，下列何者僅得針對法律位階之法規範向憲法法庭聲請判決？",
+      "options": [
+        "中央選舉委員會",
+        "臺灣高雄地方法院",
+        "監察院",
+        "屏東縣"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 16,
+      "stem": "勞工遭遇職業災害，依據勞動基準法之規定，下列敘述何者錯誤？",
+      "options": [
+        "在醫療中不能工作時，雇主應按勞工之原領工資數額予以補償",
+        "於勞動基準法第59 條規定職業災害之醫療期間，雇主不得終止契約",
+        "雇主依勞動基準法第59 條第2 款給付40 個月之平均工資，免除其工資補償責任後，雇主應補償其必需之醫療費用",
+        "勞工因職業災害而接受醫療，醫療期間屆滿2 年仍未能痊癒且仍無法工作時，雇主應即給付資遣費"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 17,
+      "stem": "下列關於聯合國消除對婦女一切形式歧視公約效力之敘述，何者正確？",
+      "options": [
+        "為國際人權公約，僅具有事實上的拘束力",
+        "為立法院批准之國際人權公約，後完成加入書之存放，有內國法效力",
+        "為立法院批准之國際人權公約，與憲法基本人權章等同效力",
+        "為國際人權公約，立法院制定該公約之施行法，明定該公約有內國法效力"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 18,
+      "stem": "有關「比例原則」，下列敘述何者錯誤？",
+      "options": [
+        "採取之方法應有助於目的之達成，乃係「適當性原則」之明文規定",
+        "有多種同樣能達成目的之方法時，應選擇對人民權益損害最少者，乃係「必要性原則」之明文規定",
+        "採取之方法所造成之損害不得與欲達成目的之利益顯失均衡，乃係「狹義比例原則」之明文規定",
+        "司法機關不得就目的本身的適法性與妥當性加以審查"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 19,
+      "stem": "關於中止犯，下列敘述何者錯誤？",
+      "options": [
+        "中止犯之法律效果為「必」減輕或免除其刑",
+        "中止犯之成立，須行為人出於己意放棄犯罪，或防止結果發生",
+        "結果不發生非防止行為所致，但行為人已盡力而為，仍能視為中止犯",
+        "雖犯罪既遂，但共同正犯其中一人因己意消極放棄犯行，仍可論以中止犯"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 20,
+      "stem": "甲、乙、丙及丁四人欲至銀行行竊，四人講好由甲負責在門口把風，乙負責破壞銀行安全設備，丙負責進入銀行保險庫內拿取錢財，丁則負責事前提供銀行配置圖及規劃行竊流程。依我國實務見解，下列敘述何者正確？",
+      "options": [
+        "甲應論以普通竊盜罪之幫助犯",
+        "乙應論以加重竊盜罪之共同正犯",
+        "丙應論以普通竊盜罪之間接正犯",
+        "丁應論以加重竊盜罪之教唆犯"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 21,
+      "stem": "居住於臺北市之甲向臺北市",
+      "options": [
+        "汽車經銷商購買一部汽車，但該汽車經常故障。有關甲得主張之申訴，下列敘述何者錯誤？A甲得直接向A 汽車經銷商申訴",
+        "甲得直接向臺灣臺北地方法院消費者保護官申訴",
+        "甲得直接向消費者保護團體申訴",
+        "甲得直接向臺北市政府消費者服務中心申訴"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 22,
+      "stem": "關於法院得聲請法規範憲法審查之審查標的，下列敘述何者正確？",
+      "options": [
+        "經立法院議決通過並施行之條約",
+        "行政機關依據法律授權所訂定之命令",
+        "終審法院之判例",
+        "經監督機關函告無效之自治法規"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 23,
+      "stem": "關於憲法法庭審查庭之設置，下列敘述何者錯誤？",
+      "options": [
+        "憲法法庭得設數審查庭，由大法官3 人組成之",
+        "審查庭設審判長，由3 位大法官輪流擔任之",
+        "各審查庭大法官之組成，每2 年調整一次",
+        "審查庭大法官未達一致決不受理之案件，應提交憲法法庭評決是否受理"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 24,
+      "stem": "甲未授與乙代理權，乙卻擅自以甲的名義，向丙承攬",
+      "options": [
+        "工程。下列敘述，何者正確？A該A 工程承攬契約無效",
+        "丙得向乙請求履行A 工程承攬契約",
+        "該A 工程承攬契約在甲、丙間有效",
+        "該A 工程承攬契約效力未定"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 25,
+      "stem": "關於刑法之規定，下列敘述何者正確？",
+      "options": [
+        "刑法上所稱電子公文書者，謂保管加密於公務機關之電子公文書",
+        "刑法所稱公務員者，謂依地方自治規章，服務地方自治團體滿兩年以上者",
+        "同一行為雖經外國確定裁判，仍得依本國刑法處斷。但在外國已受刑之全部或一部執行者，得免其刑之全部或一部之執行",
+        "僅受國家相關機關依法委託，從事與委託機關權限有關之公共事務者，並非刑法所指稱之公務員"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 26,
+      "stem": "我國憲法學上常引用的「法治國」概念，主要是繼受自何國法？",
+      "options": [
+        "美國法",
+        "德國法",
+        "日本法",
+        "法國法"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 27,
+      "stem": "依據地方制度法，關於自治法規之訂定機關與程序，下列敘述何者正確？",
+      "options": [
+        "地方行政機關得訂定自律規則，由各地方立法機關發布，並報各該上級政府備查",
+        "直轄市議會為辦理上級機關委辦事項，得依其法定職權訂定委辦規則，並報請委辦機關核定",
+        "自治條例經地方立法機關通過，並由各該行政機關公布，如自治條例有罰則時，應分別報經行政院、中央各該主管機關核定後發布",
+        "自治規則由地方行政機關訂定並公布，如自治規則有罰則時，應分別報經地方立法機關、行政院、中央各該主管機關核定後發布"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 28,
+      "stem": "依據中央法規標準法，關於法規之廢止，下列敘述何者正確？",
+      "options": [
+        "法律之廢止，應經原提案之行政機關提出，並經立法院通過後由總統公布",
+        "法規定有施行期限者，期滿當然廢止，亦無需由主管機關公告之",
+        "法律定有施行期限者，不得再行延長，應重新制定新法因應",
+        "命令之廢止，由原發布機關為之，並自公布或發布之日起，算至第三日起失效"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 29,
+      "stem": "有學者主張，民法第194 條對於慰撫金請求權是否可以讓與，並未有明文規定，此時應該基於法律上相同的理由，填補法律漏洞。此時該學者所主張的漏洞填補方法，應是下列何種方法？",
+      "options": [
+        "反面推論",
+        "目的性擴張",
+        "目的性限縮",
+        "類推適用"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 30,
+      "stem": "依民法規定，有關收養子女之要件，下列敘述何者正確？",
+      "options": [
+        "收養人得收養其舅父之外孫女",
+        "收養人之年齡，應長於被收養人18 歲以上",
+        "收養人與被收養人除訂立收養契約之外，應經公證，收養始能生效",
+        "父母離婚後，行使親權之父，出養其未成年子女時，無庸得其生母同意"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 31,
+      "stem": "There was no international _____ among the countries on how to deal with the pandemic whenit first broke out.",
+      "options": [
+        "destination",
+        "consensus",
+        "essence",
+        "gratitude"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 32,
+      "stem": "Suggestions from the survey have been _____ into the new law.",
+      "options": [
+        "subsidized",
+        "abolished",
+        "incorporated",
+        "overwhelmed"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 33,
+      "stem": "Joseph experienced intense _____ and trauma when he lost his parents in a fatal car crash.",
+      "options": [
+        "beam",
+        "grief",
+        "triumph",
+        "vanity"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 34,
+      "stem": "If you need to drive in a snowy weather, it is essential to take proper _____ to avoid an accident.",
+      "options": [
+        "objectives",
+        "inscriptions",
+        "stimulants",
+        "precautions"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 35,
+      "stem": "The mayor _____ the company to reconsider its decision to close its stores in phases over a fewyears.",
+      "options": [
+        "bares",
+        "crows",
+        "poses",
+        "urges"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 36,
+      "stem": "",
+      "options": [
+        "_____ jacket is ideal for outdoor activities because it can keep the body dry in case of rain.A consequent",
+        "determined",
+        "persuasive",
+        "waterproof"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 37,
+      "stem": "The research team carried out detailed analysis before _____ their conclusions to the board ofdirectors.",
+      "options": [
+        "deleting",
+        "discovering",
+        "installing",
+        "presenting"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 38,
+      "stem": "She was a _____ host. She made sure everyone was comfortable in the party.",
+      "options": [
+        "furious",
+        "gracious",
+        "precious",
+        "suspicious"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 39,
+      "stem": "As the storm approached, the captain made a prompt decision to change _____ of the ship.",
+      "options": [
+        "course",
+        "manual",
+        "construction",
+        "motion"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 40,
+      "stem": "The airline provided _____ towels to the passengers on the long-haul flight.",
+      "options": [
+        "requiring",
+        "reflective",
+        "refreshing",
+        "repetitive請依下文回答第41題至第45題When Eliza, a marketing manager, returned from holiday, she was asked for a meeting at her boss’soffice. She was informed of a company restructure. Someone else would take over her tasks, and she wasasked not to go to office, but to work __41__ in a new role.In the weeks that followed, Eliza’s professional life became much quieter. Her main duties now weresimply sending occasional email and completing the odd routine work from home. Amonth later, she quit.“It was __42__ ,” she said. “I was made to feel worthless. I’d rather have been just fired on the spot thanhave to go through that.”The phenomenon of __43__ employees slowly is dubbed “quiet firing.” To avoid a hardconversation, employers choose to __44__ workers and make their lives difficult. But quiet firing oftencreates even greater harm. It fails tocreate an inclusive workplace culture. It can affect a firm’s __45__ for workers departing may share theirexperience in an online review.Worse yet, it may have a negative impact on one’s well-being.Quiet firing may be the easiest option for bosses, but it’s not a good solution for firms or workers."
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 41,
+      "stem": "",
+      "options": [
+        "swiftly",
+        "remotely",
+        "comprehensively",
+        "distinguishingly"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 42,
+      "stem": "",
+      "options": [
+        "coordinating",
+        "dedicating",
+        "humiliating",
+        "understanding"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 43,
+      "stem": "",
+      "options": [
+        "poking",
+        "promoting",
+        "advancing",
+        "complimenting"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 44,
+      "stem": "",
+      "options": [
+        "sympathize",
+        "empathize",
+        "marginalize",
+        "consolidate"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 45,
+      "stem": "",
+      "options": [
+        "reputation",
+        "property",
+        "location",
+        "patience請依下文回答第46 題至第50 題Maybe you refuse to open an umbrella inside your house or walk under a ladder that’s on a sidewalk.These are superstitions, or a belief that something bad will happen even if there’s no reason to think that itwill.One big superstition in the United States is that Friday the 13th is an unlucky day. Happening up to threetimes a year depending on the calendar, the day seems to make people more careful or avoid things theyusually aren’t afraid to do. Of course, no one can prove that more misfortune takes place on Friday the13th. We just tend to notice it more if bad things happen on that day. But if Friday the 13th is only asuperstition, why do people actually believe in it?It’s hard to know exactly when Friday the 13th became thought of as unlucky, but it likely comes fromthe Christian religion. For example, in the Bible, Judas—a person who is said to have betrayed Jesus—was the 13th guest at the Last Supper. Also in the Bible, many unfortunate things happened on Fridays.So it made sense that people who read the Bible got nervous around Friday the 13th.It’s also possible that 13 is considered “cursed” because it’s the number after 12, which many people seeas a number that completes things. Think about it—12 months are in a year, 12 inches in a foot, 12 pairsof ribs in a body, etc. So it’s possible the number 13 makes people uneasy because it causes them to thinkabout the unknown—beyond the number 12.In other countries, Friday the 13th isn’t unlucky. For instance, in Spain, Tuesday the 13th is consideredthe day to dread. And in Italy, people fear the 17th day of the any month. Why? It is because the Romannumeral XVII (17) can be rearranged to spell “VIXI,” which means “my life is over” in Latin. But, like inthe United States, no one can prove that more terrible things occur on those days, either.People who are super afraid on Friday the 13th might have condition called triskaidekaphobia, which isa fear of the number 13. For most people, being afraid of Friday the 13th is just a superstition, somethingthat we can have fun pretending to fear because we know there’s really nothing to fear."
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 46,
+      "stem": "According to the passage, which of the following is NOT considered superstitious in the US?",
+      "options": [
+        "Opening an umbrella inside the house.",
+        "Fear of the 17th day of the any month.",
+        "Friday the 13th being an unlucky day.",
+        "Walking under a ladder on a sidewalk."
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 47,
+      "stem": "According to the passage, why is 13 deemed as unlucky?",
+      "options": [
+        "People are uneasy because of the unknown beyond 12.",
+        "It reminds people that Judas betrayed Jesus on Friday the 13th.",
+        "People think it means that their lives are over.",
+        "Misfortune takes place on Friday the 13th in other countries."
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 48,
+      "stem": "According to the passage, which of the following is closest in meaning to the word\"triskaidekaphobia\"?",
+      "options": [
+        "A panic over the number 13.",
+        "A curse on the number 13.",
+        "A favor of the number 13.",
+        "A delight for the number 13."
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 49,
+      "stem": "How many times can Friday the 13th occur the most in a year?",
+      "options": [
+        "Once.",
+        "Twice.",
+        "Thrice.",
+        "Four times."
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "法學知識與英文",
+      "type": "mcq",
+      "question_number": 50,
+      "stem": "In what section of a magazine would the passage most likely appear?",
+      "options": [
+        "Food.",
+        "Myth.",
+        "Health.",
+        "Ethics."
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 1,
+      "stem": "下列文句，何者敘述最正確？",
+      "options": [
+        "一畦畦黃色的野菊沿著鐵道鋪陳，十分迷人",
+        "黃昏時彩霞在天邊燃燒，投影出瑰麗的景象",
+        "他從信仰中獲得精神上的喜樂，並心懷感恩",
+        "得知他不幸發生意外，留言與追思蕩漾臉書"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 2,
+      "stem": "下列文句，「」內成語運用最正確的是：",
+      "options": [
+        "他能「信口雌黃」，隨時上臺發表精采的演說",
+        "這種方法是「揚湯止沸」，無法徹底解決問題",
+        "他的新居，空間大小適中，真是「宜室宜家」",
+        "這次宴會很豐盛，主人準備「酒囊飯袋」招待"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 3,
+      "stem": "「當年iPod 問世時，其他科技公司若介紹它，必然是朗誦硬體規格等等。但蘋果創辦人賈伯斯是這樣說：『iPod，將一千首歌放在口袋裡。』」根據上文，下列選項最符合文意的是：",
+      "options": [
+        "講述硬體規格，能顯示專業",
+        "容量一千首歌，是精確資訊",
+        "避免專業名詞，是貼心溝通",
+        "其他科技公司，較缺乏創意"
+      ],
+      "answer": "C"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 4,
+      "stem": "「我們會以『如切如磋，如琢如磨』來譬喻朋友間的交互影響。一如玉石有瑕疵稜角，用一種器具來切磋琢磨，才能圓融光潤，才能『成器』。人的性格也難免有瑕疵稜角，朋友便是切磋琢磨的利器，與自己愈不同，磨擦愈多，切磋琢磨的影響也就愈大。所以孔子論益友，特重直諒多聞。」根據上文，下列選項何者最正確？",
+      "options": [
+        "鼓勵大家結交損友砥礪自己的德性",
+        "每個人都應該成為說實話的真小人",
+        "圓融的品格可透過同溫層交友達成",
+        "與正直誠信之友相交可以砥礪品行"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 5,
+      "stem": "「一顆顆肥大茂盛的芥菜在冬天收成。吃不完的新鮮芥菜，都曬在牆頭屋瓦上，經發酵後做成酸菜，可以保存比較久。吃不完的酸菜，就塞在甕裡瓶子裡繼續發酵，做成福菜，福菜要塞得很緊實，不受潮，幾乎像真空，可以保存兩年不壞。福菜做完後，剩餘的芥菜葉，就用鹽漬風乾到幾乎沒有水分，綁成一綑一綑，做成梅乾菜。」根據上文，下列說明最正確的是：",
+      "options": [
+        "酸菜如果受潮可用真空保存",
+        "福菜的發酵時間會比酸菜長",
+        "芥菜採收後會優先日曬風乾保存",
+        "梅乾菜是以芥菜梗鹽漬風乾而成"
+      ],
+      "answer": "B"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 6,
+      "stem": "「我們從小被灌輸的觀念，是敬佩以意志力堅持成功，看不起辭職、半途而廢。當然，遇見困難就打退堂鼓的人，絕對無法成功，但有時，堅持不見得是明智的，選擇退場反而更需要勇氣。看我早期的履歷，也許會認為我是個穩定度差、不知道自己要什麼的人。其實正好相反。每次改變都讓我更清楚自己擅長什麼、不喜歡什麼，更勇敢面對內心的聲音，做出選擇。」根據上文，下列敘述最接近作者觀點的是：",
+      "options": [
+        "如果不知道要什麼，堅持不變的態度其實不明智",
+        "能以意志力堅持成功，自然就知道自己想要什麼",
+        "早期穩定度差的人，後來就很難有變勇敢的時候",
+        "只要遇見困難時就打退堂鼓，勇敢面對個人選擇"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 7,
+      "stem": "「感官機制有絕佳的調整適應能力，能辨識出景觀中的特點，感受其中差異，並為所有微小細節賦予意義。即使是身在澳洲一望無際的茂密刺槐林裡，或愛斯基摩一整片白皚皚的雪地，讓人無法分辨陸地跟海洋，或是霧氣深重、詭譎多變的阿留申群島，以及玻里尼西亞附近的茫茫大海，這些外人從表面看起來毫無辨識線索的地方，對當地人而言卻清晰可辨。」根據上文，下列選項何者最符合文意？",
+      "options": [
+        "環境地貌因人類賦予意義，而具有辨認方向的功能",
+        "人類能否找出移動方向，完全取決於地標是否清晰",
+        "地方環境的線索是否清楚可辨，仰賴精密探測工具",
+        "環境地貌能否成為參照系統，當地氣候是關鍵因素"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 8,
+      "stem": "「我在這裡好些年，也知道府上的人那一個不是肥己的。一年一年都往他家裡拿，那自然府上是一年不夠一年了。又添了大老爺、珍大爺那邊兩處的費用，外頭又有些債務，前兒又破了好些財，要想衙門裡緝賊追贓是難事。老世翁若要安頓家事，除非傳那些管事的來，派一個心腹的人各處去清查清查，該去的去，該留的留，有了虧空著在經手的身上賠補，這就有了數兒了。」上文中「我」向「老世翁」所提最主要的建議是：",
+      "options": [
+        "將不良管事者汰除",
+        "撙節不必要的開銷",
+        "指派心腹清償債務",
+        "委請官府緝賊追贓"
+      ],
+      "answer": "A"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 9,
+      "stem": "「馬諦斯的畫作使用大量色塊，分不清何處是牆面、何處是地面。然而無論是多麼平面性或裝飾性的作品，還是利用無人可及的配色引人入勝，以線條構成的人與物從未抽象化，呈現驚人的具體造形，要是畫家缺乏這種造形能力，想必畫不出像一筆畫的優異素描，也做不來那些充滿魅力的剪紙畫。他的作品看似能輕易模仿，實際上卻臻至模仿難以企及的境界。」根據上文，作者對於馬諦斯作品的分析，敘述最正確的是：",
+      "options": [
+        "對於立體感的掌握能力較弱",
+        "善於以對比色塊繪製抽象畫",
+        "一筆畫素描受到剪紙畫影響",
+        "看似簡單實則藝術境界超凡"
+      ],
+      "answer": "D"
+    },
+    {
+      "roc_year": 113,
+      "subject": "國文",
+      "type": "mcq",
+      "question_number": 10,
+      "stem": "「以前強調『專才』，現在則強調『通才』。一個原因是現代社會變遷快速，過去界定的『領域』現在可能已經不適用，或界線已經變得模糊。以近年最夯的電動車為例，以前汽車工業是一個很明確的領域，各高職學校也都設有『汽修科』等科系。然而，電動車牽涉的領域就廣得多，除了機械與材料等固有領域，還有電池（電動車的核心）、自動駕駛、人工智慧等，需要對各領域都有一些了解的人進行整合。近年來，國內外開始有大學採『不分系』的策略，相當受學生歡迎。不分系除了讓學生多一些時間探討未來職涯發展方向，了解自己真正興趣所在，也可讓學生累積各領域的經驗，大幅提升『跨領域整合』能力，也是未來發展的趨勢。」根據上文，下列選項最符合發展「通才」趨勢的關鍵因素是：",
+      "options": [
+        "各領域團隊合作的概念已經不流行",
+        "新科技所牽涉的領域已越來越寬廣",
+        "科技一日千里專業知識很快就落伍",
+        "電動車將取代燃油車成為未來主流"
+      ],
+      "answer": "B"
     }
   ]
 }

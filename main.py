@@ -194,7 +194,8 @@ async def create_practice_session(
                 "type": q["type"],
                 "subject": q["subject"],
                 "roc_year": q["roc_year"],
-                # 答案暫不回傳（前端送分後再取）
+                "answer": q.get("answer") if q["type"] == "essay" else None,
+                "explanation": q.get("explanation") if q["type"] == "essay" else None,
             }
             for q in session_qs
         ],
@@ -270,3 +271,8 @@ async def spa_fallback(full_path: str):
     if static_file.exists() and static_file.is_file():
         return FileResponse(str(static_file))
     return FileResponse(str(_ROOT / "static" / "index.html"))
+
+if __name__ == "__main__":
+    import uvicorn
+    # default port 8000
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

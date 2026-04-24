@@ -308,6 +308,7 @@ function renderQuestion() {
 
   // Essay question
   if (q.type === 'essay') {
+    const referenceAnswer = q.answer || q.explanation || '暫無參考解答';
     container.innerHTML = `
       <div class="question-card">
         <div class="question-meta">
@@ -315,7 +316,11 @@ function renderQuestion() {
           <span class="badge badge-year">${q.roc_year} 年 · 申論題</span>
         </div>
         <div class="question-stem">${escapeHtml(q.stem)}</div>
-        <button class="btn-primary" onclick="nextQuestion()">
+        <div style="margin-top:1.5rem;">
+          <button class="btn-outline" onclick="toggleEssayAnswer(this)">顯示參考解答</button>
+          <div class="essay-answer hidden" style="margin-top:1rem;padding:1rem;background:#f8fafc;border-left:4px solid ${color};font-size:0.9rem;white-space:pre-wrap;line-height:1.6;">${escapeHtml(referenceAnswer)}</div>
+        </div>
+        <button class="btn-primary" onclick="nextQuestion()" style="margin-top:1.5rem;display:block;">
           ${practiceIndex + 1 < practiceQuestions.length ? '下一題 →' : '完成練習'}
         </button>
       </div>`;
@@ -399,9 +404,25 @@ async function submitAnswer(qId, answer, el) {
 }
 
 function nextQuestion() {
+  const currentQ = practiceQuestions[practiceIndex];
+  if (currentQ && currentQ.type === 'essay') {
+    const seg = document.querySelectorAll('.progress-segment')[practiceIndex];
+    if (seg) { seg.classList.remove('current'); seg.classList.add('correct'); }
+  }
   practiceIndex++;
   if (practiceIndex >= practiceQuestions.length) showResult();
   else renderQuestion();
+}
+
+function toggleEssayAnswer(btn) {
+  const answerDiv = btn.nextElementSibling;
+  if (answerDiv.classList.contains('hidden')) {
+    answerDiv.classList.remove('hidden');
+    btn.textContent = '隱藏參考解答';
+  } else {
+    answerDiv.classList.add('hidden');
+    btn.textContent = '顯示參考解答';
+  }
 }
 
 function showResult() {
