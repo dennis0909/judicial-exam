@@ -53,7 +53,8 @@
       "B",
       "D",
       "D"
-    ]
+    ],
+    "pdf_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113_刑法概要.pdf"
   },
   "113_法學知識與英文": {
     "roc_year": 113,
@@ -109,7 +110,8 @@
       "A",
       "C",
       "B"
-    ]
+    ],
+    "pdf_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113_法學知識與英文.pdf"
   },
   "113_行政法概要": {
     "roc_year": 113,
@@ -164,6 +166,7 @@
       "C",
       "B",
       "B"
-    ]
+    ],
+    "pdf_path": "C:\\Users\\denni\\judicial-exam\\data\\pdfs\\113_行政法概要.pdf"
   }
 }

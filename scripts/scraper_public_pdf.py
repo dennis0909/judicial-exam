@@ -1,19 +1,24 @@
 """
-公職王 PDF 下載器 — 法警特考歷年試題解答
-來源：https://www.public.com.tw
+Download official judicial-exam answer PDFs from public.com.tw.
 
-執行方式：
+Usage:
     pip install requests beautifulsoup4
     python scripts/scraper_public_pdf.py
 
-輸出：data/pdfs/ 目錄 + data/pdf_index.json
+Output:
+    data/pdfs/*.pdf
+    data/pdf_index.json
 """
+
+from __future__ import annotations
 
 import json
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import unquote, urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -23,44 +28,52 @@ sys.stderr.reconfigure(encoding="utf-8")
 
 BASE_URL = "https://www.public.com.tw"
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf,*/*;q=0.8",
     "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
     "Referer": "https://www.public.com.tw/exampoint/2024-judicial",
 }
 DELAY = 2.0
-OUTPUT_DIR = Path(__file__).parent.parent / "data" / "pdfs"
-INDEX_FILE = Path(__file__).parent.parent / "data" / "pdf_index.json"
+ROOT = Path(__file__).resolve().parent.parent
+OUTPUT_DIR = ROOT / "data" / "pdfs"
+INDEX_FILE = ROOT / "data" / "pdf_index.json"
 
-# 已知 PDF 直連（113年，Phase 1 已驗證）
 KNOWN_PDFS = [
     {
-        "year": 113, "subject": "行政法概要",
+        "year": 113,
+        "subject": "行政法概要",
         "url": "https://www.public.com.tw/TestFileManage/21088/anspdf/113司法四等-行政法概要.pdf",
     },
     {
-        "year": 113, "subject": "刑法概要",
+        "year": 113,
+        "subject": "刑法概要",
         "url": "https://www.public.com.tw/TestFileManage/21090/anspdf/113司法特考四等-刑法概要.pdf",
     },
     {
-        "year": 113, "subject": "刑事訴訟法概要",
+        "year": 113,
+        "subject": "刑事訴訟法概要",
         "url": "https://www.public.com.tw/TestFileManage/21071/anspdf/113司法四等-刑事訴訟法概要.pdf",
     },
     {
-        "year": 113, "subject": "法院組織法",
+        "year": 113,
+        "subject": "法院組織法",
         "url": "https://www.public.com.tw/TestFileManage/21078/anspdf/113司法特考四等-法院組織法.pdf",
     },
     {
-        "year": 113, "subject": "國文",
+        "year": 113,
+        "subject": "國文",
         "url": "https://www.public.com.tw/TestFileManage/21069/anspdf/113司法特考四等-國文(作文與測驗).pdf",
     },
     {
-        "year": 113, "subject": "法學知識與英文",
+        "year": 113,
+        "subject": "法學知識與英文",
         "url": "https://www.public.com.tw/TestFileManage/21093/anspdf/113司法特考四等、海巡特考四等-法學知識與英文.pdf",
     },
 ]
 
-# 各年度解答頁面 URL（公職王的解答彙整頁）
 YEAR_PAGES = {
     114: "https://www.public.com.tw/exampoint/2025-judicial",
     113: "https://www.public.com.tw/exampoint/2024-judicial",
@@ -72,152 +85,166 @@ YEAR_PAGES = {
     107: "https://www.public.com.tw/exampoint/2018-judicial",
 }
 
-# 法警相關關鍵字
-BAILIFF_KEYWORDS = ["法警", "judicial-bailiff", "四等_法警", "四等法警"]
+SUBJECT_ALIASES = {
+    "行政法概要": "行政法概要",
+    "行政法": "行政法概要",
+    "刑法概要": "刑法概要",
+    "刑法": "刑法概要",
+    "刑事訴訟法概要": "刑事訴訟法概要",
+    "刑事訴訟法": "刑事訴訟法概要",
+    "刑訴": "刑事訴訟法概要",
+    "法院組織法": "法院組織法",
+    "法組": "法院組織法",
+    "法學知識與英文": "法學知識與英文",
+    "法學知識": "法學知識與英文",
+    "國文": "國文",
+}
 
-# 相關科目關鍵字
-SUBJECT_KEYWORDS = ["行政法概要", "刑法概要", "刑事訴訟法概要", "法院組織法", "法學知識", "國文"]
+BAILIFF_KEYWORDS = (
+    "法警",
+    "司法四等",
+    "司法特考四等",
+    "judicial",
+)
+
+
+def normalize_subject(text: str) -> str | None:
+    normalized = unquote(text)
+    for alias, canonical in SUBJECT_ALIASES.items():
+        if alias in normalized:
+            return canonical
+    return None
 
 
 def is_bailiff_related(text: str) -> bool:
-    return any(kw in text for kw in BAILIFF_KEYWORDS)
+    haystack = unquote(text).lower()
+    return any(keyword.lower() in haystack for keyword in BAILIFF_KEYWORDS)
 
 
-def extract_subject_from_name(filename: str) -> str:
-    subjects = {
-        "行政法概要": "行政法概要",
-        "刑法概要": "刑法概要",
-        "刑事訴訟法概要": "刑事訴訟法概要",
-        "法院組織法": "法院組織法",
-        "法學知識": "法學知識與英文",
-        "國文": "國文",
-    }
-    for key, canonical in subjects.items():
-        if key in filename:
-            return canonical
-    return "其他"
+def build_filename(year: int, subject: str) -> str:
+    safe_subject = re.sub(r'[\\/:*?"<>|]', "", subject).strip()
+    return f"{year}_{safe_subject}.pdf"
 
 
 def find_pdfs_from_year_page(year: int, url: str, session: requests.Session) -> list[dict]:
-    """從公職王年度解答頁找法警 PDF 連結"""
-    pdfs = []
-    try:
-        resp = session.get(url, timeout=15)
-        resp.encoding = "utf-8"
-        if resp.status_code != 200:
-            print(f"  {year}年頁面 HTTP {resp.status_code}")
-            return []
+    """Discover answer-PDF links from a yearly public.com.tw exam page."""
+    pdfs: list[dict] = []
+    resp = session.get(url, timeout=15)
+    resp.raise_for_status()
+    resp.encoding = "utf-8"
 
-        soup = BeautifulSoup(resp.text, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
+    for link in soup.find_all("a", href=re.compile(r"\.pdf(?:$|\?)", re.I)):
+        href = link.get("href", "").strip()
+        if not href:
+            continue
 
-        # 找所有 PDF 連結
-        pdf_links = soup.find_all("a", href=re.compile(r"\.pdf", re.I))
-        for link in pdf_links:
-            href = link.get("href", "")
-            link_text = link.get_text(strip=True)
-            full_text = f"{href} {link_text}"
+        link_text = link.get_text(" ", strip=True)
+        full_text = f"{unquote(href)} {link_text}"
+        subject = normalize_subject(full_text)
+        if not subject:
+            continue
+        if not is_bailiff_related(full_text):
+            continue
 
-            # 只要法警相關或主要科目
-            if is_bailiff_related(full_text) or any(kw in full_text for kw in SUBJECT_KEYWORDS):
-                full_url = href if href.startswith("http") else f"{BASE_URL}{href}"
-                subject = extract_subject_from_name(full_text)
-                pdfs.append({
-                    "year": year,
-                    "subject": subject,
-                    "url": full_url,
-                    "link_text": link_text,
-                })
-
-    except Exception as e:
-        print(f"  {year}年頁面抓取失敗：{e}")
+        pdfs.append(
+            {
+                "year": year,
+                "subject": subject,
+                "url": urljoin(BASE_URL, href),
+                "link_text": link_text,
+                "discovered_from": url,
+            }
+        )
 
     return pdfs
 
 
 def download_pdf(pdf_info: dict, session: requests.Session) -> str | None:
-    """下載 PDF 並儲存，回傳本地路徑"""
+    """Download a single PDF into data/pdfs/ and return the local path."""
     url = pdf_info["url"]
     year = pdf_info["year"]
     subject = pdf_info["subject"]
 
-    # 安全檔名
-    safe_subject = subject.replace("/", "").replace("\\", "").replace(":", "")
-    filename = f"{year}_{safe_subject}.pdf"
-    local_path = OUTPUT_DIR / str(year) / filename
+    filename = build_filename(year, subject)
+    local_path = OUTPUT_DIR / filename
 
     if local_path.exists():
-        print(f"    已存在，略過：{filename}")
+        print(f"    already exists: {filename}")
         return str(local_path)
 
-    local_path.parent.mkdir(parents=True, exist_ok=True)
+    resp = session.get(url, timeout=30, stream=True)
+    resp.raise_for_status()
 
-    try:
-        resp = session.get(url, timeout=30, stream=True)
-        if resp.status_code == 200 and "pdf" in resp.headers.get("content-type", "").lower():
-            with open(local_path, "wb") as f:
-                for chunk in resp.iter_content(chunk_size=8192):
-                    f.write(chunk)
-            size_kb = local_path.stat().st_size // 1024
-            print(f"    ✅ {filename} ({size_kb} KB)")
-            return str(local_path)
-        else:
-            print(f"    ❌ HTTP {resp.status_code} 或非 PDF：{url}")
-    except Exception as e:
-        print(f"    ❌ 下載失敗：{e}")
+    content_type = resp.headers.get("content-type", "").lower()
+    if "pdf" not in content_type and not url.lower().endswith(".pdf"):
+        print(f"    skipped non-pdf response: {url} ({content_type or 'unknown'})")
+        return None
 
-    return None
+    with open(local_path, "wb") as file_obj:
+        for chunk in resp.iter_content(chunk_size=8192):
+            if chunk:
+                file_obj.write(chunk)
+
+    size_kb = local_path.stat().st_size // 1024
+    print(f"    downloaded: {filename} ({size_kb} KB)")
+    return str(local_path)
 
 
-def run():
+def dedupe_pdfs(pdfs: list[dict]) -> list[dict]:
+    by_url: dict[str, dict] = {}
+    for pdf in pdfs:
+        by_url.setdefault(pdf["url"], pdf)
+    return list(by_url.values())
+
+
+def run() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    print("=== 公職王 PDF 下載器 ===")
-    all_pdfs = list(KNOWN_PDFS)  # 從已知 PDF 開始
+    print("=== Download official answer PDFs ===")
+    all_pdfs = list(KNOWN_PDFS)
 
-    # Step 1：從各年度頁面爬 PDF 連結
-    print("\nStep 1：從各年度解答頁找 PDF 連結...")
+    print("\nStep 1: discover yearly PDF links")
     for year, url in YEAR_PAGES.items():
-        print(f"  {year}年：{url}")
-        found = find_pdfs_from_year_page(year, url, session)
-        if found:
-            all_pdfs.extend(found)
-            print(f"    找到 {len(found)} 個 PDF 連結")
+        print(f"  {year}: {url}")
+        try:
+            discovered = find_pdfs_from_year_page(year, url, session)
+            print(f"    discovered {len(discovered)} candidate PDFs")
+            all_pdfs.extend(discovered)
+        except Exception as exc:
+            print(f"    failed: {exc}")
         time.sleep(DELAY)
 
-    # 去重（by url）
-    seen_urls = set()
-    unique_pdfs = []
-    for pdf in all_pdfs:
-        if pdf["url"] not in seen_urls:
-            seen_urls.add(pdf["url"])
-            unique_pdfs.append(pdf)
+    unique_pdfs = dedupe_pdfs(all_pdfs)
+    print(f"\nTotal unique PDFs: {len(unique_pdfs)}")
 
-    print(f"\n共 {len(unique_pdfs)} 個不重複 PDF")
-
-    # Step 2：下載
-    print("\nStep 2：下載 PDF...")
-    for i, pdf in enumerate(unique_pdfs, 1):
-        print(f"  [{i}/{len(unique_pdfs)}] {pdf['year']}年 {pdf['subject']}")
-        local_path = download_pdf(pdf, session)
-        pdf["local_path"] = local_path
+    print("\nStep 2: download PDFs")
+    for index, pdf in enumerate(unique_pdfs, 1):
+        print(f"  [{index}/{len(unique_pdfs)}] {pdf['year']}年 {pdf['subject']}")
+        try:
+            pdf["local_path"] = download_pdf(pdf, session)
+        except Exception as exc:
+            print(f"    failed: {exc}")
+            pdf["local_path"] = None
         time.sleep(DELAY)
 
-    # 儲存索引
-    index = {
-        "crawled_at": __import__("datetime").datetime.now().isoformat(),
+    downloaded = sum(1 for pdf in unique_pdfs if pdf.get("local_path"))
+    payload = {
+        "crawled_at": datetime.now().isoformat(),
         "total": len(unique_pdfs),
-        "downloaded": sum(1 for p in unique_pdfs if p.get("local_path")),
+        "downloaded": downloaded,
         "pdfs": unique_pdfs,
     }
-    with open(INDEX_FILE, "w", encoding="utf-8") as f:
-        json.dump(index, f, ensure_ascii=False, indent=2)
+    with open(INDEX_FILE, "w", encoding="utf-8") as file_obj:
+        json.dump(payload, file_obj, ensure_ascii=False, indent=2)
 
-    print(f"\n=== 完成 ===")
-    print(f"已下載：{index['downloaded']}/{index['total']} 份")
-    print(f"索引儲存至：{INDEX_FILE}")
-    print(f"PDF 目錄：{OUTPUT_DIR}")
+    print("\n=== Done ===")
+    print(f"Downloaded: {downloaded}/{len(unique_pdfs)}")
+    print(f"Index: {INDEX_FILE}")
+    print(f"PDF dir: {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":

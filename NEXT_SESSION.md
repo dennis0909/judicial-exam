@@ -1,116 +1,73 @@
-# 下個 Session 繼續這裡
+# Next Session
 
-> 建立：2026-04-23
-> 專案路徑：C:\Users\denni\judicial-exam\
+> Updated: 2026-04-24
+> Repo: `C:\Users\denni\judicial-exam`
 
-## 目標
+## Goal
 
-建立「司法特考四等法警考古題分析系統」，功能比照 `C:\Users\denni\exam-analyzer\`
+Build a usable judicial-exam question app by reusing the `exam-analyzer` architecture, but with a stable scraper pipeline first.
 
-## 目前進度
+## Current Status
 
-- [x] Phase 1：資料源偵查完成（見 docs/phase1-recon.md）
-- [ ] Phase 2：執行爬蟲，取得題目資料
-- [ ] Phase 3：Fork exam-analyzer，建立 judicial-exam App
+- [x] Phase 1: source reconnaissance finished
+- [x] Phase 2: pipeline repaired for `scraper_lawbank.py -> scraper_public_pdf.py -> extract_pdf_answers.py -> build_questions.py`
+- [ ] Phase 3: continue app fork / UI / deployment work
 
----
+## Current Pipeline
 
-## Phase 2：立即執行（不需分析，直接跑）
-
-```bash
+```powershell
 cd C:\Users\denni\judicial-exam
 
-# 安裝依賴
-pip install requests beautifulsoup4
+pip install requests beautifulsoup4 pikepdf pymupdf
 
-# Step 1：爬法源法律網（含解析，預計 500+ 題）
-python scripts/scraper_lawbank.py
-# 輸出：data/lawbank_questions.json
-
-# Step 2：下載公職王 PDF
-python scripts/scraper_public_pdf.py
-# 輸出：data/pdfs/ + data/pdf_index.json
+python scripts\scraper_lawbank.py
+python scripts\scraper_public_pdf.py
+python scripts\extract_pdf_answers.py
+python scripts\build_questions.py
 ```
 
-執行後確認：
-- `data/lawbank_questions.json` 的 total 數量
-- `data/pdfs/` 下有幾個 PDF
-- 有多少題有 answer（非 null）
+## Current Outputs
 
----
+- `data/lawbank_questions.json`
+- `data/pdf_index.json`
+- `data/pdf_answers.json`
+- `questions.json`
 
-## Phase 3：Fork exam-analyzer → judicial-exam
+## Important Constraints
 
-參考 `C:\Users\denni\exam-analyzer\` 的結構：
+- Lawbank currently covers only 4 subjects in this repo's dataset:
+  - `行政法概要`
+  - `刑法概要`
+  - `刑事訴訟法概要`
+  - `法院組織法`
+- PDF answer extraction currently provides useful objective answers for:
+  - `行政法概要`
+  - `刑法概要`
+  - `法學知識與英文`
+- `法學知識與英文` answer keys exist, but question bodies are not yet in `lawbank_questions.json`
+- `國文` PDF is downloaded, but the current app dataset still does not include its question bodies
 
-### 複用（不改）
-- auth_firebase.py
-- db.py
-- gamification.py
-- Dockerfile
-- railway.toml
-- requirements.txt（略調整）
+## What Was Fixed This Session
 
-### 改寫重點
+- `scraper_public_pdf.py`
+  - standardized canonical subject names
+  - downloads PDFs into a stable `data/pdfs/*.pdf` flow
+  - improved yearly discovery and URL normalization
+- `scraper_lawbank.py`
+  - cleaned parser structure
+  - added hard validation for expected `(roc_year, subject)` vs parsed page metadata
+  - kept output schema aligned with downstream scripts
+- `extract_pdf_answers.py`
+  - now scans PDFs recursively
+  - dedupes duplicate files by stem
+  - no longer silently misses PDFs stored under year subfolders
+- `build_questions.py`
+  - keeps merge logic simple and deterministic
+  - warns when PDF answers exist for subjects not yet present in the question bank
 
-**utils.py** — 把城市正規化換成科目正規化：
-```python
-SUBJECTS = {
-    "行政法概要": ["行政法", "行政法概要"],
-    "刑法概要": ["刑法", "刑法概要"],
-    "刑事訴訟法概要": ["刑訴", "刑事訴訟法概要", "刑事訴訟法"],
-    "法院組織法": ["法院組織法", "法組"],
-    "法學知識與英文": ["法學知識", "法學知識與英文"],
-    "國文": ["國文"],
-}
-QUESTION_TYPES = {"mcq": "選擇題", "essay": "申論題"}
-```
+## Next High-Value Tasks
 
-**main.py** — 主要路由改動：
-- `/api/questions` filter：改 `subject` 取代 `city`
-- `/api/stats` 改為按科目統計
-- 新增 `/api/subjects` endpoint
-
-**app.js** — UI 改動：
-- 科目篩選器（取代縣市）
-- 題型篩選（選擇/申論）
-- 申論題：不顯示選項，只顯示題幹 + 參考解答
-
-### 新增功能
-- 體能測驗標準靜態頁（男5'50"/女6'20"）
-- 申論題閱讀模式（展開/收合參考解答）
-
----
-
-## 資料 Schema（questions.json）
-
-```json
-{
-  "id": "113_行政法概要_1",
-  "year": 2024,
-  "roc_year": 113,
-  "subject": "行政法概要",
-  "exam_type": "司法特考",
-  "exam_level": "四等",
-  "exam_category": "法警",
-  "question_number": 1,
-  "type": "mcq",
-  "stem": "題幹文字...",
-  "options": {"A": "...", "B": "...", "C": "...", "D": "..."},
-  "answer": "A",
-  "explanation": "解析文字...",
-  "source": "法源法律網",
-  "source_eid": "7634"
-}
-```
-
----
-
-## 快速參考
-
-- Phase 1 偵查報告：`docs/phase1-recon.md`
-- 法源 EID（113年）：7634(行政法), 7635(法院組織法), 7636(刑法), 7637(刑訴)
-- 法源 EID（114年）：8007(行政法), 8008(法院組織法), 8009(刑法), 8010(刑訴)
-- 公職王 113年 PDF：docs/phase1-recon.md 內有完整直連 URL
-- exam-analyzer 路徑：`C:\Users\denni\exam-analyzer\`
-- 部署目標：Railway（同 exam-analyzer）
+1. Decide the source strategy for `法學知識與英文` and `國文` question bodies.
+2. Wire the repaired `questions.json` into the app flow and subject filters.
+3. Clean remaining mojibake docs inherited from older notes.
+4. Keep `docs/maintenance.md` as the checklist for pruning stale memory/md/skill notes.

@@ -1,72 +1,74 @@
 """
-公職王 PDF 答案提取器
-從 data/pdfs/ 下的 PDF 提取選擇題答案
-執行：python scripts/extract_pdf_answers.py
-輸出：data/pdf_answers.json
+Extract answer keys from downloaded official PDFs.
 
-支援兩種格式：
-1. SMask 圖片格式（行政法概要、刑法概要）：答案為 XObject SMask 二進位 MD5 指紋
-2. 私用字元格式（法學知識與英文）：答案以 private-use Unicode 字元嵌入文字層
+Usage:
+    python scripts/extract_pdf_answers.py
+
+Output:
+    data/pdf_answers.json
 """
-import json
-import zlib
-import re
+
+from __future__ import annotations
+
 import hashlib
+import json
+import re
 import sys
+import zlib
 from pathlib import Path
 
-sys.stdout.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding="utf-8")
 
 try:
     import pikepdf
 except ImportError:
-    print("請執行: pip install pikepdf")
+    print("Missing dependency: pip install pikepdf")
     sys.exit(1)
 
 try:
     import fitz  # PyMuPDF
+
     HAS_FITZ = True
 except ImportError:
     HAS_FITZ = False
 
-# 私用字元 → 答案字母（法學知識與英文格式）
 PRIVATE_CHAR_MAP: dict[str, str] = {
-    '\ue2b7': 'A',
-    '\ue2b8': 'B',
-    '\ue2b9': 'C',
-    '\ue2ba': 'D',
+    "\ue2b7": "A",
+    "\ue2b8": "B",
+    "\ue2b9": "C",
+    "\ue2ba": "D",
 }
 
-# 已知答案圖片雜湊 → 字母映射 (從 113年行政法概要 PDF 建立)
 ANSWER_HASHES: dict[str, str] = {
     # 113_行政法概要
-    'b85cfa95a61d17c653a3966028d69e71': 'D',
-    '3609ba45be8dd729c06e1a4ac93cbd8a': 'A',
-    '3982d818f7ca9bd991956019b7378780': 'B',
-    '45bd951c9c309bffb0b5a16f5ca4722d': 'C',
+    "b85cfa95a61d17c653a3966028d69e71": "D",
+    "3609ba45be8dd729c06e1a4ac93cbd8a": "A",
+    "3982d818f7ca9bd991956019b7378780": "B",
+    "45bd951c9c309bffb0b5a16f5ca4722d": "C",
     # 113_刑法概要
-    'fdfa7b27fa1c4d76b28c0c3578810be5': 'A',
-    '7f74a5f8f6f7726dddfd45e812070351': 'C',
-    '2be2f67f478357ee431d56451c485b0e': 'D',
-    '422da79441cf733527a81121ee395449': 'B',
+    "fdfa7b27fa1c4d76b28c0c3578810be5": "A",
+    "7f74a5f8f6f7726dddfd45e812070351": "C",
+    "2be2f67f478357ee431d56451c485b0e": "D",
+    "422da79441cf733527a81121ee395449": "B",
 }
 
-DATA_DIR = Path(__file__).parent.parent / 'data'
-PDF_DIR = DATA_DIR / 'pdfs'
-OUTPUT_FILE = DATA_DIR / 'pdf_answers.json'
+ESSAY_SUBJECTS = {"法院組織法", "刑事訴訟法概要"}
+
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+PDF_DIR = DATA_DIR / "pdfs"
+OUTPUT_FILE = DATA_DIR / "pdf_answers.json"
 
 
 def get_smask_hash(pdf: pikepdf.Pdf, xobj: pikepdf.Object) -> str | None:
-    smask = xobj.get('/SMask')
+    smask = xobj.get("/SMask")
     if not smask:
         return None
-    smask_obj = pdf.get_object(smask.objgen) if hasattr(smask, 'objgen') else smask
+    smask_obj = pdf.get_object(smask.objgen) if hasattr(smask, "objgen") else smask
     raw = bytes(smask_obj.read_raw_bytes())
     return hashlib.md5(raw).hexdigest()
 
 
-def read_stream_bytes(stream_obj, pdf: pikepdf.Pdf) -> bytes:
-    """讀取 content stream 位元組，自動解壓縮"""
+def read_stream_bytes(stream_obj) -> bytes:
     try:
         raw = bytes(stream_obj.read_raw_bytes())
         try:
@@ -74,154 +76,155 @@ def read_stream_bytes(stream_obj, pdf: pikepdf.Pdf) -> bytes:
         except Exception:
             return raw
     except Exception:
-        return b''
+        return b""
 
 
 def extract_answers_from_pdf(pdf_path: Path) -> list[str]:
-    """從一份 PDF 提取所有選擇題答案，回傳答案字母清單（順序即題序）"""
+    """Extract answer letters by detecting tiny answer-marker image XObjects."""
     pdf = pikepdf.open(pdf_path)
-    all_answers: list[tuple[int, float, float, str]] = []  # (page, y, question_seq, letter)
+    answers: list[tuple[int, float, str]] = []
 
     for page_idx, page in enumerate(pdf.pages):
-        resources = page.get('/Resources')
+        resources = page.get("/Resources")
         if not resources:
             continue
-        xobjects = resources.get('/XObject', {})
-
-        contents_obj = page.get('/Contents')
+        xobjects = resources.get("/XObject", {})
+        contents_obj = page.get("/Contents")
         if contents_obj is None:
             continue
 
-        # 讀取所有 content streams
-        all_text = ''
+        stream_text = ""
         try:
-            # 嘗試作為單一 stream
             raw = bytes(contents_obj.read_raw_bytes())
             try:
-                all_text = zlib.decompress(raw).decode('latin-1', errors='replace')
+                stream_text = zlib.decompress(raw).decode("latin-1", errors="replace")
             except Exception:
-                all_text = raw.decode('latin-1', errors='replace')
+                stream_text = raw.decode("latin-1", errors="replace")
         except Exception:
-            # 作為 stream 陣列
             try:
-                for cs in contents_obj:
-                    if hasattr(cs, 'read_raw_bytes'):
-                        data = read_stream_bytes(cs, pdf)
-                        all_text += data.decode('latin-1', errors='replace')
+                for content_stream in contents_obj:
+                    if hasattr(content_stream, "read_raw_bytes"):
+                        stream_text += read_stream_bytes(content_stream).decode("latin-1", errors="replace")
             except Exception:
                 pass
 
-        # 找答案圖片（x≈48）
-        answer_imgs: list[tuple[float, str]] = []  # (y, img_name)
-        for m in re.finditer(
-            r'([\d.]+) 0 0 ([\d.]+) ([\d.]+) ([\d.]+) cm[\r\n]+/(\w+) Do',
-            all_text
-        ):
-            w = float(m.group(1))
-            x = float(m.group(3))
-            y = float(m.group(4))
-            img_name = m.group(5)
-            if w < 30 and 40 <= x <= 55:
+        answer_imgs: list[tuple[float, str]] = []
+        for match in re.finditer(r"([\d.]+) 0 0 ([\d.]+) ([\d.]+) ([\d.]+) cm[\r\n]+/(\w+) Do", stream_text):
+            width = float(match.group(1))
+            x = float(match.group(3))
+            y = float(match.group(4))
+            img_name = match.group(5)
+            if width < 30 and 40 <= x <= 55:
                 answer_imgs.append((y, img_name))
 
-        answer_imgs.sort(key=lambda t: -t[0])  # 由上而下
-
-        for y, img_name in answer_imgs:
-            xobj_ref = xobjects.get('/' + img_name)
+        for y, img_name in sorted(answer_imgs, key=lambda item: -item[0]):
+            xobj_ref = xobjects.get("/" + img_name)
             if not xobj_ref:
                 continue
             try:
-                xobj = pdf.get_object(xobj_ref.objgen) if hasattr(xobj_ref, 'objgen') else xobj_ref
-                h = get_smask_hash(pdf, xobj)
-                letter = ANSWER_HASHES.get(h, '?') if h else '?'
-                all_answers.append((page_idx, y, len(all_answers), letter))
+                xobj = pdf.get_object(xobj_ref.objgen) if hasattr(xobj_ref, "objgen") else xobj_ref
+                hash_value = get_smask_hash(pdf, xobj)
+                letter = ANSWER_HASHES.get(hash_value, "?") if hash_value else "?"
+                answers.append((page_idx, y, letter))
             except Exception:
-                pass
+                continue
 
-    # 排序：先 page，再 y 降序
-    all_answers.sort(key=lambda t: (t[0], -t[1]))
-    return [letter for _, _, _, letter in all_answers]
+    answers.sort(key=lambda item: (item[0], -item[1]))
+    return [letter for _, _, letter in answers]
 
 
 def extract_answers_private_char(pdf_path: Path) -> list[str]:
-    """用 PyMuPDF 提取私用字元格式答案（法學知識與英文）"""
+    """Fallback for PDFs that encode answer letters as private Unicode glyphs."""
     if not HAS_FITZ:
         return []
+
     pdf = fitz.open(str(pdf_path))
-    all_answers: list[str] = []
-    for page_idx in range(len(pdf)):
-        page = pdf[page_idx]
+    answers: list[str] = []
+    for page in pdf:
         page_answers: list[tuple[float, str]] = []
-        for block in page.get_text('dict')['blocks']:
-            if block['type'] != 0:
+        for block in page.get_text("dict")["blocks"]:
+            if block["type"] != 0:
                 continue
-            for line in block['lines']:
-                for span in line['spans']:
-                    text = span['text'].strip()
-                    x = span['bbox'][0]
-                    y = span['bbox'][1]
+            for line in block["lines"]:
+                for span in line["spans"]:
+                    text = span["text"].strip()
+                    x = span["bbox"][0]
+                    y = span["bbox"][1]
                     if x < 50 and len(text) == 1 and text in PRIVATE_CHAR_MAP:
                         page_answers.append((y, PRIVATE_CHAR_MAP[text]))
-        page_answers.sort(key=lambda t: t[0])
-        all_answers.extend(letter for _, letter in page_answers)
-    return all_answers
+        page_answers.sort(key=lambda item: item[0])
+        answers.extend(letter for _, letter in page_answers)
+
+    return answers
 
 
-def run():
-    print('=== 公職王 PDF 答案提取器 ===')
+def collect_pdf_files() -> list[Path]:
+    """Recursively collect PDFs and dedupe by filename stem."""
+    selected: dict[str, Path] = {}
+    for pdf_path in sorted(PDF_DIR.rglob("*.pdf")):
+        key = pdf_path.stem
+        current = selected.get(key)
+        if current is None:
+            selected[key] = pdf_path
+            continue
 
-    # 找所有 PDF
-    pdfs = sorted(PDF_DIR.glob('*.pdf'))
-    print(f'找到 {len(pdfs)} 個 PDF')
+        # Prefer the shallower path to avoid processing both root and year-subdir duplicates.
+        if len(pdf_path.relative_to(PDF_DIR).parts) < len(current.relative_to(PDF_DIR).parts):
+            selected[key] = pdf_path
+
+    return [selected[key] for key in sorted(selected)]
+
+
+def run() -> None:
+    print("=== Extract PDF answer keys ===")
+    pdfs = collect_pdf_files()
+    print(f"Found {len(pdfs)} unique PDFs")
 
     results = {}
 
     for pdf_path in pdfs:
-        fname = pdf_path.stem  # e.g. '113_行政法概要'
-        parts = fname.split('_', 1)
-        if len(parts) < 2:
+        stem = pdf_path.stem
+        parts = stem.split("_", 1)
+        if len(parts) != 2:
             continue
-        roc_year_str, subject = parts[0], parts[1]
+
         try:
-            roc_year = int(roc_year_str)
+            roc_year = int(parts[0])
         except ValueError:
             continue
 
-        print(f'\n處理：{fname}.pdf')
+        subject = parts[1]
+        print(f"\nProcessing: {pdf_path.relative_to(PDF_DIR)}")
 
-        # 申論題科目直接跳過
-        ESSAY_SUBJECTS = ('刑事訴訟法概要', '法院組織法', '刑事訴訟法', '法院組織')
         if subject in ESSAY_SUBJECTS:
-            print(f'  (申論題科目，跳過)')
+            print("  skipped essay-only subject")
             continue
 
-        # 法學知識與英文用私用字元格式
-        if subject in ('法學知識與英文',):
+        if subject == "法學知識與英文":
             answers = extract_answers_private_char(pdf_path)
         else:
             answers = extract_answers_from_pdf(pdf_path)
 
-        # 申論題科目（無 MCQ 答案）跳過
         if not answers:
-            print(f'  (無選擇題答案，跳過)')
+            print("  no answer key extracted")
             continue
 
-        print(f'  提取到 {len(answers)} 個答案：{" ".join(answers)}')
-        
-        key = f'{roc_year}_{subject}'
-        results[key] = {
-            'roc_year': roc_year,
-            'subject': subject,
-            'answers': answers,  # 索引 0 = Q1, 1 = Q2, ...
+        print(f"  extracted {len(answers)} answers")
+        results[f"{roc_year}_{subject}"] = {
+            "roc_year": roc_year,
+            "subject": subject,
+            "answers": answers,
+            "pdf_path": str(pdf_path),
         }
-    
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-    
-    print(f'\n已儲存：{OUTPUT_FILE}')
-    total = sum(len(v['answers']) for v in results.values())
-    print(f'總答案數：{total}')
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as file_obj:
+        json.dump(results, file_obj, ensure_ascii=False, indent=2)
+
+    total_answers = sum(len(value["answers"]) for value in results.values())
+    print(f"\nOutput: {OUTPUT_FILE}")
+    print(f"Subjects with answers: {len(results)}")
+    print(f"Total extracted answers: {total_answers}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()
