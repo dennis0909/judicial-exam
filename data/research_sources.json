@@ -1,0 +1,53 @@
+{
+  "version": "2026.04.26",
+  "sources": [
+    {
+      "name": "考選部考畢試題查詢平臺",
+      "url": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx",
+      "kind": "exam_questions",
+      "priority": 1
+    },
+    {
+      "name": "中華民國刑法-全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001",
+      "kind": "law",
+      "priority": 1
+    },
+    {
+      "name": "刑事訴訟法-全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001",
+      "kind": "law",
+      "priority": 1
+    },
+    {
+      "name": "法院組織法-全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053",
+      "kind": "law",
+      "priority": 1
+    },
+    {
+      "name": "行政程序法-全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030055",
+      "kind": "law",
+      "priority": 2
+    },
+    {
+      "name": "憲法法庭",
+      "url": "https://cons.judicial.gov.tw/",
+      "kind": "current_affairs",
+      "priority": 2
+    },
+    {
+      "name": "司法院法制動態",
+      "url": "https://www.judicial.gov.tw/tw/lp-1907-1.html",
+      "kind": "current_affairs",
+      "priority": 2
+    },
+    {
+      "name": "立法院三讀通過條文與附帶決議",
+      "url": "https://data.ly.gov.tw/getds.action?id=373",
+      "kind": "bills",
+      "priority": 2
+    }
+  ]
+}

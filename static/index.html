@@ -110,6 +110,18 @@
       <button class="tab-btn" data-tab="browse">
         <span class="tab-icon">🔍</span><span class="tab-label">題庫</span>
       </button>
+      <button class="tab-btn" data-tab="topics">
+        <span class="tab-icon">🧭</span><span class="tab-label">考點</span>
+      </button>
+      <button class="tab-btn" data-tab="hot">
+        <span class="tab-icon">🔥</span><span class="tab-label">熱門</span>
+      </button>
+      <button class="tab-btn" data-tab="wrongbook">
+        <span class="tab-icon">📌</span><span class="tab-label">錯題本</span>
+      </button>
+      <button class="tab-btn" data-tab="updates">
+        <span class="tab-icon">⚡</span><span class="tab-label">修法時事</span>
+      </button>
       <button class="tab-btn" data-tab="exam-info">
         <span class="tab-icon">📋</span><span class="tab-label">考試資訊</span>
       </button>
@@ -129,6 +141,22 @@
     <button class="mobile-nav-btn" data-tab="browse" aria-label="題庫">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-3.5-3.5"/></svg>
       <span>題庫</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="topics" aria-label="考點">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/><circle cx="18" cy="16" r="3"/></svg>
+      <span>考點</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="hot" aria-label="熱門">
+      <svg viewBox="0 0 24 24"><path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-4 3-6 0 3 2 4 2 6"/></svg>
+      <span>熱門</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="wrongbook" aria-label="錯題本">
+      <svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-3-6 3z"/></svg>
+      <span>錯題</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="updates" aria-label="修法時事">
+      <svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+      <span>修法</span>
     </button>
     <button class="mobile-nav-btn" data-tab="exam-info" aria-label="考試資訊">
       <svg viewBox="0 0 24 24"><path d="M6 4h11a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2Z"/><path d="M9 10h6M9 13h4"/></svg>
@@ -166,9 +194,43 @@
         <h3 class="chart-title">快速開始練習</h3>
         <div class="grid grid-2 md-grid-3 gap-3" id="subject-shortcuts"></div>
       </div>
+
+      <div class="chart-card mt-6">
+        <h3 class="chart-title">高頻考點</h3>
+        <div class="grid md-grid-4 gap-3" id="dashboard-topics"></div>
+      </div>
     </section>
 
-    <!-- ===== 2. Practice ===== -->
+    <!-- ===== 2. Topics ===== -->
+    <section id="tab-topics" class="tab-content hidden">
+      <div class="grid md-grid-2 gap-6 mb-6">
+        <div class="chart-card">
+          <h3 class="chart-title">考點熱度排序</h3>
+          <div id="exam-point-list" class="space-y-3"></div>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title">主題考點分類</h3>
+          <div id="topic-taxonomy" class="space-y-3"></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3 class="chart-title">年度考點變化</h3>
+        <div id="topic-year-grid" class="grid md-grid-4 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Hot Questions ===== -->
+    <section id="tab-hot" class="tab-content hidden">
+      <div class="chart-card mb-4">
+        <div class="flex items-center justify-between">
+          <h3 class="chart-title" style="margin-bottom:0;">熱門考題</h3>
+          <span id="hot-count" style="font-size:0.8rem;color:#94a3b8;"></span>
+        </div>
+      </div>
+      <div id="hot-list" class="space-y-3"></div>
+    </section>
+
+    <!-- ===== 4. Practice ===== -->
     <section id="tab-practice" class="tab-content hidden">
       <div id="practice-setup" class="chart-card mb-6">
         <h3 class="chart-title">練習設定</h3>
@@ -233,7 +295,7 @@
       </div>
     </section>
 
-    <!-- ===== 3. Browse ===== -->
+    <!-- ===== 5. Browse ===== -->
     <section id="tab-browse" class="tab-content hidden">
       <div class="filter-bar flex flex-wrap gap-3 items-center mb-4">
         <div>
@@ -274,7 +336,36 @@
       </div>
     </section>
 
-    <!-- ===== 4. Exam Info ===== -->
+    <!-- ===== 6. Wrongbook ===== -->
+    <section id="tab-wrongbook" class="tab-content hidden">
+      <div class="chart-card mb-4">
+        <div class="flex items-center justify-between">
+          <h3 class="chart-title" style="margin-bottom:0;">錯題本</h3>
+          <button class="btn-outline" onclick="clearWrongBook()" style="font-size:0.8rem;padding:0.35rem 0.75rem;">清空</button>
+        </div>
+      </div>
+      <div id="wrongbook-list" class="space-y-3"></div>
+    </section>
+
+    <!-- ===== 7. Amendments and Current Affairs ===== -->
+    <section id="tab-updates" class="tab-content hidden">
+      <div class="grid md-grid-2 gap-6 mb-6">
+        <div class="chart-card">
+          <h3 class="chart-title">今年與近年修法</h3>
+          <div id="amendments-list" class="space-y-3"></div>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title">時事題追蹤</h3>
+          <div id="current-affairs-list" class="space-y-3"></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3 class="chart-title">年度整理</h3>
+        <div id="yearly-focus-list" class="grid md-grid-3 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ===== 8. Exam Info ===== -->
     <section id="tab-exam-info" class="tab-content hidden">
       <div class="grid md-grid-2 gap-6">
         <div class="chart-card">
@@ -327,6 +418,16 @@
   <footer class="app-footer">
     司法特考四等法警考古題分析系統 &copy; 2026 | 資料來源：法源法律網 86-114 年歷屆考題
   </footer>
+
+  <div id="analysis-modal" class="analysis-modal hidden" role="dialog" aria-modal="true" aria-labelledby="analysis-title">
+    <div class="analysis-modal-panel">
+      <div class="flex items-center justify-between" style="margin-bottom:0.75rem;">
+        <h3 id="analysis-title" class="chart-title" style="margin-bottom:0;">AI 分析</h3>
+        <button class="modal-close" onclick="closeAIAnalysis()" aria-label="關閉">×</button>
+      </div>
+      <div id="analysis-content"></div>
+    </div>
+  </div>
 
   <script src="/static/js/app.js?v=2"></script>
 </body>

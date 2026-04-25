@@ -1,5 +1,7 @@
 """Utility functions for judicial-exam — 法警特考考古題系統."""
 
+from __future__ import annotations
+
 # 法警特考 6 大科目
 SUBJECTS: list[str] = [
     "行政法概要",

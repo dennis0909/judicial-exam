@@ -1,5 +1,7 @@
 """法警特考考古題分析系統 — FastAPI 後端"""
 
+from __future__ import annotations
+
 import json
 import logging
 import os
@@ -13,6 +15,15 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from utils import normalize_subject, SUBJECTS, QUESTION_TYPE_DISPLAY
+from analysis import (
+    build_exam_point_stats,
+    build_question_indexes,
+    generate_ai_analysis,
+    hot_questions,
+    load_amendments,
+    load_current_affairs,
+    load_taxonomy,
+)
 import auth_firebase as fb_auth
 import db
 
@@ -32,6 +43,9 @@ with open(_Q_FILE, encoding="utf-8") as f:
 ALL_QUESTIONS: list[dict] = _data["questions"]
 Q_BY_ID: dict[str, dict] = {q["id"]: q for q in ALL_QUESTIONS}
 ALL_YEARS: list[int] = sorted({q["roc_year"] for q in ALL_QUESTIONS if q.get("roc_year")})
+QUESTION_INDEXES = build_question_indexes(ALL_QUESTIONS)
+ENRICHED_QUESTIONS: list[dict] = QUESTION_INDEXES["questions"]
+ENRICHED_BY_ID: dict[str, dict] = QUESTION_INDEXES["by_id"]
 
 logger.info(f"載入 {len(ALL_QUESTIONS)} 題（{len(ALL_YEARS)} 年度）")
 
@@ -101,7 +115,7 @@ async def get_questions(
     offset: int = Query(0, ge=0),
     shuffle: bool = Query(False),
 ):
-    qs = ALL_QUESTIONS
+    qs = ENRICHED_QUESTIONS
 
     if subject:
         canonical = normalize_subject(subject)
@@ -129,10 +143,54 @@ async def get_questions(
 # ---------- /api/questions/{q_id} ----------
 @app.get("/api/questions/{q_id}")
 async def get_question(q_id: str):
-    q = Q_BY_ID.get(q_id)
+    q = ENRICHED_BY_ID.get(q_id)
     if not q:
         raise HTTPException(404, "題目不存在")
     return q
+
+
+# ---------- /api/exam-points ----------
+@app.get("/api/exam-points")
+async def get_exam_points():
+    return build_exam_point_stats(ALL_QUESTIONS)
+
+
+# ---------- /api/topics ----------
+@app.get("/api/topics")
+async def get_topics():
+    stats = build_exam_point_stats(ALL_QUESTIONS)
+    return {
+        "taxonomy": load_taxonomy(),
+        "topics": stats["topics"],
+        "by_subject": stats["by_subject"],
+    }
+
+
+# ---------- /api/hot-questions ----------
+@app.get("/api/hot-questions")
+async def get_hot_questions(limit: int = Query(30, ge=1, le=100)):
+    return {"questions": hot_questions(ALL_QUESTIONS, limit=limit)}
+
+
+# ---------- /api/amendments ----------
+@app.get("/api/amendments")
+async def get_amendments():
+    return load_amendments()
+
+
+# ---------- /api/current-affairs ----------
+@app.get("/api/current-affairs")
+async def get_current_affairs():
+    return load_current_affairs()
+
+
+# ---------- /api/questions/{q_id}/analysis ----------
+@app.get("/api/questions/{q_id}/analysis")
+async def get_question_analysis(q_id: str):
+    q = Q_BY_ID.get(q_id)
+    if not q:
+        raise HTTPException(404, "題目不存在")
+    return generate_ai_analysis(q)
 
 
 # ---------- /api/stats ----------
@@ -142,6 +200,8 @@ async def get_stats():
     by_subject = Counter(q["subject"] for q in ALL_QUESTIONS)
     by_type = Counter(q["type"] for q in ALL_QUESTIONS)
     by_year = Counter(q["roc_year"] for q in ALL_QUESTIONS if q.get("roc_year"))
+    topic_stats = build_exam_point_stats(ALL_QUESTIONS)["topics"][:8]
+    answer_count = sum(1 for q in ALL_QUESTIONS if q.get("answer"))
 
     # 年度趨勢（各科）
     trend: dict[int, dict[str, int]] = defaultdict(lambda: defaultdict(int))
@@ -156,6 +216,8 @@ async def get_stats():
         "years": dict(sorted(by_year.items())),
         "trend": {str(y): dict(v) for y, v in sorted(trend.items())},
         "years_range": [min(ALL_YEARS), max(ALL_YEARS)] if ALL_YEARS else [],
+        "_answerCount": answer_count,
+        "top_topics": topic_stats,
     }
 
 
@@ -168,7 +230,7 @@ async def create_practice_session(
     q_type: str = Query("mcq"),
 ):
     """產生練習題組（選擇題優先，有答案的題目先）"""
-    qs = [q for q in ALL_QUESTIONS if q["type"] == q_type]
+    qs = [q for q in ENRICHED_QUESTIONS if q["type"] == q_type]
 
     if subject:
         canonical = normalize_subject(subject)
@@ -195,6 +257,10 @@ async def create_practice_session(
                 "type": q["type"],
                 "subject": q["subject"],
                 "roc_year": q["roc_year"],
+                "topic_id": q.get("topic_id"),
+                "topic": q.get("topic"),
+                "concepts": q.get("concepts", []),
+                "law_refs": q.get("law_refs", []),
                 "answer": q.get("answer") if q["type"] == "essay" else None,
                 "explanation": q.get("explanation") if q["type"] == "essay" else None,
             }

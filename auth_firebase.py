@@ -14,8 +14,12 @@ import logging
 import os
 from typing import Any, Optional
 
-from google.auth.transport import requests as google_requests
-from google.oauth2 import id_token as google_id_token
+try:
+    from google.auth.transport import requests as google_requests
+    from google.oauth2 import id_token as google_id_token
+except ModuleNotFoundError:
+    google_requests = None
+    google_id_token = None
 
 logger = logging.getLogger(__name__)
 
@@ -23,11 +27,11 @@ logger = logging.getLogger(__name__)
 PROJECT_ID: str = os.environ.get("FIREBASE_PROJECT_ID", "").strip()
 
 # google-auth 會自動 cache Google public keys,重複用同一個 Request 物件即可
-_REQUEST = google_requests.Request()
+_REQUEST = google_requests.Request() if google_requests else None
 
 
 def is_configured() -> bool:
-    return bool(PROJECT_ID)
+    return bool(PROJECT_ID and google_id_token and _REQUEST)
 
 
 def verify_id_token(token: str) -> Optional[dict[str, Any]]:
@@ -43,6 +47,9 @@ def verify_id_token(token: str) -> Optional[dict[str, Any]]:
         return None
     if not PROJECT_ID:
         logger.warning("auth_firebase: FIREBASE_PROJECT_ID 未設定,無法 verify")
+        return None
+    if not google_id_token or not _REQUEST:
+        logger.warning("auth_firebase: google-auth 未安裝,無法 verify")
         return None
     try:
         claims = google_id_token.verify_firebase_token(

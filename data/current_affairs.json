@@ -1,0 +1,82 @@
+{
+  "version": "2026.04.26",
+  "as_of": "2026-04-26",
+  "items": [
+    {
+      "id": "ccourt_liberty_detention_114",
+      "title": "人身自由、羈押與裁判憲法審查",
+      "date": "114",
+      "subjects": ["刑事訴訟法概要", "法學知識與英文"],
+      "topic_ids": ["criminal_coercive", "constitutional_rights"],
+      "summary": "憲法法庭114年多件裁定涉及延長羈押、刑事補償、定應執行刑等聲請。雖多為不受理，但考點集中在人身自由、程序保障與刑事救濟。",
+      "exam_relevance": "整理羈押要件、停止羈押、抗告、刑事補償與憲法第8條/第16條的交會。",
+      "keywords": ["羈押", "延長羈押", "刑事補償", "人身自由", "抗告", "憲法法庭"],
+      "source_url": "https://cons.judicial.gov.tw/"
+    },
+    {
+      "id": "legislative_third_reading_watch",
+      "title": "立法院三讀法案與刑事司法修法追蹤",
+      "date": "115",
+      "subjects": ["刑法概要", "刑事訴訟法概要", "法學知識與英文"],
+      "topic_ids": ["criminal_general", "criminal_coercive", "constitutional_rights"],
+      "summary": "立法院三讀資料可用來追蹤考前最新修法脈絡，正式作答仍以總統公布與全國法規資料庫現行條文為準。",
+      "exam_relevance": "適合建立『草案/三讀/公布/施行』時間軸，避免把未施行草案誤作現行法。",
+      "keywords": ["三讀", "修法", "施行", "立法院", "法案"],
+      "source_url": "https://data.ly.gov.tw/getds.action?id=373"
+    },
+    {
+      "id": "judicial_weekly_law_updates",
+      "title": "司法院法制動態與司法改革議題",
+      "date": "115",
+      "subjects": ["法院組織法", "刑事訴訟法概要", "法學知識與英文"],
+      "topic_ids": ["court_structure", "court_personnel", "criminal_trial_remedy"],
+      "summary": "司法院司法周刊與法制動態可用來追蹤法院組織、司法改革、程序制度與新法施行。",
+      "exam_relevance": "法院組織法申論與法學知識時事題可從司法制度改革、法院職權與程序保障切入。",
+      "keywords": ["司法院", "司法改革", "法院組織", "法制動態", "三讀"],
+      "source_url": "https://www.judicial.gov.tw/tw/lp-1907-1.html"
+    },
+    {
+      "id": "exam_notices_115",
+      "title": "考選部司法考試公告與應試科目追蹤",
+      "date": "115",
+      "subjects": ["國文", "法學知識與英文", "行政法概要", "刑法概要", "刑事訴訟法概要", "法院組織法"],
+      "topic_ids": ["constitutional_rights", "legal_basics", "court_personnel"],
+      "summary": "考選部公告、考畢試題與測驗題答案是試題與答案的權威來源。考前應追蹤報名、日程、應試科目與題型公告。",
+      "exam_relevance": "系統資料更新時應保留PDF來源、答案更正與下載時間，避免使用二手資料覆蓋官方版本。",
+      "keywords": ["考選部", "考畢試題", "答案更正", "司法特考", "法警"],
+      "source_url": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx"
+    }
+  ],
+  "source_feeds": [
+    {
+      "name": "考選部考畢試題查詢平臺",
+      "url": "https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx",
+      "kind": "exam_questions"
+    },
+    {
+      "name": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/",
+      "kind": "law_text"
+    },
+    {
+      "name": "法務部主管法規查詢系統",
+      "url": "https://mojlaw.moj.gov.tw/",
+      "kind": "law_history"
+    },
+    {
+      "name": "憲法法庭",
+      "url": "https://cons.judicial.gov.tw/",
+      "kind": "constitutional_decisions"
+    },
+    {
+      "name": "司法院法制動態",
+      "url": "https://www.judicial.gov.tw/tw/lp-1907-1.html",
+      "kind": "judicial_updates"
+    },
+    {
+      "name": "立法院三讀通過條文與附帶決議開放資料",
+      "url": "https://data.ly.gov.tw/getds.action?id=373",
+      "kind": "bills"
+    }
+  ]
+}

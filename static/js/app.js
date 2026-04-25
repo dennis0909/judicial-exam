@@ -19,6 +19,11 @@ let practiceCorrect = 0;
 let practiceWrong = 0;
 let browseOffset = 0;
 let browseTotalCount = 0;
+let examPoints = null;
+let hotQuestions = [];
+let amendmentsData = null;
+let currentAffairsData = null;
+let wrongBook = safeLoadJSON('judicialWrongBook', []);
 
 // ── Init ──
 document.addEventListener('DOMContentLoaded', async () => {
@@ -70,6 +75,10 @@ function showTab(name) {
   }
   // Lazy load browse
   if (name === 'browse') loadBrowse(1);
+  if (name === 'topics') loadExamPoints();
+  if (name === 'hot') loadHotQuestions();
+  if (name === 'wrongbook') renderWrongBook();
+  if (name === 'updates') loadUpdates();
 }
 
 // ═══════════════════════════════════════════
@@ -92,6 +101,16 @@ function initEventListeners() {
     clearTimeout(keywordTimer);
     keywordTimer = setTimeout(() => loadBrowse(1), 400);
   });
+}
+
+function safeLoadJSON(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (_) {
+    localStorage.removeItem(key);
+    return fallback;
+  }
 }
 
 // ═══════════════════════════════════════════
@@ -121,7 +140,7 @@ async function loadStats() {
   try {
     const r = await fetch('/api/stats');
     stats = await r.json();
-    const mcqCount = (stats.types['選擇題'] || 0);
+    const mcqCount = stats.types.mcq || stats.types['選擇題'] || 0;
     // Update header
     document.getElementById('header-sub').textContent =
       `題庫：${stats.total} 題 ｜ ${stats.years_range[0]}–${stats.years_range[1]} 年度`;
@@ -158,13 +177,12 @@ async function loadYears() {
 // Stat Cards
 // ═══════════════════════════════════════════
 function renderStatCards(mcqCount) {
-  // Count questions with answers
-  const ansCount = stats._answerCount || 0;  // We'll get this from the API or compute
+  const ansCount = stats._answerCount || 0;
 
   const cards = [
     { label: '總題數', value: stats.total, color: '#1a365d' },
     { label: '選擇題', value: mcqCount, color: '#2563eb' },
-    { label: '申論題', value: stats.types['申論題'] || 0, color: '#7c3aed' },
+    { label: '有答案', value: ansCount, color: '#7c3aed' },
     { label: '年度數', value: Object.keys(stats.years).length, color: '#059669' },
   ];
   document.getElementById('stat-cards').innerHTML = cards.map(c => `
@@ -172,6 +190,17 @@ function renderStatCards(mcqCount) {
       <div class="stat-number" style="color:${c.color}">${c.value}</div>
       <div class="stat-label">${c.label}</div>
     </div>`).join('');
+
+  const dash = document.getElementById('dashboard-topics');
+  if (dash) {
+    dash.innerHTML = (stats.top_topics || []).slice(0, 8).map(t => `
+      <button class="study-domain-card" onclick="showTab('topics')">
+        <div class="domain-name">${escapeHtml(t.topic)}</div>
+        <div class="domain-count">${t.count} 題 · 近年 ${t.recent_count} 題</div>
+        <div class="heat-meter"><div class="heat-meter-fill" style="width:${Math.min(100, Math.round(t.heat))}%"></div></div>
+      </button>
+    `).join('');
+  }
 }
 
 // ═══════════════════════════════════════════
@@ -242,6 +271,108 @@ function quickPractice(subject) {
   document.getElementById('practice-subject').value = subject;
   document.getElementById('practice-type').value = MCQ_SUBJECTS.includes(subject) ? 'mcq' : 'essay';
   startPractice();
+}
+
+// ═══════════════════════════════════════════
+// Exam points / topic taxonomy
+// ═══════════════════════════════════════════
+async function loadExamPoints() {
+  if (examPoints) {
+    renderExamPoints();
+    return;
+  }
+  try {
+    const r = await fetch('/api/exam-points');
+    examPoints = await r.json();
+    renderExamPoints();
+  } catch (e) {
+    document.getElementById('exam-point-list').innerHTML = '<div class="empty-state" style="color:#ef4444;">載入失敗</div>';
+  }
+}
+
+function renderExamPoints() {
+  const list = document.getElementById('exam-point-list');
+  const taxonomy = document.getElementById('topic-taxonomy');
+  const yearGrid = document.getElementById('topic-year-grid');
+  if (!examPoints || !list || !taxonomy || !yearGrid) return;
+
+  const maxHeat = Math.max(...examPoints.topics.map(t => t.heat), 1);
+  list.innerHTML = examPoints.topics.slice(0, 16).map(t => `
+    <div class="question-card" style="padding:1rem;">
+      <div class="flex items-center justify-between gap-3">
+        <div>
+          <span class="topic-chip">${escapeHtml(t.topic)}</span>
+          <div class="mini-meta" style="margin-top:0.4rem;">${t.count} 題 · 近年 ${t.recent_count} 題 · 答案率 ${Math.round(t.answer_rate * 100)}%</div>
+        </div>
+        <div style="font-weight:700;color:#f97316;">${t.heat}</div>
+      </div>
+      <div class="heat-meter"><div class="heat-meter-fill" style="width:${Math.round(t.heat / maxHeat * 100)}%"></div></div>
+    </div>
+  `).join('');
+
+  const subjects = examPoints.taxonomy?.subjects || {};
+  taxonomy.innerHTML = Object.entries(subjects).map(([subject, cfg]) => `
+    <div class="question-card" style="padding:1rem;">
+      <div style="font-weight:700;margin-bottom:0.5rem;color:${SUBJECT_COLORS[subject] || '#1a365d'}">${escapeHtml(subject)}</div>
+      <div class="flex flex-wrap gap-3">
+        ${(cfg.topics || []).map(t => `<span class="topic-chip">${escapeHtml(t.label)}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  yearGrid.innerHTML = Object.entries(examPoints.by_year || {}).reverse().map(([year, topics]) => `
+    <div class="question-card" style="padding:1rem;">
+      <div style="font-weight:700;margin-bottom:0.5rem;">${year} 年</div>
+      ${(topics || []).slice(0, 5).map(t => `
+        <div class="mini-meta" style="display:flex;justify-content:space-between;gap:0.5rem;">
+          <span>${escapeHtml(t.topic)}</span><strong>${t.count}</strong>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════
+// Hot questions
+// ═══════════════════════════════════════════
+async function loadHotQuestions() {
+  if (hotQuestions.length) {
+    renderHotQuestions();
+    return;
+  }
+  try {
+    const r = await fetch('/api/hot-questions?limit=40');
+    const data = await r.json();
+    hotQuestions = data.questions || [];
+    renderHotQuestions();
+  } catch (e) {
+    document.getElementById('hot-list').innerHTML = '<div class="empty-state" style="color:#ef4444;">載入失敗</div>';
+  }
+}
+
+function renderHotQuestions() {
+  const list = document.getElementById('hot-list');
+  if (!list) return;
+  document.getElementById('hot-count').textContent = `共 ${hotQuestions.length} 題`;
+  list.innerHTML = hotQuestions.map(renderQuestionSummaryCard).join('');
+}
+
+function renderQuestionSummaryCard(q) {
+  const color = SUBJECT_COLORS[q.subject] || '#6b7280';
+  return `
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge" style="background:${color};color:#fff;">${escapeHtml(q.subject || '')}</span>
+        <span class="badge badge-year">${q.roc_year || ''} 年 · 第 ${q.question_number || ''} 題</span>
+        <span class="topic-chip">${escapeHtml(q.topic || '未分類')}</span>
+        <span class="badge" style="background:#ffedd5;color:#9a3412;">熱度 ${q.heat_score || ''}</span>
+      </div>
+      <div class="question-stem">${escapeHtml(q.stem || '')}</div>
+      <div class="mini-meta" style="margin-top:0.5rem;">${escapeHtml(q.reason || '')}</div>
+      ${(q.law_refs || []).length ? `<div class="mini-meta" style="margin-top:0.35rem;">${q.law_refs.map(escapeHtml).join('、')}</div>` : ''}
+      <button class="btn-outline" onclick="openAIAnalysis('${q.id}')" style="margin-top:0.75rem;font-size:0.8rem;padding:0.35rem 0.75rem;">AI 分析</button>
+    </div>
+  `;
 }
 
 // ═══════════════════════════════════════════
@@ -388,6 +519,7 @@ async function submitAnswer(qId, answer, el) {
       if (result.explanation) fb.innerHTML += `<div style="margin-top:0.5rem;font-size:0.8rem;opacity:0.8;">${escapeHtml(result.explanation)}</div>`;
       practiceWrong++;
       if (seg) { seg.classList.remove('current'); seg.classList.add('wrong'); }
+      addWrongBook(qId, answer, result.correct, result.explanation);
     }
 
     // Add next button
@@ -398,6 +530,13 @@ async function submitAnswer(qId, answer, el) {
     nextBtn.style.display = 'block';
     nextBtn.onclick = nextQuestion;
     document.getElementById('q-card').appendChild(nextBtn);
+    const analysisBtn = document.createElement('button');
+    analysisBtn.textContent = 'AI 分析';
+    analysisBtn.className = 'btn-outline';
+    analysisBtn.style.marginTop = '0.75rem';
+    analysisBtn.style.marginLeft = '0.5rem';
+    analysisBtn.onclick = () => openAIAnalysis(qId);
+    document.getElementById('q-card').appendChild(analysisBtn);
   } catch (e) {
     nextQuestion();
   }
@@ -440,6 +579,76 @@ function showResult() {
 function endPractice() {
   document.getElementById('practice-setup').classList.remove('hidden');
   document.getElementById('practice-area').classList.add('hidden');
+}
+
+// ═══════════════════════════════════════════
+// Wrongbook
+// ═══════════════════════════════════════════
+function saveWrongBook() {
+  localStorage.setItem('judicialWrongBook', JSON.stringify(wrongBook));
+}
+
+function addWrongBook(qId, selected, correct, explanation) {
+  const q = practiceQuestions.find(item => item.id === qId) || { id: qId };
+  const existing = wrongBook.find(item => item.id === qId);
+  const payload = {
+    ...q,
+    selectedAnswer: selected,
+    correctAnswer: correct,
+    explanation: explanation || q.explanation || '',
+    lastWrongAt: new Date().toISOString(),
+    mistakeCount: existing ? (existing.mistakeCount || 1) + 1 : 1,
+  };
+  wrongBook = [payload, ...wrongBook.filter(item => item.id !== qId)].slice(0, 200);
+  saveWrongBook();
+}
+
+function renderWrongBook() {
+  const list = document.getElementById('wrongbook-list');
+  if (!list) return;
+  if (!wrongBook.length) {
+    list.innerHTML = '<div class="empty-state">目前沒有錯題</div>';
+    return;
+  }
+  list.innerHTML = wrongBook.map(q => {
+    const color = SUBJECT_COLORS[q.subject] || '#6b7280';
+    return `
+      <div class="question-card">
+        <div class="question-meta">
+          <span class="badge" style="background:${color};color:#fff;">${escapeHtml(q.subject || '')}</span>
+          <span class="badge badge-year">${q.roc_year || ''} 年</span>
+          ${q.topic ? `<span class="topic-chip">${escapeHtml(q.topic)}</span>` : ''}
+          <span class="badge" style="background:#fee2e2;color:#991b1b;">錯 ${q.mistakeCount || 1} 次</span>
+        </div>
+        <div class="question-stem">${escapeHtml(q.stem || '')}</div>
+        ${q.options ? `<ul class="option-list" style="margin-top:0.5rem;">
+          ${Object.entries(q.options).map(([k, v]) => `
+            <li class="option-item" style="padding:0.4rem 0.6rem;font-size:0.85rem;${q.correctAnswer === k ? 'background:#dcfce7;color:#166534;font-weight:600;border-radius:0.375rem;' : q.selectedAnswer === k ? 'background:#fee2e2;color:#991b1b;border-radius:0.375rem;' : ''}">
+              <span style="font-weight:600;margin-right:0.375rem;">${k}.</span>${escapeHtml(v)}
+            </li>`).join('')}
+        </ul>` : ''}
+        <div class="mini-meta" style="margin-top:0.5rem;">你的答案：${escapeHtml(q.selectedAnswer || '-')} ｜ 正解：${escapeHtml(q.correctAnswer || '-')}</div>
+        <div class="flex gap-3 flex-wrap" style="margin-top:0.75rem;">
+          <button class="btn-outline" onclick="openAIAnalysis('${q.id}')" style="font-size:0.8rem;padding:0.35rem 0.75rem;">AI 分析</button>
+          <button class="btn-outline" onclick="removeWrongBook('${q.id}')" style="font-size:0.8rem;padding:0.35rem 0.75rem;">移除</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function removeWrongBook(qId) {
+  wrongBook = wrongBook.filter(item => item.id !== qId);
+  saveWrongBook();
+  renderWrongBook();
+}
+
+function clearWrongBook() {
+  if (!wrongBook.length) return;
+  if (!confirm('清空錯題本？')) return;
+  wrongBook = [];
+  saveWrongBook();
+  renderWrongBook();
 }
 
 // ═══════════════════════════════════════════
@@ -486,6 +695,7 @@ async function loadBrowse(page) {
           <span class="badge" style="background:${color};color:#fff;">${q.subject}</span>
           <span class="badge badge-year">${q.roc_year} 年</span>
           <span class="badge" style="background:${q.type === 'mcq' ? '#e0f2fe' : '#fce7f3'};color:${q.type === 'mcq' ? '#0369a1' : '#9d174d'};">${q.type === 'mcq' ? '選擇題' : '申論題'}</span>
+          ${q.topic ? `<span class="topic-chip">${escapeHtml(q.topic)}</span>` : ''}
           ${hasAnswer ? '<span class="ans-badge has-ans">有答案</span>' : '<span class="ans-badge no-ans">待補</span>'}
         </div>
         <div class="question-stem">${q.question_number}. ${escapeHtml(q.stem)}</div>
@@ -497,6 +707,8 @@ async function loadBrowse(page) {
               </li>`).join('')}
           </ul>` : ''}
         ${hasAnswer ? `<div style="margin-top:0.5rem;font-size:0.8rem;color:#16a34a;font-weight:600;">答案：${q.answer}</div>` : ''}
+        ${(q.law_refs || []).length ? `<div class="mini-meta" style="margin-top:0.35rem;">${q.law_refs.map(escapeHtml).join('、')}</div>` : ''}
+        <button class="btn-outline" onclick="openAIAnalysis('${q.id}')" style="margin-top:0.75rem;font-size:0.8rem;padding:0.35rem 0.75rem;">AI 分析</button>
       </div>`;
     }).join('');
   } catch (e) {
@@ -514,10 +726,133 @@ function browsePage(dir) {
 }
 
 // ═══════════════════════════════════════════
+// Amendments / current affairs
+// ═══════════════════════════════════════════
+async function loadUpdates() {
+  try {
+    if (!amendmentsData) {
+      const r = await fetch('/api/amendments');
+      amendmentsData = await r.json();
+    }
+    if (!currentAffairsData) {
+      const r = await fetch('/api/current-affairs');
+      currentAffairsData = await r.json();
+    }
+    renderUpdates();
+  } catch (e) {
+    document.getElementById('amendments-list').innerHTML = '<div class="empty-state" style="color:#ef4444;">載入失敗</div>';
+  }
+}
+
+function renderUpdates() {
+  const amendments = document.getElementById('amendments-list');
+  const affairs = document.getElementById('current-affairs-list');
+  const yearly = document.getElementById('yearly-focus-list');
+  if (!amendments || !affairs || !yearly) return;
+
+  amendments.innerHTML = (amendmentsData.items || []).map(item => `
+    <div class="question-card" style="padding:1rem;">
+      <div class="question-meta">
+        <span class="badge badge-year">${escapeHtml(item.date || '')}</span>
+        <span class="topic-chip">${escapeHtml(item.law || '')}</span>
+      </div>
+      <div style="font-weight:700;margin-bottom:0.4rem;">${escapeHtml(item.summary || '')}</div>
+      <div class="mini-meta">${escapeHtml(item.exam_relevance || '')}</div>
+      ${(item.articles || []).length ? `<div class="mini-meta" style="margin-top:0.35rem;">${item.articles.map(escapeHtml).join('、')}</div>` : ''}
+      ${item.source_url ? `<a href="${item.source_url}" target="_blank" rel="noreferrer" class="mini-meta" style="display:inline-block;margin-top:0.5rem;">官方來源</a>` : ''}
+    </div>
+  `).join('');
+
+  affairs.innerHTML = (currentAffairsData.items || []).map(item => `
+    <div class="question-card" style="padding:1rem;">
+      <div class="question-meta">
+        <span class="badge badge-year">${escapeHtml(item.date || '')}</span>
+        ${(item.subjects || []).slice(0, 2).map(s => `<span class="badge" style="background:${SUBJECT_COLORS[s] || '#64748b'};color:#fff;">${escapeHtml(s)}</span>`).join('')}
+      </div>
+      <div style="font-weight:700;margin-bottom:0.4rem;">${escapeHtml(item.title || '')}</div>
+      <div class="mini-meta">${escapeHtml(item.summary || '')}</div>
+      <div class="mini-meta" style="margin-top:0.35rem;">${escapeHtml(item.exam_relevance || '')}</div>
+      ${item.source_url ? `<a href="${item.source_url}" target="_blank" rel="noreferrer" class="mini-meta" style="display:inline-block;margin-top:0.5rem;">來源</a>` : ''}
+    </div>
+  `).join('');
+
+  yearly.innerHTML = (amendmentsData.yearly_focus || []).map(item => `
+    <div class="question-card" style="padding:1rem;">
+      <div class="topic-chip">${item.roc_year} 年</div>
+      <div style="font-weight:700;margin-top:0.5rem;">${escapeHtml(item.title || '')}</div>
+      <div class="mini-meta" style="margin-top:0.35rem;">${escapeHtml(item.summary || '')}</div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════
+// AI analysis modal
+// ═══════════════════════════════════════════
+async function openAIAnalysis(qId) {
+  const modal = document.getElementById('analysis-modal');
+  const content = document.getElementById('analysis-content');
+  if (!modal || !content) return;
+  modal.classList.remove('hidden');
+  content.innerHTML = '<div class="skeleton-loading"><div class="skeleton-line" style="width:60%"></div><div class="skeleton-line" style="width:95%"></div><div class="skeleton-line" style="width:80%"></div></div>';
+  try {
+    const r = await fetch(`/api/questions/${encodeURIComponent(qId)}/analysis`);
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.detail || 'analysis failed');
+    renderAIAnalysis(data);
+  } catch (e) {
+    content.innerHTML = '<div class="empty-state" style="color:#ef4444;">分析失敗</div>';
+  }
+}
+
+function closeAIAnalysis() {
+  document.getElementById('analysis-modal')?.classList.add('hidden');
+}
+
+function renderAIAnalysis(data) {
+  const content = document.getElementById('analysis-content');
+  if (!content) return;
+  content.innerHTML = `
+    <div class="question-meta">
+      <span class="badge" style="background:${SUBJECT_COLORS[data.subject] || '#64748b'};color:#fff;">${escapeHtml(data.subject || '')}</span>
+      <span class="topic-chip">${escapeHtml(data.topic || '')}</span>
+      <span class="badge" style="background:#e0f2fe;color:#0369a1;">信心 ${Math.round((data.confidence || 0) * 100)}%</span>
+    </div>
+    <div class="analysis-section">
+      <div style="font-weight:700;">核心爭點</div>
+      <div class="mini-meta" style="margin-top:0.35rem;">${escapeHtml(data.core_issue || '')}</div>
+    </div>
+    <div class="analysis-section">
+      <div style="font-weight:700;">作答策略</div>
+      <ul class="analysis-list">${(data.exam_strategy || []).map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
+    </div>
+    <div class="analysis-section">
+      <div style="font-weight:700;">選項檢查</div>
+      <ul class="analysis-list">${(data.option_strategy || []).map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
+    </div>
+    ${(data.law_refs || []).length ? `<div class="analysis-section"><div style="font-weight:700;">關聯法條</div><div class="mini-meta" style="margin-top:0.35rem;">${data.law_refs.map(escapeHtml).join('、')}</div></div>` : ''}
+    ${renderAnalysisRelated('修法提醒', data.amendment_alerts)}
+    ${renderAnalysisRelated('時事連結', data.current_affairs_alerts)}
+    <div class="analysis-section mini-meta">${escapeHtml(data.source_note || '')}</div>
+  `;
+}
+
+function renderAnalysisRelated(title, items) {
+  if (!items || !items.length) return '';
+  return `
+    <div class="analysis-section">
+      <div style="font-weight:700;">${title}</div>
+      <ul class="analysis-list">
+        ${items.map(item => `<li><strong>${escapeHtml(item.title || item.law || '')}</strong>：${escapeHtml(item.summary || '')}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════════
 // Utilities
 // ═══════════════════════════════════════════
 function escapeHtml(str) {
-  if (!str) return '';
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
 }

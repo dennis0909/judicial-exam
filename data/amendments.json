@@ -1,0 +1,117 @@
+{
+  "version": "2026.04.26",
+  "as_of": "2026-04-26",
+  "source_note": "以全國法規資料庫、法務部主管法規查詢系統、立法院公開資料為主要來源；考前仍須回查官方最新文字。",
+  "items": [
+    {
+      "id": "criminal_code_1150313_parole",
+      "roc_year": 115,
+      "date": "115-03-13",
+      "law": "中華民國刑法",
+      "subjects": ["刑法概要", "法學知識與英文"],
+      "topic_ids": ["criminal_general"],
+      "articles": ["第78-1條", "第78-2條", "第79-1條"],
+      "summary": "修正第79-1條，增訂第78-1、78-2條，並自115年3月14日施行。刑罰執行、假釋與撤銷效果相關題組須列入今年追蹤。",
+      "exam_relevance": "今年最直接的刑法總則修法，適合出成假釋、撤銷與刑之執行效果比較題。",
+      "keywords": ["假釋", "撤銷", "刑之執行", "79-1", "78-1", "78-2"],
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001"
+    },
+    {
+      "id": "criminal_code_1140801_child_protection",
+      "roc_year": 114,
+      "date": "114-08-01",
+      "law": "中華民國刑法",
+      "subjects": ["刑法概要"],
+      "topic_ids": ["criminal_personal"],
+      "articles": ["第272-1條", "第286條"],
+      "summary": "增訂第272-1條並修正第286條。生命、身體與兒少保護相關犯罪是近年高敏感度考點。",
+      "exam_relevance": "可與殺人、傷害、遺棄、兒少保護責任及加重構成要件整合命題。",
+      "keywords": ["兒少", "幼童", "殺人", "傷害", "286", "272-1"],
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001"
+    },
+    {
+      "id": "criminal_code_1140528_obstruction_justice",
+      "roc_year": 114,
+      "date": "114-05-28",
+      "law": "中華民國刑法",
+      "subjects": ["刑法概要", "法院組織法"],
+      "topic_ids": ["criminal_public_order", "court_order_public"],
+      "articles": ["第161條", "第161-1條", "第172-1條", "第172-2條", "第172-3條"],
+      "summary": "修正第161條，增訂第161-1、172-1至172-3條及相關章名。司法程序秩序、脫逃與妨害司法公正相關議題應列入高頻追蹤。",
+      "exam_relevance": "法警職務與法庭/羈押秩序高度相關，適合連結法院組織法與刑法妨害司法秩序題。",
+      "keywords": ["脫逃", "妨害司法", "偽證", "湮滅證據", "法庭秩序", "161", "172-1"],
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001"
+    },
+    {
+      "id": "criminal_procedure_1141111_sampling",
+      "roc_year": 114,
+      "date": "114-11-11",
+      "law": "刑事訴訟法",
+      "subjects": ["刑事訴訟法概要"],
+      "topic_ids": ["criminal_coercive", "criminal_evidence"],
+      "articles": ["第116-2條", "第205-2條", "第205-3條", "第205-4條"],
+      "summary": "修正第116-2、205-2條，增訂第205-3、205-4條。涉及強制處分、科技/鑑定資料與證據取得的程序控制。",
+      "exam_relevance": "刑訴申論容易測程序要件、令狀/比例原則、證據能力與救濟。",
+      "keywords": ["強制處分", "鑑定", "採樣", "DNA", "證據", "116-2", "205-2", "205-3"],
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001"
+    },
+    {
+      "id": "criminal_procedure_1130731_special_coercive",
+      "roc_year": 113,
+      "date": "113-07-31",
+      "law": "刑事訴訟法",
+      "subjects": ["刑事訴訟法概要"],
+      "topic_ids": ["criminal_coercive", "criminal_evidence"],
+      "articles": ["第70-1條", "第153-1條至第153-10條", "第245條", "第245-1條"],
+      "summary": "增訂特殊強制處分章及偵查不公開相關規定。科技偵查、秘密性、比例原則與救濟是近年核心命題。",
+      "exam_relevance": "可與搜索扣押、通訊監察、偵查不公開、被告防禦權一起比較。",
+      "keywords": ["特殊強制處分", "科技偵查", "偵查不公開", "搜索", "扣押", "153-1", "245"],
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001"
+    },
+    {
+      "id": "court_organization_1140716_staffing",
+      "roc_year": 114,
+      "date": "114-07-16",
+      "law": "法院組織法",
+      "subjects": ["法院組織法"],
+      "topic_ids": ["court_structure", "court_personnel"],
+      "articles": ["法院組織法附表", "第115條"],
+      "summary": "全國法規資料庫顯示法院組織法修正日期為114年7月16日，附表與施行規定是今年法院組織法複習重點。",
+      "exam_relevance": "法警類科容易測法院層級、司法職員、員額與施行日期。",
+      "keywords": ["法院組織", "法警", "員額", "附表", "施行日期", "115"],
+      "source_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053"
+    }
+  ],
+  "yearly_focus": [
+    {
+      "roc_year": 115,
+      "title": "今年追蹤：刑法假釋/刑之執行效果修正",
+      "summary": "115年刑法第78-1、78-2、79-1修正是今年最需要追蹤的法條變動；搭配刑事政策、累再犯、假釋撤銷效果整理。"
+    },
+    {
+      "roc_year": 114,
+      "title": "近期高權重：刑法妨害司法、兒少保護；刑訴強制處分與鑑定",
+      "summary": "114年刑法與刑訴均有與司法程序、強制處分、證據/鑑定、生命身體法益相關修正，與法警職務高度連動。"
+    },
+    {
+      "roc_year": 113,
+      "title": "刑訴特殊強制處分章與偵查不公開",
+      "summary": "113年刑訴增訂特殊強制處分章，適合作為刑訴申論與時事題的核心。"
+    },
+    {
+      "roc_year": 112,
+      "title": "刑法性影像與詐欺、刑訴證據/審判程序更新",
+      "summary": "112年前後刑法與刑訴多次更新，適合整理成舊題新法比較表。"
+    },
+    {
+      "roc_year": 111,
+      "title": "公共危險、妨害公務與刑罰執行議題",
+      "summary": "111年前後的刑法公共危險與妨害公務修正仍常與法警工作情境連結。"
+    },
+    {
+      "roc_year": 110,
+      "title": "行政程序法最近一次大範圍修正後的穩定考點",
+      "summary": "行政程序法目前全國法規資料庫修正日期為110年1月20日，後續主要以行政法一般原則與救濟實務整合。"
+    }
+  ]
+}

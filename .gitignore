@@ -2,7 +2,13 @@ __pycache__/
 *.pyc
 .env
 data/app.db
+data/app.db-shm
+data/app.db-wal
 data/*.bak
+data/refine_runs.jsonl
+data/refine_status.json
+data/refine_loop.log
+data/refine_loop.pid
 data/pdfs/
 logs/
 .DS_Store
